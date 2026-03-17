@@ -20,7 +20,7 @@
   "app/page.tsx -> @/components/ContentPipeline": {
     "id": 3869,
     "files": [
-      "static/chunks/869.b7d35c7898811857.js"
+      "static/chunks/869.0272e528797c6793.js"
     ]
   },
   "app/page.tsx -> @/components/FlywheelStatus": {
@@ -54,9 +54,9 @@
     ]
   },
   "app/page.tsx -> @/components/MemoryViewer": {
-    "id": 3022,
+    "id": 8667,
     "files": [
-      "static/chunks/22.b4e4371e340c72df.js"
+      "static/chunks/667.6fdeb150c2fee330.js"
     ]
   },
   "app/page.tsx -> @/components/PublishingPipeline": {
@@ -66,9 +66,9 @@
     ]
   },
   "app/page.tsx -> @/components/TaskBoard": {
-    "id": 9677,
+    "id": 1399,
     "files": [
-      "static/chunks/677.b69925a7f52620ea.js"
+      "static/chunks/399.ff7105db5fb42e0a.js"
     ]
   }
 }

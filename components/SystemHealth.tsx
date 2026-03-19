@@ -56,11 +56,47 @@ function timeAgo(isoStr?: string): string {
   return days + 'd ' + (hrs % 24) + 'h ago'
 }
 
+const MAX_HISTORY = 96 // ~24h at 15-min intervals or ~96 min at 60s
+
+interface UptimeEntry {
+  ts: string
+  status: 'green' | 'yellow' | 'red'
+}
+
+function statusToColor(status: string): 'green' | 'yellow' | 'red' {
+  const s = (status || '').toLowerCase()
+  if (s === 'healthy' || s === 'ok' || s === 'green') return 'green'
+  if (s === 'degraded' || s === 'yellow') return 'yellow'
+  return 'red'
+}
+
+function loadUptimeHistory(): UptimeEntry[] {
+  if (typeof window === 'undefined') return []
+  try {
+    return JSON.parse(localStorage.getItem('agm_uptime_history') || '[]')
+  } catch { return [] }
+}
+
+function saveUptimeHistory(history: UptimeEntry[]) {
+  if (typeof window === 'undefined') return
+  localStorage.setItem('agm_uptime_history', JSON.stringify(history))
+}
+
 export default function SystemHealth() {
   const [data, setData] = useState<HealthData | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null)
+  const [uptimeHistory, setUptimeHistory] = useState<UptimeEntry[]>(loadUptimeHistory)
+
+  const recordUptime = useCallback((status: string) => {
+    setUptimeHistory(prev => {
+      const entry: UptimeEntry = { ts: new Date().toISOString(), status: statusToColor(status) }
+      const next = [...prev, entry].slice(-MAX_HISTORY)
+      saveUptimeHistory(next)
+      return next
+    })
+  }, [])
 
   const fetchHealth = useCallback(async () => {
     try {
@@ -70,12 +106,14 @@ export default function SystemHealth() {
       setData(json)
       setError(null)
       setLastUpdated(new Date())
+      recordUptime(json.status || 'unhealthy')
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : 'Unknown error')
+      recordUptime('unhealthy')
     } finally {
       setLoading(false)
     }
-  }, [])
+  }, [recordUptime])
 
   useEffect(() => {
     fetchHealth()
@@ -165,6 +203,41 @@ export default function SystemHealth() {
           </button>
         </div>
       </div>
+
+      {/* Uptime Bar */}
+      {uptimeHistory.length >= 2 && (() => {
+        const upCount = uptimeHistory.filter(h => h.status === 'green').length
+        const pct = ((upCount / uptimeHistory.length) * 100).toFixed(1)
+        const pctNum = parseFloat(pct)
+        const pctColor = pctNum >= 99.5 ? 'text-green-400' : pctNum >= 95 ? 'text-yellow-400' : 'text-red-400'
+        const oldest = new Date(uptimeHistory[0].ts).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })
+
+        return (
+          <div className="bg-gray-900 rounded-lg shadow-xl p-6 border border-gray-800">
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="text-sm font-semibold text-white">Uptime</h3>
+              <span className="text-xs text-gray-500">{uptimeHistory.length} checks</span>
+            </div>
+            <p className={`text-3xl font-bold mb-2 ${pctColor}`}>{pct}%</p>
+            <div className="flex gap-px h-8 mb-2">
+              {uptimeHistory.map((h, i) => (
+                <div
+                  key={i}
+                  className={`flex-1 rounded-sm cursor-default transition-opacity hover:opacity-80 ${
+                    h.status === 'green' ? 'bg-green-500' :
+                    h.status === 'yellow' ? 'bg-yellow-500' : 'bg-red-500'
+                  }`}
+                  title={`${new Date(h.ts).toLocaleString()} — ${h.status}`}
+                />
+              ))}
+            </div>
+            <div className="flex justify-between text-xs text-gray-500">
+              <span>{oldest}</span>
+              <span>Now</span>
+            </div>
+          </div>
+        )
+      })()}
 
       {/* Client Health Cards */}
       <div className="bg-gray-900 rounded-lg shadow-xl p-6 border border-gray-800">

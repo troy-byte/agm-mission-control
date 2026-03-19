@@ -1,4 +1,4 @@
-// File: /Users/troyscott_homeMac/YouTube Workspace (DOE)/.tmp/mission-control-pull/app/page.tsx
+// File: /private/tmp/agm-mission-control/app/page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

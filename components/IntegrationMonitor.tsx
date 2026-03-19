@@ -67,16 +67,28 @@ export default function IntegrationMonitor() {
       features: ['AI SEO onboarding', 'Arc Site integration scoping']
     },
     {
+      id: 'housecallpro-goldenmailer',
+      name: 'Golden Mailer → Housecall Pro',
+      client: 'Golden Mailer',
+      fsmPlatform: 'Housecall Pro',
+      target: 'TBD (AGM or SERTBO)',
+      status: 'building',
+      proToolsTier: 'Core',
+      priceSignal: '$297/mo',
+      description: 'First Housecall Pro integration. Test client via goldenmailer.com. MAX plan required for API.',
+      features: ['API research done', 'Webhook support confirmed', 'MAX plan gating']
+    },
+    {
       id: 'field-routes-valleywide',
-      name: 'Valleywide Pest → Field Routes',
+      name: 'Valleywide Pest → SERTBO',
       client: 'Valleywide Pest Control',
       fsmPlatform: 'Field Routes',
-      target: 'AGM (via SERTBO)',
-      status: 'building',
-      proToolsTier: 'Pro',
-      priceSignal: '$597/mo',
-      description: 'Enterprise-scale pest control. Via Andrew/SERTBO channel. Validates standalone Pro Tools.',
-      features: ['APIs connected', 'Data audit complete', '49% phone-only contacts', 'Sync engine building']
+      target: 'SERTBO',
+      status: 'live',
+      proToolsTier: 'Core',
+      priceSignal: '$297/mo',
+      description: 'Pest control vertical. Via Andrew/SERTBO channel. Core tier, signed Mar 18. 8,373 customers.',
+      features: ['APIs connected', 'Data audit complete', '51% have email', 'Sync engine live']
     }
   ])
 

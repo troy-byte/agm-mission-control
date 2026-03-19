@@ -1,8 +1,8 @@
 {
   "app/page.tsx -> @/components/AgentStatusMonitor": {
-    "id": 4703,
+    "id": 7236,
     "files": [
-      "static/chunks/703.3c7e0574b04d9426.js"
+      "static/chunks/236.cb57e5931794c8cc.js"
     ]
   },
   "app/page.tsx -> @/components/Calendar": {
@@ -14,7 +14,7 @@
   "app/page.tsx -> @/components/ClientsDashboard": {
     "id": 9710,
     "files": [
-      "static/chunks/710.a2cec4376f9746bb.js"
+      "static/chunks/710.900b33e9f75e82ca.js"
     ]
   },
   "app/page.tsx -> @/components/ContentPipeline": {
@@ -24,9 +24,9 @@
     ]
   },
   "app/page.tsx -> @/components/FlywheelStatus": {
-    "id": 2279,
+    "id": 3828,
     "files": [
-      "static/chunks/279.39024baab82762af.js"
+      "static/chunks/828.c9f94d7f9a5b53af.js"
     ]
   },
   "app/page.tsx -> @/components/HandoffMonitor": {
@@ -38,7 +38,7 @@
   "app/page.tsx -> @/components/IntegrationMonitor": {
     "id": 9095,
     "files": [
-      "static/chunks/95.4bf64c28fcd41ee9.js"
+      "static/chunks/95.558df5d38a142b16.js"
     ]
   },
   "app/page.tsx -> @/components/MeetTheTeamDetailed": {
@@ -47,28 +47,22 @@
       "static/chunks/57.f2e538dd2adf72dc.js"
     ]
   },
-  "app/page.tsx -> @/components/MemoryMonitor": {
-    "id": 9028,
-    "files": [
-      "static/chunks/28.26e657e5485b90cb.js"
-    ]
-  },
-  "app/page.tsx -> @/components/MemoryViewer": {
-    "id": 8667,
-    "files": [
-      "static/chunks/667.6fdeb150c2fee330.js"
-    ]
-  },
   "app/page.tsx -> @/components/PublishingPipeline": {
     "id": 1065,
     "files": [
       "static/chunks/65.02914d2e67662477.js"
     ]
   },
-  "app/page.tsx -> @/components/TaskBoard": {
-    "id": 1399,
+  "app/page.tsx -> @/components/SystemHealth": {
+    "id": 2917,
     "files": [
-      "static/chunks/399.ff7105db5fb42e0a.js"
+      "static/chunks/917.c4e02ae6e942bd0f.js"
+    ]
+  },
+  "app/page.tsx -> @/components/TaskBoard": {
+    "id": 2801,
+    "files": [
+      "static/chunks/801.862fd4a805ee2977.js"
     ]
   }
 }

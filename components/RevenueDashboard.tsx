@@ -20,16 +20,18 @@ interface RevenueData {
 
 export default function RevenueDashboard() {
   const [revenue] = useState<RevenueData>({
-    currentMRR: 1094,
+    currentMRR: 1391,
     targetMRR: 65000,
-    payingClients: 2,
+    payingClients: 3,
     pipelineClients: 1,
     productLayers: 5,
-    fsmPlatforms: 3,
+    fsmPlatforms: 4,
     clients: [
       { name: 'Texas Turf (Ivana)', mrr: 797, platform: 'Jobber', status: 'live' },
       { name: 'Heavenly Greens', mrr: 297, platform: 'CENTAH / Salesforce', status: 'live' },
-      { name: 'Valleywide Pest', mrr: 0, platform: 'Field Routes', status: 'in_progress' },
+      { name: 'Artificial Turf Express', mrr: 297, platform: 'Jobber', status: 'live' },
+      { name: 'Valleywide Pest Control', mrr: 297, platform: 'Field Routes → SERTBO', status: 'live' },
+      { name: 'Golden Mailer', mrr: 0, platform: 'Housecall Pro', status: 'in_progress' },
     ]
   })
 

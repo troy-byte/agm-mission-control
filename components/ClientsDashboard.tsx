@@ -42,12 +42,13 @@ export default function ClientsDashboard() {
   ])
 
   const [proToolsClients] = useState<ProToolsClient[]>([
-    { name: 'Heavenly Greens', fsmPlatform: 'CENTAH / Salesforce', status: 'live', monthlyValue: 297, notes: 'Costco lead intake. Confirm payment status.' },
-    { name: 'Artificial Turf Express', fsmPlatform: 'Jobber', status: 'live', monthlyValue: 0, notes: 'Confirm payment status.' },
-    { name: 'Texas Turf (Ivana)', fsmPlatform: 'Jobber', status: 'live', monthlyValue: 0, notes: '4 workflows live. Free integration as founding partner.' },
-    { name: 'Sunburst Landscaping', fsmPlatform: 'BuildingConnected', status: 'prospect', monthlyValue: 0, notes: 'Contact: Noelle. Already on BuildingConnected. Commercial construction bid integration.' },
-    { name: 'Oasis Turf', fsmPlatform: 'Arc Site', status: 'prospect', monthlyValue: 0, notes: 'AI SEO ($1,297/mo) coming soon. Arc Site integration candidate.' },
-    { name: 'Valleywide Pest', fsmPlatform: 'Field Routes', status: 'prospect', monthlyValue: 0, notes: 'Via Andrew/SERTBO. 8,373 customers. Building sync engine. Not yet paying.' },
+    { name: 'Heavenly Greens', fsmPlatform: 'CENTAH / Salesforce', status: 'live', monthlyValue: 297, notes: 'Costco lead intake. AGM + ProTools Core. SF + AGM bridge.' },
+    { name: 'Artificial Turf Express', fsmPlatform: 'Jobber', status: 'live', monthlyValue: 297, notes: 'AGM platform client.' },
+    { name: 'Texas Turf (Ivana)', fsmPlatform: 'Jobber', status: 'live', monthlyValue: 0, notes: '4 workflows live. Free integration — founding use case client.' },
+    { name: 'Valleywide Pest Control', fsmPlatform: 'Field Routes', status: 'live', monthlyValue: 297, notes: 'Via Andrew/SERTBO. Core tier ($297/mo). Signed Mar 18, 2026. 8,373 customers.' },
+    { name: 'Golden Mailer', fsmPlatform: 'Housecall Pro', status: 'in_progress', monthlyValue: 0, notes: 'Test integration began Mar 19. Third ProTools client. MAX plan API access.' },
+    { name: 'Sunburst Landscaping', fsmPlatform: 'BuildingConnected', status: 'prospect', monthlyValue: 0, notes: 'Contact: Noelle. Commercial construction bid integration.' },
+    { name: 'Oasis Turf', fsmPlatform: 'Arc Site', status: 'prospect', monthlyValue: 0, notes: 'AI SEO ($1,297/mo) closing. Arc Site integration candidate.' },
   ])
 
   const totalMRR = clients.reduce((sum, c) => sum + c.totalMonthly, 0)
@@ -180,10 +181,10 @@ export default function ClientsDashboard() {
         </div>
       </div>
 
-      {/* Action Item */}
-      <div className="mt-4 p-3 bg-yellow-900/20 rounded-lg border border-yellow-800">
-        <p className="text-sm text-yellow-300">
-          <strong>Action:</strong> Confirm HG and ATE are paying for AGM platform. If not, MRR needs adjustment.
+      {/* Status Note */}
+      <div className="mt-4 p-3 bg-blue-900/20 rounded-lg border border-blue-800">
+        <p className="text-sm text-blue-300">
+          <strong>Pipeline:</strong> 4 live integrations, 1 building (Golden Mailer / Housecall Pro), 2 prospects. ProTools MRR: $891/mo.
         </p>
       </div>
     </div>

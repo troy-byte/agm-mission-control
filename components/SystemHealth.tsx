@@ -44,7 +44,8 @@ const CRON_LABELS: Record<string, { label: string; schedule: string }> = {
 
 function timeAgo(isoStr?: string): string {
   if (!isoStr) return 'Never'
-  const d = new Date(isoStr.endsWith('Z') ? isoStr : isoStr + 'Z')
+  const d = new Date(isoStr)
+  if (isNaN(d.getTime())) return 'N/A'
   const now = new Date()
   const diffMs = now.getTime() - d.getTime()
   const mins = Math.floor(diffMs / 60000)
@@ -123,15 +124,15 @@ export default function SystemHealth() {
 
   const getStatusIcon = (status: string) => {
     const s = status?.toLowerCase()
-    if (s === 'healthy' || s === 'ok') return <CheckCircle className="w-5 h-5 text-green-400" />
-    if (s === 'degraded') return <AlertCircle className="w-5 h-5 text-yellow-400" />
+    if (s === 'healthy' || s === 'ok' || s === 'green') return <CheckCircle className="w-5 h-5 text-green-400" />
+    if (s === 'degraded' || s === 'yellow') return <AlertCircle className="w-5 h-5 text-yellow-400" />
     return <XCircle className="w-5 h-5 text-red-400" />
   }
 
   const getStatusBadge = (status: string) => {
     const s = status?.toLowerCase()
-    if (s === 'healthy' || s === 'ok') return { text: 'Healthy', classes: 'bg-green-900 text-green-300' }
-    if (s === 'degraded') return { text: 'Degraded', classes: 'bg-yellow-900 text-yellow-300' }
+    if (s === 'healthy' || s === 'ok' || s === 'green') return { text: 'Healthy', classes: 'bg-green-900 text-green-300' }
+    if (s === 'degraded' || s === 'yellow') return { text: 'Degraded', classes: 'bg-yellow-900 text-yellow-300' }
     return { text: 'Unhealthy', classes: 'bg-red-900 text-red-300' }
   }
 

@@ -8,6 +8,7 @@ interface ClientHealth {
   token_valid: boolean
   token_expires_in_minutes?: number
   processed_events_count?: number
+  injections?: number
   pending_retries?: number
   dead_retries?: number
   last_event_at?: string
@@ -263,7 +264,7 @@ export default function SystemHealth() {
                   <span className={`text-xs px-2 py-1 rounded ${badge.classes}`}>{badge.text}</span>
                 </div>
 
-                <div className="grid grid-cols-3 gap-3 text-sm">
+                <div className="grid grid-cols-4 gap-3 text-sm">
                   <div>
                     <p className="text-xs text-gray-500">Token</p>
                     <p className={`font-medium ${client.token_valid ? 'text-green-400' : 'text-red-400'}`}>
@@ -273,6 +274,10 @@ export default function SystemHealth() {
                           : 'Valid')
                         : 'Expired'}
                     </p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-500">Injections</p>
+                    <p className="font-medium text-cyan-400">{(client.injections || 0).toLocaleString()}</p>
                   </div>
                   <div>
                     <p className="text-xs text-gray-500">Events</p>

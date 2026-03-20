@@ -44,10 +44,10 @@ export default function ClientsDashboard() {
   const [proToolsClients] = useState<ProToolsClient[]>([
     { name: 'Heavenly Greens', fsmPlatform: 'CENTAH / Salesforce', status: 'live', monthlyValue: 297, notes: 'Costco lead intake. AGM + ProTools Core. SF + AGM bridge.' },
     { name: 'Artificial Turf Express', fsmPlatform: 'Jobber', status: 'live', monthlyValue: 297, notes: 'AGM platform client.' },
-    { name: 'Texas Turf (Ivana)', fsmPlatform: 'Jobber', status: 'live', monthlyValue: 0, notes: '4 workflows live. Free integration — founding use case client.' },
+    { name: 'Texas Turf (Ivana)', fsmPlatform: 'Jobber', status: 'live', monthlyValue: 0, notes: 'Residential free (founding partner). Commercial pipeline = $297/mo paid add-on, not yet scoped.' },
     { name: 'Valleywide Pest Control', fsmPlatform: 'Field Routes', status: 'live', monthlyValue: 297, notes: 'Via Andrew/SERTBO. Core tier ($297/mo). Signed Mar 18, 2026. 8,373 customers.' },
-    { name: 'Golden Mailer', fsmPlatform: 'Housecall Pro', status: 'in_progress', monthlyValue: 0, notes: 'Test integration began Mar 19. Third ProTools client. MAX plan API access.' },
-    { name: 'Sunburst Landscaping', fsmPlatform: 'BuildingConnected', status: 'prospect', monthlyValue: 0, notes: 'Contact: Noelle. Commercial construction bid integration.' },
+    { name: 'Golden Mailer', fsmPlatform: 'Housecall Pro', status: 'in_progress', monthlyValue: 0, notes: 'Test integration began Mar 19. GHL target: AGM. Awaiting API creds + MAX plan confirmation.' },
+    { name: 'Sunburst Landscaping', fsmPlatform: 'Unknown', status: 'prospect', monthlyValue: 0, notes: 'On hold — Noelle unclear on platform. Needs clarification before scoping.' },
     { name: 'Oasis Turf', fsmPlatform: 'Arc Site', status: 'prospect', monthlyValue: 0, notes: 'AI SEO ($1,297/mo) closing. Arc Site integration candidate.' },
   ])
 

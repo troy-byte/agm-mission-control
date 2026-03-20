@@ -14,7 +14,7 @@
   "app/page.tsx -> @/components/ClientsDashboard": {
     "id": 9710,
     "files": [
-      "static/chunks/710.900b33e9f75e82ca.js"
+      "static/chunks/710.e7c5cde92e340344.js"
     ]
   },
   "app/page.tsx -> @/components/ContentPipeline": {
@@ -38,7 +38,7 @@
   "app/page.tsx -> @/components/IntegrationMonitor": {
     "id": 9095,
     "files": [
-      "static/chunks/95.558df5d38a142b16.js"
+      "static/chunks/95.4d390eb66405becc.js"
     ]
   },
   "app/page.tsx -> @/components/MeetTheTeamDetailed": {

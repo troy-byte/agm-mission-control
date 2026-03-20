@@ -26,9 +26,9 @@ export default function IntegrationMonitor() {
       target: 'AGM',
       status: 'live',
       proToolsTier: 'Core',
-      priceSignal: '$297/mo',
-      description: 'Quote lifecycle sync — sent, approved, closed. Self-healing Layers 1-4.',
-      features: ['4 workflows live', 'Self-healing retry', 'Health endpoint', 'Event store']
+      priceSignal: 'Residential free / Commercial $297/mo',
+      description: 'Residential quote lifecycle live (free, founding partner). Commercial pipeline = paid $297/mo add-on, not yet scoped.',
+      features: ['4 residential WFs live', 'Self-healing retry', 'Commercial pipeline pending']
     },
     {
       id: 'centah-hg',
@@ -51,8 +51,8 @@ export default function IntegrationMonitor() {
       status: 'prospect',
       proToolsTier: 'Enterprise',
       priceSignal: '$997/mo',
-      description: 'Commercial construction bid management. Webhooks confirmed, CRM sync pattern proven.',
-      features: ['API research done', 'Webhook support confirmed', 'CRM sync pattern documented']
+      description: 'Commercial construction bid management. On hold — Noelle unclear on platform details.',
+      features: ['API research done', 'Needs platform clarification from Noelle']
     },
     {
       id: 'arcsite-oasis',
@@ -71,7 +71,7 @@ export default function IntegrationMonitor() {
       name: 'Golden Mailer → Housecall Pro',
       client: 'Golden Mailer',
       fsmPlatform: 'Housecall Pro',
-      target: 'TBD (AGM or SERTBO)',
+      target: 'AGM',
       status: 'building',
       proToolsTier: 'Core',
       priceSignal: '$297/mo',

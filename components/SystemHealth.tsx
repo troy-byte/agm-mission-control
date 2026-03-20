@@ -21,6 +21,8 @@ interface Heartbeat {
   timestamp?: string
   epoch?: number
   detail?: string
+  stale?: boolean
+  age_minutes?: number
 }
 
 interface UptimeEntry {
@@ -47,6 +49,7 @@ const CRON_LABELS: Record<string, { label: string; schedule: string }> = {
   'synthetic_canary': { label: 'Synthetic Canary', schedule: 'Daily 6 AM UTC' },
   'morning_inbox_cleanup': { label: 'Morning Inbox Cleanup', schedule: '5:20 AM PT' },
   'morning_email_briefing': { label: 'Morning Email Briefing', schedule: '5:30 AM PT' },
+  'volume_backup': { label: 'Volume Backup', schedule: 'Daily 1 AM PT' },
 }
 
 function timeAgo(isoStr?: string): string {
@@ -310,12 +313,7 @@ export default function SystemHealth() {
             <tbody>
               {cronEntries.map(([name, hb]) => {
                 const info = CRON_LABELS[name] || { label: name, schedule: '-' }
-                let isStale = false
-                if (hb.epoch) {
-                  const ageMs = Date.now() - (hb.epoch * 1000)
-                  const isFrequent = name.includes('keepalive') || name.includes('retry')
-                  if (isFrequent && ageMs > 2 * 3600 * 1000) isStale = true
-                }
+                const isStale = hb.stale === true || hb.status === 'stale'
 
                 return (
                   <tr key={name} className="border-b border-gray-800/50 hover:bg-gray-800/30">

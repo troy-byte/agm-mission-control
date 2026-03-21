@@ -235,21 +235,19 @@ export default function SystemHealth() {
             <p className="text-[10px] uppercase tracking-widest text-gray-500">Uptime History</p>
             <p className="text-[10px] text-gray-600">{history.length} checks</p>
           </div>
-          <div className="flex items-end justify-between" style={{ height: '64px' }}>
+          <div className="flex items-end justify-between" style={{ height: '80px' }}>
             {history.map((h, i) => {
-              // Vary height for organic bar chart look — green varies 60-100%, yellow shorter, red full
-              const seed = ((i * 7 + 13) % 5)  // deterministic pseudo-random per index
-              const greenHeights = [38, 44, 50, 56, 64]
-              const px = h.status === 'green'
-                ? greenHeights[seed]
-                : h.status === 'yellow' ? 28
-                : 64
+              // Every bar gets organic height variation regardless of status
+              // Uses deterministic hash so it's stable across renders
+              const hash = ((i * 17 + 31) % 11)
+              const baseHeights = [42, 50, 58, 64, 72, 48, 56, 68, 44, 62, 76]
+              const px = h.status === 'red' ? 80 : baseHeights[hash]  // Red = full height spike
               return (
                 <div
                   key={i}
                   className={`rounded-t-sm cursor-default transition-opacity hover:opacity-60 ${
                     h.status === 'green' ? 'bg-green-500/70' :
-                    h.status === 'yellow' ? 'bg-yellow-500' : 'bg-red-500'
+                    h.status === 'yellow' ? 'bg-yellow-500/70' : 'bg-red-500'
                   }`}
                   style={{ height: `${px}px`, width: `${Math.max(100 / history.length - 0.5, 2)}%` }}
                   title={`${new Date(h.ts).toLocaleString()} — ${h.status}`}

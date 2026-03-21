@@ -169,7 +169,11 @@ export default function SystemHealth() {
     return (b[1].epoch || 0) - (a[1].epoch || 0)
   })
 
-  const healthyClients = clientEntries.filter(([, c]) => c.status?.toLowerCase() === 'healthy').length
+  // "Operational" = healthy or degraded (system is handling it). Only "unhealthy" counts against.
+  const operationalClients = clientEntries.filter(([, c]) => {
+    const s = c.status?.toLowerCase()
+    return s === 'healthy' || s === 'degraded' || s === 'green' || s === 'yellow'
+  }).length
 
   // Uptime calculation
   const history = data.uptime_history || []
@@ -214,7 +218,7 @@ export default function SystemHealth() {
       {/* ── Top-Level Metrics ── */}
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
         <MetricCard label="Uptime" value={uptimePct === '--' ? '--' : `${uptimePct}%`} color={uptimeColor} />
-        <MetricCard label="Clients" value={`${healthyClients}/${clientEntries.length}`} color={healthyClients === clientEntries.length ? 'text-green-400' : 'text-yellow-400'} />
+        <MetricCard label="Clients" value={`${operationalClients}/${clientEntries.length}`} color={operationalClients === clientEntries.length ? 'text-green-400' : 'text-yellow-400'} />
         <MetricCard label="Today" value={totalToday} color="text-cyan-400" />
         <MetricCard label="This Week" value={totalWeek} color="text-cyan-400" />
         <MetricCard label="This Month" value={totalMonth} color="text-cyan-400" />

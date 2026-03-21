@@ -452,6 +452,31 @@ export default function SystemHealth() {
         </div>
       </div>
 
+      {/* ── Quick Links ── */}
+      <div className="border border-gray-800 rounded-lg bg-[#0d1117] p-4">
+        <p className="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Quick Links</p>
+        <div className="grid grid-cols-2 gap-3">
+          <a
+            href="https://troy-byte.github.io/master-project-list/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-gray-800 rounded p-3 hover:border-gray-600 transition-colors group"
+          >
+            <p className="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">AGM Master List</p>
+            <p className="text-[10px] text-gray-600 mt-0.5">Project tracking &amp; to-do list</p>
+          </a>
+          <a
+            href="https://troy-byte.github.io/hg-projects/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-gray-800 rounded p-3 hover:border-gray-600 transition-colors group"
+          >
+            <p className="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">HG &amp; ATE Master List</p>
+            <p className="text-[10px] text-gray-600 mt-0.5">Heavenly Greens &amp; ATE projects</p>
+          </a>
+        </div>
+      </div>
+
       {/* ── Footer ── */}
       <div className="flex items-center justify-between text-[10px] text-gray-700 px-1">
         <span>Auto-refresh: 60s</span>

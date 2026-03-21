@@ -51,6 +51,31 @@ export default function MissionControl() {
               <HandoffMonitor />
               <ContentPipeline />
             </div>
+
+            {/* Quick Links */}
+            <div className="bg-gray-900 rounded-lg shadow-xl p-5 border border-gray-800">
+              <h3 className="text-xs uppercase tracking-widest text-gray-500 font-mono mb-3">Quick Links</h3>
+              <div className="grid grid-cols-2 gap-3">
+                <a
+                  href="https://troy-byte.github.io/master-project-list/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-gray-800 rounded p-3 hover:border-gray-600 transition-colors group"
+                >
+                  <p className="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">AGM Master List</p>
+                  <p className="text-xs text-gray-500 mt-0.5">Project tracking &amp; to-do list</p>
+                </a>
+                <a
+                  href="https://troy-byte.github.io/hg-projects/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-gray-800 rounded p-3 hover:border-gray-600 transition-colors group"
+                >
+                  <p className="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">HG &amp; ATE Master List</p>
+                  <p className="text-xs text-gray-500 mt-0.5">Heavenly Greens &amp; ATE projects</p>
+                </a>
+              </div>
+            </div>
           </div>
         )
       case 'clients':

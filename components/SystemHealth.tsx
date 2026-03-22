@@ -14,6 +14,7 @@ interface ClientHealth {
   pending_retries?: number
   dead_retries?: number
   last_event_at?: string
+  last_check_at?: string
   last_event_key?: string
   issues?: string[]
 }
@@ -279,8 +280,8 @@ export default function SystemHealth() {
                   <StatusBadge status={client.status} />
                 </div>
 
-                {/* Token + Last Event row */}
-                <div className="grid grid-cols-2 gap-3">
+                {/* Token + Last Check + Last Event row */}
+                <div className="grid grid-cols-3 gap-3">
                   <div className="border border-gray-800 rounded p-2">
                     <p className="text-[10px] uppercase tracking-widest text-gray-500">Token</p>
                     <p className={`text-lg font-bold ${client.token_valid ? 'text-green-400' : 'text-red-400'}`}>
@@ -292,8 +293,12 @@ export default function SystemHealth() {
                     </p>
                   </div>
                   <div className="border border-gray-800 rounded p-2">
+                    <p className="text-[10px] uppercase tracking-widest text-gray-500">Last Check</p>
+                    <p className="font-bold text-green-400">{timeAgo(client.last_check_at)}</p>
+                  </div>
+                  <div className="border border-gray-800 rounded p-2">
                     <p className="text-[10px] uppercase tracking-widest text-gray-500">Last Event</p>
-                    <p className="text-lg font-bold text-white">{timeAgo(client.last_event_at)}</p>
+                    <p className="font-bold text-white">{timeAgo(client.last_event_at)}</p>
                   </div>
                 </div>
 

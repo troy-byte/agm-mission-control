@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>North Star To-Do List — AGM Pro Tools</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0f1a; color: #e0e0e0; padding: 24px; max-width: 1100px; margin: 0 auto; }
+
+  h1 { font-size: 28px; color: #fff; margin-bottom: 4px; }
+  .subtitle { color: #8a9bb5; font-size: 14px; margin-bottom: 8px; }
+  .datestamp { color: #475569; font-size: 12px; margin-bottom: 32px; }
+
+  /* Category sections */
+  .category { margin-bottom: 36px; }
+  .cat-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #1e293b; }
+  .cat-title { font-size: 18px; font-weight: 700; color: #fff; }
+  .cat-count { font-size: 12px; color: #64748b; background: #1e293b; padding: 2px 10px; border-radius: 10px; }
+
+  /* Priority badges */
+  .priority { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 4px; margin-right: 8px; vertical-align: middle; }
+  .priority.now { background: rgba(239,68,68,0.2); color: #f87171; }
+  .priority.next { background: rgba(245,158,11,0.2); color: #fbbf24; }
+  .priority.soon { background: rgba(59,130,246,0.2); color: #60a5fa; }
+  .priority.queued { background: rgba(100,116,139,0.2); color: #94a3b8; }
+  .priority.recurring { background: rgba(168,85,247,0.2); color: #c084fc; }
+  .priority.waiting { background: rgba(34,197,94,0.2); color: #4ade80; }
+  .priority.done { background: rgba(100,116,139,0.15); color: #64748b; }
+
+  /* Task rows */
+  .task { display: grid; grid-template-columns: 90px 1fr 200px; align-items: start; gap: 12px; padding: 10px 12px; border-radius: 6px; margin-bottom: 4px; transition: background 0.15s; }
+  .task:hover { background: rgba(255,255,255,0.03); }
+  .task-name { font-size: 14px; font-weight: 600; color: #e0e0e0; }
+  .task-desc { font-size: 12px; color: #8a9bb5; margin-top: 2px; }
+  .task-meta { font-size: 11px; color: #64748b; text-align: right; }
+  .task-meta a { color: #3b82f6; text-decoration: none; }
+  .task-meta a:hover { text-decoration: underline; }
+
+  .task.done-row { opacity: 0.45; }
+  .task.done-row .task-name { text-decoration: line-through; }
+
+  /* Divider */
+  .divider { height: 1px; background: #1e293b; margin: 12px 0; }
+
+  /* Stats */
+  .stats { display: flex; gap: 32px; margin-bottom: 32px; padding: 16px; background: #111827; border-radius: 8px; border: 1px solid #1e293b; }
+  .stat { text-align: center; }
+  .stat-value { font-size: 24px; font-weight: 700; color: #fff; }
+  .stat-label { font-size: 11px; color: #8a9bb5; }
+
+  .footer { text-align: center; color: #475569; font-size: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #1e293b; }
+</style>
+</head>
+<body>
+
+<h1>North Star To-Do List</h1>
+<p class="subtitle">Everything we're working on across AGM Pro Tools, Heavenly Greens, and ATE</p>
+<p class="datestamp">Last updated: 2026-03-24</p>
+
+<div class="stats">
+  <div class="stat"><div class="stat-value">4</div><div class="stat-label">Clients Live</div></div>
+  <div class="stat"><div class="stat-value">3</div><div class="stat-label">Prospects</div></div>
+  <div class="stat"><div class="stat-value">$891</div><div class="stat-label">Monthly MRR</div></div>
+  <div class="stat"><div class="stat-value">7</div><div class="stat-label">Now / This Week</div></div>
+  <div class="stat"><div class="stat-value">10</div><div class="stat-label">Next Up</div></div>
+  <div class="stat"><div class="stat-value">11</div><div class="stat-label">Queued</div></div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<div class="category">
+  <div class="cat-header">
+    <span class="cat-title">This Week — Monday/Tuesday Priority</span>
+    <span class="cat-count">7 items</span>
+  </div>
+
+  <div class="task">
+    <span class="priority now">Now</span>
+    <div>
+      <div class="task-name">Zapier Deprecation — Build All Replacement Endpoints</div>
+      <div class="task-desc">38 of 42 Zaps remaining. Build 5 Modal endpoints (Website Leads, Site Forms, LiveChat, Web Forms, Utility) to replace all remaining Zaps. Deploy Monday, validate Tuesday, kill Zapier.</div>
+    </div>
+    <div class="task-meta">4/42 done<br>Target: Tue Mar 24</div>
+  </div>
+
+  <div class="task">
+    <span class="priority now">Now</span>
+    <div>
+      <div class="task-name">modal_webhook.py Decomposition</div>
+      <div class="task-desc">4,798-line monolith &rarr; 5 focused Modal apps. Extract leads, youtube, proposals, health into independent apps. Shared helpers to modal_helpers.py. Same URLs, independent failure.</div>
+    </div>
+    <div class="task-meta">0/5 modules<br>Target: Mon Mar 24</div>
+  </div>
+
+  <div class="task">
+    <span class="priority now">Now</span>
+    <div>
+      <div class="task-name">WEBHOOK_API_KEY &rarr; Modal Secrets</div>
+      <div class="task-desc">Blocker from security audit. Bearer token auth added to all endpoints but the key isn't in Modal secrets yet. Must deploy before decomposition.</div>
+    </div>
+    <div class="task-meta">Blocker<br>5 min fix</div>
+  </div>
+
+  <div class="task">
+    <span class="priority now">Now</span>
+    <div>
+      <div class="task-name">Deactivate Broadly Workflow Rule in SF</div>
+      <div class="task-desc">SF Setup &rarr; Workflow Rules &rarr; "Broadly" &rarr; Deactivate. Zapier was contaminating AGM contact names via Broadly business_name mapping.</div>
+    </div>
+    <div class="task-meta">SF Setup<br>5 min</div>
+  </div>
+
+  <div class="task">
+    <span class="priority now">Now</span>
+    <div>
+      <div class="task-name">AGM Opportunity Value Backfill</div>
+      <div class="task-desc">AGM pipeline opportunities show $0 because Zapier never synced monetary values. Backfill from SF contract amounts for all synced opportunities.</div>
+    </div>
+    <div class="task-meta">Script needed</div>
+  </div>
+
+  <div class="task">
+    <span class="priority now">Now</span>
+    <div>
+      <div class="task-name">Real Turf — Gamma Pitch for Monday Call</div>
+      <div class="task-desc">8-slide pitch outline ready in .tmp/realturf_gamma_outline.md. Build in Gamma before Monday call with V. Tuesday Mar 25 in-person visit.</div>
+    </div>
+    <div class="task-meta">Outline done<br>Build in Gamma</div>
+  </div>
+
+  <div class="task">
+    <span class="priority now">Now</span>
+    <div>
+      <div class="task-name">Weekly Industry Report — First Live Run</div>
+      <div class="task-desc">Pipeline wired (Scout &rarr; Quill &rarr; Pixel &rarr; Echo). HTML template needs polish. Run full pipeline with real content. Schedule for weekly auto-run.</div>
+    </div>
+    <div class="task-meta">Pipeline wired<br>Template polish needed</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<div class="category">
+  <div class="cat-header">
+    <span class="cat-title">Next Up — This Week / Next Week</span>
+    <span class="cat-count">10 items</span>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">SF-to-AGM Migration — Batch Strategy</div>
+      <div class="task-desc">POC complete (Jerry Ellis). Define batch scope: all customers vs active only, file migration cutoff (176 GB), DocuSign strategy. Three operating contexts documented.</div>
+    </div>
+    <div class="task-meta">POC done<br><a href="https://troy-byte.github.io/hg-projects/sf-agm-migration-map.html">View Map</a></div>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">Client-Facing Health Dashboard</div>
+      <div class="task-desc">Clients see nothing about their integration health. Build GitHub Pages dashboard — one row per client, auto-updated from /health endpoints. Part of product packaging.</div>
+    </div>
+    <div class="task-meta">Mac Mini crons live<br>Dashboard not built</div>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">Document Signature Watch Dog</div>
+      <div class="task-desc">Automated reminder loop for unsigned documents (sales contract, start of work, completion of work). Three independent loops, timed escalation. Critical for revenue leakage.</div>
+    </div>
+    <div class="task-meta">Designed<br>Not built</div>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">HG Calendar Dashboard — Modal Live Refresh</div>
+      <div class="task-desc">Calendar is live but static JSON. Needs Modal endpoint for auto-refresh and date navigation via API. Part of HG Mission Control vision.</div>
+    </div>
+    <div class="task-meta"><a href="https://troy-byte.github.io/hg-calendar/">Live</a><br>Static data</div>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">AGM Friday Live — Episode 1</div>
+      <div class="task-desc">Troy brings industry context (3-5 min), Andrew demos AGM live (8-12 min). One 15-20 min session multiplied into 6-7 content pieces. First episode Mar 28.</div>
+    </div>
+    <div class="task-meta">Target: Mar 28</div>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">Golden Mailer — Housecall Pro Integration</div>
+      <div class="task-desc">Client #5 building. Awaiting API creds and AGM target instance from client. Integration architecture designed.</div>
+    </div>
+    <div class="task-meta">Blocked<br>Awaiting creds</div>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">Costco Lead Outreach Protocols (Pillar 5)</div>
+      <div class="task-desc">Speed-to-lead strategy, call scripts, business hours routing, lead qualification criteria. Not built — awaiting Troy's input on outreach strategy.</div>
+    </div>
+    <div class="task-meta">Directive needed</div>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">SMS/Email/Voice Follow-Up Sequences (Pillar 6)</div>
+      <div class="task-desc">Automated multi-channel follow-up for Costco leads in AGM. Synthflow vs AGM Voice AI decision. TCPA compliance. Built in AGM workflow builder.</div>
+    </div>
+    <div class="task-meta">Template ready<br>Sequences not built</div>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">HubSpot Package Investigation</div>
+      <div class="task-desc">Legacy HubSpot package in SF org. Is it still needed? If not, remove to clean up the org. Part of Zapier deprecation cleanup.</div>
+    </div>
+    <div class="task-meta">Investigate</div>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">INSURANCE.md Update</div>
+      <div class="task-desc">Hasn't been updated since security hardening. Needs new Modal endpoints from Zapier replacement, new custom fields from SF migration, updated cron list.</div>
+    </div>
+    <div class="task-meta">Post-Zapier</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<div class="category">
+  <div class="cat-header">
+    <span class="cat-title">Queued — On the Radar</span>
+    <span class="cat-count">12 items</span>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">Self-Service Client Onboarding</div>
+      <div class="task-desc">Currently adding a client requires Harlan + Troy. Need a flow where Andrew (or a client) can onboard without engineering. PIT key gen, config JSON, registry, deploy.</div>
+    </div>
+    <div class="task-meta">Product gap</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">Billing Integration (Stripe)</div>
+      <div class="task-desc">Pricing tiers exist (Core $297 / Pro $597 / Enterprise $997) but billing is manual. Wire Stripe into the onboarding flow for automatic invoicing.</div>
+    </div>
+    <div class="task-meta">Product gap</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">Multi-Cloud Redundancy</div>
+      <div class="task-desc">Single Modal deployment, single region (us-west). Fine for 10 clients. At 50+ need multi-region or multi-cloud failover for 99.99% uptime.</div>
+    </div>
+    <div class="task-meta">Scale concern</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">Turf Prep — Method:CRM Integration</div>
+      <div class="task-desc">API assessment done. Andrew emailed Tiffany Mar 20 — awaiting Method API key. Once received, build the sync.</div>
+    </div>
+    <div class="task-meta">Blocked<br>Awaiting API key</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">AGM Wednesday Ask Us Anything</div>
+      <div class="task-desc">Weekly 30-45 min live Q&A. Client retention + engagement. Surfaces pain points that feed Friday episodes. Not launched yet.</div>
+    </div>
+    <div class="task-meta">Content flywheel</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">Mac Mini Visual Dashboard</div>
+      <div class="task-desc">Single-pane-of-glass view of system health, client status, event flow, alerts. Mac Mini is operational, dashboard not built.</div>
+    </div>
+    <div class="task-meta">Concept only</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">HG Calendar &rarr; AGM Data Source Swap</div>
+      <div class="task-desc">Calendar dashboard currently reads from SF Events. Phase 2: swap to AGM calendar data. Build agm_calendar_feed.py with same JSON schema.</div>
+    </div>
+    <div class="task-meta">Phase 2</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">ATE Newsletter Template</div>
+      <div class="task-desc">Monthly newsletter for Artificial Turf Express. Same pipeline as HG newsletter. HTML generated by Harlan, posted into ATE AGM sub-account.</div>
+    </div>
+    <div class="task-meta">Recurring<br>Template TBD</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">ATE Square Backend Migration</div>
+      <div class="task-desc">Complete backend changeover to use Square for products and new photo integration for ATE.</div>
+    </div>
+    <div class="task-meta">Not started</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">Find Video Producer</div>
+      <div class="task-desc">Source and hire a video producer for HG content. Upwork and network referrals. Needed for Friday Live production quality.</div>
+    </div>
+    <div class="task-meta">Not started</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">Jobber Marketplace Listing</div>
+      <div class="task-desc">Get AGM Pro Tools listed on the Jobber App Marketplace. Partnership conversation initiated. Key distribution channel for first 100 clients.</div>
+    </div>
+    <div class="task-meta">Partnership</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">GHL Dependency Analysis</div>
+      <div class="task-desc">Troy requested via Telegram. Full analysis of what AGM Pro Tools depends on from GHL — API surface, rate limits, feature gaps, risk assessment.</div>
+    </div>
+    <div class="task-meta">Owed to Troy</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<div class="category">
+  <div class="cat-header">
+    <span class="cat-title">Waiting On Others</span>
+    <span class="cat-count">4 items</span>
+  </div>
+
+  <div class="task">
+    <span class="priority waiting">Waiting</span>
+    <div>
+      <div class="task-name">Andrew — Review Workflow SMS/Email Copy</div>
+      <div class="task-desc">Needs to finalize SMS + email copy for the "Completed - Paid" review request. Button: "Leave Us a Review." Required before review automation goes live.</div>
+    </div>
+    <div class="task-meta">Andrew</div>
+  </div>
+
+  <div class="task">
+    <span class="priority waiting">Waiting</span>
+    <div>
+      <div class="task-name">Andrew — Pause Costco Email Zap</div>
+      <div class="task-desc">"Lead into AGM from Costco Email" Zap. Our Modal pipeline handles this. Andrew needs to pause it in Zapier.</div>
+    </div>
+    <div class="task-meta">Andrew</div>
+  </div>
+
+  <div class="task">
+    <span class="priority waiting">Waiting</span>
+    <div>
+      <div class="task-name">Golden Mailer — API Credentials</div>
+      <div class="task-desc">Need Housecall Pro API creds and AGM target instance from the client to begin integration build.</div>
+    </div>
+    <div class="task-meta">Client</div>
+  </div>
+
+  <div class="task">
+    <span class="priority waiting">Waiting</span>
+    <div>
+      <div class="task-name">Turf Prep — Method API Key</div>
+      <div class="task-desc">Andrew emailed Tiffany Mar 20. Need Method:CRM API key to build the integration.</div>
+    </div>
+    <div class="task-meta">Tiffany</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<div class="category">
+  <div class="cat-header">
+    <span class="cat-title">Recurring / Ongoing</span>
+    <span class="cat-count">4 items</span>
+  </div>
+
+  <div class="task">
+    <span class="priority recurring">Recurring</span>
+    <div>
+      <div class="task-name">Daily Chapter Recording</div>
+      <div class="task-desc">Nightly 8 PM PT audio chapter. Days 7-9 recorded. Full loop: MP3 + transcript + Telegram post + chapters doc update + commit.</div>
+    </div>
+    <div class="task-meta">Nightly 8 PM</div>
+  </div>
+
+  <div class="task">
+    <span class="priority recurring">Recurring</span>
+    <div>
+      <div class="task-name">Zero Inbox Briefing</div>
+      <div class="task-desc">AI-powered email briefing with one-click archive. Live for Troy + Tim. Embeds system health. Daily automated run.</div>
+    </div>
+    <div class="task-meta">Daily</div>
+  </div>
+
+  <div class="task">
+    <span class="priority recurring">Recurring</span>
+    <div>
+      <div class="task-name">HG Newsletter</div>
+      <div class="task-desc">Monthly newsletter for Heavenly Greens. HTML generated by Harlan, distributed via AGM Conversations API.</div>
+    </div>
+    <div class="task-meta">Monthly</div>
+  </div>
+
+  <div class="task">
+    <span class="priority recurring">Recurring</span>
+    <div>
+      <div class="task-name">Atlas Content Production</div>
+      <div class="task-desc">Blog posts, long-form topics, cloud stacks, local short topics, press releases. 4x per month cadence for HG.</div>
+    </div>
+    <div class="task-meta">4x/month</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<div class="category">
+  <div class="cat-header">
+    <span class="cat-title">Recently Completed</span>
+    <span class="cat-count">8 items</span>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority done">Done</span>
+    <div>
+      <div class="task-name">SF-to-AGM Migration POC (Jerry Ellis)</div>
+      <div class="task-desc">32+ custom fields, pipeline opp, structured notes, 2 PDFs uploaded. Email sent to Tim + Troy.</div>
+    </div>
+    <div class="task-meta">Mar 23</div>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority done">Done</span>
+    <div>
+      <div class="task-name">SF-to-AGM Visual Migration Map</div>
+      <div class="task-desc">Full data flow map deployed to GitHub Pages. Three operating contexts. Wired to HG master list.</div>
+    </div>
+    <div class="task-meta">Mar 23</div>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority done">Done</span>
+    <div>
+      <div class="task-name">Security Hardening</div>
+      <div class="task-desc">Full audit, 10/21 fixed, all 3 criticals closed. Bearer auth, encrypted backups, pre-commit hooks.</div>
+    </div>
+    <div class="task-meta">Mar 22</div>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority done">Done</span>
+    <div>
+      <div class="task-name">Briggs Operational (Mac Mini)</div>
+      <div class="task-desc">Telegram listener, handoff pipeline, git sync, all crons running. Briggs is a live participant.</div>
+    </div>
+    <div class="task-meta">Mar 21</div>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority done">Done</span>
+    <div>
+      <div class="task-name">AGM Operating Document</div>
+      <div class="task-desc">873-line system Bible. Platform dependency analysis, AI continuity, staleness monitoring.</div>
+    </div>
+    <div class="task-meta">Mar 22</div>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority done">Done</span>
+    <div>
+      <div class="task-name">SF &rarr; AGM Stage Sync (replaces 4 Zaps)</div>
+      <div class="task-desc">Polls SF Opportunities for stage changes, syncs to AGM pipeline. Deployed to Modal.</div>
+    </div>
+    <div class="task-meta">Mar 20</div>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority done">Done</span>
+    <div>
+      <div class="task-name">Newsletter Distribution Pipeline</div>
+      <div class="task-desc">AGM Conversations API direct send. ghl_newsletter_sender.py rewritten. Test sends confirmed working.</div>
+    </div>
+    <div class="task-meta">Mar 23</div>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority done">Done</span>
+    <div>
+      <div class="task-name">Weekly Industry Report Directive</div>
+      <div class="task-desc">11 iterations. Execution script built (turf_industry_news.py). Workflow specs emailed to Andrew.</div>
+    </div>
+    <div class="task-meta">Mar 23</div>
+  </div>
+</div>
+
+<div class="footer">
+  North Star To-Do List — AGM Pro Tools — Generated 2026-03-23 by Harlan<br>
+  Source of truth for everything in flight. Updated each session.
+</div>
+
+</body>
+</html>

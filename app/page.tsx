@@ -38,18 +38,27 @@ export default function MissionControl() {
     switch (activeTab) {
       case 'dashboard':
         return (
-          <div className="space-y-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <ClientsDashboard />
-              <FlywheelStatus />
+          <div className="space-y-8">
+            {/* Client Operations — external, client-facing health */}
+            <div>
+              <p className="text-[10px] uppercase tracking-widest text-gray-500 font-mono mb-3">Client Operations</p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <ClientsDashboard />
+                <IntegrationMonitor />
+              </div>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <IntegrationMonitor />
-              <AgentStatusMonitor />
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <HandoffMonitor />
-              <ContentPipeline />
+
+            {/* Internal Processes — content flywheel, agents, handoffs */}
+            <div>
+              <p className="text-[10px] uppercase tracking-widest text-gray-500 font-mono mb-3">Internal Processes</p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <FlywheelStatus />
+                <AgentStatusMonitor />
+              </div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+                <HandoffMonitor />
+                <ContentPipeline compact />
+              </div>
             </div>
 
             {/* Quick Links */}

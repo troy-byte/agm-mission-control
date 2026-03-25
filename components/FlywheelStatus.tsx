@@ -1,222 +1,304 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { Activity, AlertCircle, CheckCircle, XCircle, TrendingUp } from 'lucide-react'
+import { useState, useEffect, useCallback } from 'react'
+import { Activity, AlertCircle, CheckCircle, XCircle, RefreshCw, AlertTriangle } from 'lucide-react'
+
+interface PipelineHeartbeat {
+  cron: string
+  status: string
+  timestamp: string
+  epoch: number
+  detail: string
+}
+
+interface HealthData {
+  heartbeats: Record<string, PipelineHeartbeat>
+}
 
 interface FlywheelStage {
   id: string
   name: string
-  status: 'green' | 'yellow' | 'red'
-  lastActivity?: string
-  metrics?: {
-    current: number
-    target: number
-    unit: string
-  }
-  message?: string
-  actionNeeded?: string
+  description: string
+  schedule: string
+  dependencies: string[]
 }
 
-const realStages: FlywheelStage[] = [
+const HEALTH_URL = 'https://agm-pro--claude-orchestrator-health.modal.run'
+const REFRESH_INTERVAL = 60000
+
+const PIPELINE_STAGES: FlywheelStage[] = [
   {
-    id: 'intelligence',
-    name: 'Intelligence',
-    status: 'red',
-    lastActivity: 'Not yet operational',
-    metrics: { current: 0, target: 50, unit: 'signals/week' },
-    message: 'Scout agent not yet deployed. Manual research only.',
-    actionNeeded: 'Deploy Scout signal pipeline on Mac Mini'
+    id: 'scout',
+    name: 'Scout',
+    description: 'Industry research + trend signals',
+    schedule: 'Monday',
+    dependencies: ['ANTHROPIC_API_KEY'],
   },
   {
-    id: 'newsletter',
-    name: 'Newsletter',
-    status: 'green',
-    lastActivity: 'Monthly cadence',
-    metrics: { current: 280, target: 500, unit: 'subscribers' },
-    message: 'AGM Intelligence Report — ~280 subs, 97% non-customers. Monthly send via AGM.'
+    id: 'quill',
+    name: 'Quill',
+    description: 'Newsletter + report writing',
+    schedule: 'Wednesday',
+    dependencies: ['ANTHROPIC_API_KEY', 'token_sheets.json'],
   },
   {
-    id: 'agm-friday',
-    name: 'AGM Friday',
-    status: 'yellow',
-    lastActivity: 'Pre-launch',
-    metrics: { current: 0, target: 1, unit: 'episode/week' },
-    message: 'Content pipeline designed. First episode pending. HeyGen render pipeline built.',
-    actionNeeded: 'Produce and publish Episode 1'
+    id: 'pixel',
+    name: 'Pixel',
+    description: 'Video, thumbnails, visuals',
+    schedule: 'Thursday',
+    dependencies: ['OPENAI_API_KEY', 'ELEVENLABS_API_KEY', 'token_sheets.json'],
   },
   {
-    id: 'demo',
-    name: 'Product Demo',
-    status: 'yellow',
-    lastActivity: 'Organic only',
-    metrics: { current: 0, target: 10, unit: 'demos/week' },
-    message: 'No structured demo pipeline yet. Conversion is organic via newsletter + marketplace.',
-    actionNeeded: 'Build demo video for AGMProTools.com'
+    id: 'echo',
+    name: 'Echo',
+    description: 'Distribution (email, YouTube, S3)',
+    schedule: 'Tuesday',
+    dependencies: ['GHL_API_KEY', 'youtube_token.json'],
   },
-  {
-    id: 'adoption',
-    name: 'Customer Adoption',
-    status: 'yellow',
-    lastActivity: '3 paying, 1 building',
-    metrics: { current: 3, target: 5, unit: 'customers/month' },
-    message: 'HG ($297) + ATE ($297) + Valleywide ($297) live. Texas Turf free (use case). Golden Mailer building.',
-    actionNeeded: 'Write Texas Turf case study for content pipeline'
-  }
 ]
 
+function timeAgo(isoString: string): string {
+  const now = Date.now()
+  const then = new Date(isoString).getTime()
+  const diffMs = now - then
+  if (diffMs < 0) return 'just now'
+  const mins = Math.floor(diffMs / 60000)
+  if (mins < 1) return 'just now'
+  if (mins < 60) return `${mins}m ago`
+  const hours = Math.floor(mins / 60)
+  if (hours < 24) return `${hours}h ago`
+  const days = Math.floor(hours / 24)
+  return `${days}d ${hours % 24}h ago`
+}
+
+function parseFailures(detail: string): string[] {
+  if (!detail) return []
+  // Detail format: "Content pipeline validation failed (N checks): item1, item2"
+  const match = detail.match(/:\s*(.+)$/)
+  if (match) {
+    return match[1].split(',').map(s => s.trim()).filter(Boolean)
+  }
+  return [detail]
+}
+
+function getStageStatus(stage: FlywheelStage, failures: string[]): 'green' | 'yellow' | 'red' {
+  const stageFailures = stage.dependencies.filter(dep => failures.includes(dep))
+  if (stageFailures.length > 0) return 'red'
+  return 'green'
+}
+
 export default function FlywheelStatus() {
-  const [stages] = useState<FlywheelStage[]>(realStages)
-  const [overallHealth, setOverallHealth] = useState<'healthy' | 'warning' | 'critical'>('warning')
+  const [heartbeat, setHeartbeat] = useState<PipelineHeartbeat | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+  const [, setLastRefresh] = useState<Date>(new Date())
+
+  const fetchHealth = useCallback(async () => {
+    try {
+      const res = await fetch(HEALTH_URL, { cache: 'no-store' })
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      const data: HealthData = await res.json()
+      const cp = data.heartbeats?.content_pipeline || null
+      setHeartbeat(cp)
+      setError(null)
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : 'Failed to fetch')
+    } finally {
+      setLoading(false)
+      setLastRefresh(new Date())
+    }
+  }, [])
 
   useEffect(() => {
-    const redCount = stages.filter(s => s.status === 'red').length
-    const yellowCount = stages.filter(s => s.status === 'yellow').length
+    fetchHealth()
+    const interval = setInterval(fetchHealth, REFRESH_INTERVAL)
+    return () => clearInterval(interval)
+  }, [fetchHealth])
 
-    if (redCount > 1) {
-      setOverallHealth('critical')
-    } else if (redCount > 0 || yellowCount > 1) {
-      setOverallHealth('warning')
-    } else {
-      setOverallHealth('healthy')
-    }
-  }, [stages])
+  const failures = heartbeat ? parseFailures(heartbeat.detail) : []
+  const pipelineOk = heartbeat?.status === 'ok'
+  const pipelineError = heartbeat?.status === 'error'
+  const neverRun = !heartbeat
 
-  const getStatusIcon = (status: string) => {
+  const stagesWithStatus = PIPELINE_STAGES.map(stage => ({
+    ...stage,
+    status: neverRun ? 'yellow' as const : getStageStatus(stage, failures),
+  }))
+
+  const redCount = stagesWithStatus.filter(s => s.status === 'red').length
+  const overallHealth = neverRun ? 'unknown' : pipelineOk ? 'healthy' : redCount > 1 ? 'critical' : 'degraded'
+
+  const getStatusIcon = (status: string, size = 'w-4 h-4') => {
     switch (status) {
-      case 'green': return <CheckCircle className="w-5 h-5 text-green-500" />
-      case 'yellow': return <AlertCircle className="w-5 h-5 text-yellow-500" />
-      case 'red': return <XCircle className="w-5 h-5 text-red-500" />
-      default: return null
+      case 'green': return <CheckCircle className={`${size} text-green-500`} />
+      case 'yellow': return <AlertCircle className={`${size} text-yellow-500`} />
+      case 'red': return <XCircle className={`${size} text-red-500`} />
+      default: return <AlertCircle className={`${size} text-gray-500`} />
     }
   }
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'green': return 'bg-green-900/20 border-green-800'
-      case 'yellow': return 'bg-yellow-900/20 border-yellow-800'
-      case 'red': return 'bg-red-900/20 border-red-800'
-      default: return 'bg-gray-900/20 border-gray-800'
-    }
-  }
-
-  const getHealthBadge = () => {
+  const getBadge = () => {
     switch (overallHealth) {
-      case 'healthy': return { text: 'All Systems Go', classes: 'text-green-400 bg-green-900/30 border-green-700' }
-      case 'warning': return { text: 'Early Stage — Building', classes: 'text-yellow-400 bg-yellow-900/30 border-yellow-700' }
-      case 'critical': return { text: 'Critical Gaps', classes: 'text-red-400 bg-red-900/30 border-red-700' }
+      case 'healthy': return { text: 'Operational', classes: 'text-green-400 bg-green-900/30 border-green-700' }
+      case 'degraded': return { text: 'Degraded', classes: 'text-yellow-400 bg-yellow-900/30 border-yellow-700' }
+      case 'critical': return { text: 'Critical', classes: 'text-red-400 bg-red-900/30 border-red-700' }
+      default: return { text: 'No Data', classes: 'text-gray-400 bg-gray-900/30 border-gray-700' }
     }
   }
 
-  const badge = getHealthBadge()
+  const badge = getBadge()
+
+  if (loading) {
+    return (
+      <div className="bg-[#0d1117] rounded-lg border border-gray-800 p-6">
+        <div className="flex items-center space-x-3">
+          <RefreshCw className="w-5 h-5 text-gray-500 animate-spin" />
+          <span className="text-sm text-gray-500 font-mono">Loading content flywheel...</span>
+        </div>
+      </div>
+    )
+  }
 
   return (
-    <div className="bg-gray-900 rounded-lg shadow-xl border border-gray-800">
-      <div className="p-6 border-b border-gray-700">
+    <div className="bg-[#0d1117] rounded-lg border border-gray-800">
+      {/* Header */}
+      <div className="p-5 border-b border-gray-800">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <Activity className="w-6 h-6 text-blue-400" />
-            <h2 className="text-xl font-semibold text-white">Flywheel Status</h2>
+            <Activity className="w-5 h-5 text-indigo-400" />
+            <div>
+              <h2 className="text-sm font-semibold text-white">Content Flywheel</h2>
+              <p className="text-[10px] text-gray-500 font-mono mt-0.5">
+                Scout &rarr; Quill &rarr; Pixel &rarr; Echo
+              </p>
+            </div>
           </div>
-          <span className={`px-3 py-1 rounded-full text-sm font-medium border ${badge.classes}`}>
+          <span className={`px-2.5 py-1 rounded text-[10px] font-mono font-medium border ${badge.classes}`}>
             {badge.text}
           </span>
         </div>
       </div>
 
-      <div className="p-6">
-        {/* Flywheel Flow Visualization */}
-        <div className="mb-8">
-          <div className="flex items-center justify-between space-x-2">
-            {stages.map((stage, index) => (
-              <div key={stage.id} className="flex-1">
-                <div className="flex items-center space-x-1">
-                  {getStatusIcon(stage.status)}
-                  {index < stages.length - 1 && (
-                    <div className="flex-1 h-0.5 bg-gray-700" />
-                  )}
-                </div>
-                <p className="text-xs text-gray-400 mt-1 text-center">
-                  {stage.name}
+      <div className="p-5 space-y-4">
+        {/* Error Banner */}
+        {pipelineError && failures.length > 0 && (
+          <div className="bg-red-900/20 border border-red-800 rounded-lg p-3">
+            <div className="flex items-start space-x-2">
+              <AlertTriangle className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" />
+              <div>
+                <p className="text-xs font-medium text-red-300">
+                  Pipeline validation failed — {failures.length} {failures.length === 1 ? 'check' : 'checks'}
                 </p>
+                <ul className="mt-1.5 space-y-1">
+                  {failures.map((f, i) => (
+                    <li key={i} className="text-xs text-red-400/80 font-mono flex items-center space-x-1.5">
+                      <XCircle className="w-3 h-3 flex-shrink-0" />
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            ))}
+            </div>
           </div>
-          <p className="text-xs text-gray-600 text-center mt-3">
-            Intelligence → Newsletter → Content → Demos → Customers → (loop back)
-          </p>
-        </div>
+        )}
 
-        {/* Stage Details */}
-        <div className="space-y-4">
-          {stages.map(stage => (
-            <div
-              key={stage.id}
-              className={`rounded-lg border p-4 transition-all ${getStatusColor(stage.status)}`}
-            >
-              <div className="flex items-start justify-between mb-2">
-                <div className="flex items-center space-x-2">
-                  {getStatusIcon(stage.status)}
-                  <h3 className="font-medium text-white">{stage.name}</h3>
+        {neverRun && (
+          <div className="bg-yellow-900/20 border border-yellow-800 rounded-lg p-3">
+            <div className="flex items-start space-x-2">
+              <AlertCircle className="w-4 h-4 text-yellow-400 mt-0.5 flex-shrink-0" />
+              <p className="text-xs text-yellow-300">
+                No content pipeline heartbeat found. Cron may not be deployed or hasn&apos;t run yet.
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* Pipeline Flow */}
+        <div className="flex items-center justify-between">
+          {stagesWithStatus.map((stage, index) => (
+            <div key={stage.id} className="flex items-center flex-1">
+              <div className="flex flex-col items-center flex-1">
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center border ${
+                  stage.status === 'green' ? 'bg-green-900/30 border-green-700' :
+                  stage.status === 'red' ? 'bg-red-900/30 border-red-700' :
+                  'bg-gray-800 border-gray-700'
+                }`}>
+                  {getStatusIcon(stage.status, 'w-5 h-5')}
                 </div>
-                <span className="text-sm text-gray-400">
-                  {stage.lastActivity}
-                </span>
+                <p className="text-[11px] font-medium text-white mt-1.5">{stage.name}</p>
+                <p className="text-[9px] text-gray-500">{stage.schedule}</p>
               </div>
-
-              {stage.metrics && (
-                <div className="mb-2">
-                  <div className="flex items-center justify-between text-sm mb-1">
-                    <span className="text-gray-400">Progress</span>
-                    <span className="font-medium text-white">
-                      {stage.metrics.current} / {stage.metrics.target} {stage.metrics.unit}
-                    </span>
-                  </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
-                    <div
-                      className={`h-2 rounded-full transition-all ${
-                        stage.status === 'green' ? 'bg-green-500' :
-                        stage.status === 'yellow' ? 'bg-yellow-500' : 'bg-red-500'
-                      }`}
-                      style={{ width: `${Math.max((stage.metrics.current / stage.metrics.target) * 100, stage.metrics.current > 0 ? 2 : 0)}%` }}
-                    />
-                  </div>
-                </div>
-              )}
-
-              {stage.message && (
-                <p className="text-sm text-gray-400">{stage.message}</p>
+              {index < stagesWithStatus.length - 1 && (
+                <div className={`h-0.5 w-6 mx-1 ${
+                  stage.status === 'green' && stagesWithStatus[index + 1].status === 'green'
+                    ? 'bg-green-800' : 'bg-gray-700'
+                }`} />
               )}
             </div>
           ))}
         </div>
 
-        {/* Consistency Reminder */}
-        <div className="mt-6 p-4 bg-blue-900/20 rounded-lg border border-blue-800">
-          <div className="flex items-start space-x-3">
-            <TrendingUp className="w-5 h-5 text-blue-400 mt-0.5" />
-            <div>
-              <h4 className="font-medium text-white mb-1">
-                Flywheel Cadence (Consistency = Everything)
-              </h4>
-              <ul className="text-sm text-gray-400 space-y-1">
-                <li>• <strong className="text-white">Weekly:</strong> AGM Friday episode + LinkedIn insight post</li>
-                <li>• <strong className="text-white">Monthly:</strong> Intelligence Report newsletter</li>
-                <li>• <strong className="text-white">This Week:</strong> Get first content piece through the full pipeline → publish Friday</li>
-              </ul>
-            </div>
-          </div>
+        {/* Stage Detail Cards */}
+        <div className="grid grid-cols-2 gap-2">
+          {stagesWithStatus.map(stage => {
+            const stageFailures = stage.dependencies.filter(dep => failures.includes(dep))
+            return (
+              <div
+                key={stage.id}
+                className={`rounded border p-3 ${
+                  stage.status === 'red' ? 'bg-red-900/10 border-red-900' :
+                  stage.status === 'green' ? 'bg-green-900/10 border-green-900/50' :
+                  'bg-gray-900/50 border-gray-800'
+                }`}
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <div className="flex items-center space-x-1.5">
+                    {getStatusIcon(stage.status, 'w-3.5 h-3.5')}
+                    <span className="text-xs font-medium text-white">{stage.name}</span>
+                  </div>
+                  <span className="text-[9px] text-gray-500 font-mono">{stage.schedule}</span>
+                </div>
+                <p className="text-[10px] text-gray-400 mb-1">{stage.description}</p>
+                {stageFailures.length > 0 && (
+                  <div className="mt-1.5 space-y-0.5">
+                    {stageFailures.map((f, i) => (
+                      <p key={i} className="text-[10px] text-red-400 font-mono">
+                        Missing: {f}
+                      </p>
+                    ))}
+                  </div>
+                )}
+                {stage.status === 'green' && !neverRun && (
+                  <p className="text-[10px] text-green-500/70 font-mono mt-1">All deps OK</p>
+                )}
+              </div>
+            )
+          })}
         </div>
 
-        {/* Action Items */}
-        {stages.filter(s => s.actionNeeded).length > 0 && (
-          <div className="mt-4 p-4 bg-yellow-900/20 rounded-lg border border-yellow-800">
-            <h4 className="font-medium text-yellow-300 mb-2">Actions Needed</h4>
-            <ul className="text-sm text-gray-400 space-y-1">
-              {stages.filter(s => s.actionNeeded).map(stage => (
-                <li key={stage.id}>• <strong className="text-white">{stage.name}:</strong> {stage.actionNeeded}</li>
-              ))}
-            </ul>
+        {/* Last Check */}
+        <div className="flex items-center justify-between pt-2 border-t border-gray-800">
+          <div className="text-[10px] text-gray-500 font-mono">
+            {heartbeat ? (
+              <>Last check: {timeAgo(heartbeat.timestamp)}</>
+            ) : (
+              <>No heartbeat data</>
+            )}
           </div>
+          <button
+            onClick={fetchHealth}
+            className="text-[10px] text-gray-500 hover:text-gray-300 font-mono flex items-center space-x-1 transition-colors"
+          >
+            <RefreshCw className="w-3 h-3" />
+            <span>Refresh</span>
+          </button>
+        </div>
+
+        {/* Error connecting to endpoint */}
+        {error && (
+          <p className="text-[10px] text-red-500/60 font-mono">
+            Endpoint error: {error}
+          </p>
         )}
       </div>
     </div>

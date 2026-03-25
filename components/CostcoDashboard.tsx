@@ -5,8 +5,8 @@ import { ShoppingCart, TrendingUp, DollarSign, MapPin, Users, Layers, ExternalLi
 
 // SF instance base URL
 const SF_BASE = 'https://d37000000pbiqeac.my.salesforce.com/lightning/r'
-const AGM_BASE = 'https://app.gohighlevel.com/v2/location'
-const AGM_LOCATION = 'YOUR_LOCATION_ID' // HG AGM location
+const AGM_BASE = 'https://app.agmpro.com/v2/location'
+const AGM_LOCATION = 'tNwDUPgJ4GFjCD81OGVA'
 
 // ── Types ──────────────────────────────────────────────────────────────
 

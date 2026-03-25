@@ -68,6 +68,11 @@ function sfLeadUrl(sfId: string) {
 }
 
 function agmUrl(agmId: string) {
+  // Mock IDs (agm_001 etc.) won't resolve — link to contacts list for prototype
+  // Production: real AGM contact IDs from SQLite tracker will link to /contacts/detail/{id}
+  if (agmId.startsWith('agm_')) {
+    return `${AGM_BASE}/${AGM_LOCATION}/contacts`
+  }
   return `${AGM_BASE}/${AGM_LOCATION}/contacts/detail/${agmId}`
 }
 

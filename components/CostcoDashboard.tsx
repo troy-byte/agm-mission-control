@@ -45,6 +45,9 @@ interface DashboardData {
     pipelineValue: number
     cancelledValue: number
     cancelledCount: number
+    appointmentsBooked: number
+    appointmentsRanConfirmed: number
+    appointmentsUnconfirmed: number
   }
   statusCounts: Record<string, number>
   turfTypeCounts: Record<string, number>
@@ -239,16 +242,28 @@ export default function CostcoDashboard() {
         <span className="text-xs text-gray-600">Updated: {new Date(data.generated).toLocaleString()}</span>
       </div>
 
-      {/* KPI Row */}
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
+      {/* Funnel Summary */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         <MetricCard label="Total Leads" value={s.totalLeads} />
+        <MetricCard label="Appts Booked" value={s.appointmentsBooked} color="text-blue-400" />
+        <MetricCard label="Appts Ran" value={s.appointmentsRanConfirmed} color="text-purple-400" sub="AGM confirmed" />
         <MetricCard label="Sold" value={s.sold} color="text-green-400" />
-        <MetricCard label="Close Rate" value={`${s.soldRate}%`} color="text-cyan-400" />
+      </div>
+
+      {/* Revenue KPIs */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         <MetricCard label="Revenue" value={`$${s.totalRevenue.toLocaleString()}`} color="text-emerald-400" />
-        <MetricCard label="Avg Deal" value={`$${s.avgDealSize.toLocaleString()}`} />
+        <MetricCard label="Close Rate" value={`${s.soldRate}%`} color="text-cyan-400" />
         <MetricCard label="Total Sqft" value={s.totalSqft.toLocaleString()} />
         <MetricCard label="Avg $/sqft" value={`$${s.avgPricePerSqft.toFixed(2)}`} color="text-cyan-400" />
-        <MetricCard label="Pipeline" value={`$${s.pipelineValue.toLocaleString()}`} color="text-yellow-400" sub="open opps" />
+      </div>
+
+      {/* Data gap note */}
+      <div className="p-3 rounded-lg border" style={{ background: 'rgba(59,130,246,0.06)', borderColor: 'rgba(59,130,246,0.15)' }}>
+        <p className="text-xs text-blue-400">
+          <strong>{s.appointmentsRanConfirmed}</strong> appointments confirmed ran via AGM.{' '}
+          <strong>{s.appointmentsUnconfirmed}</strong> additional at &ldquo;Booked&rdquo; in Salesforce &mdash; appointment outcome unconfirmed (pre-pipeline leads).
+        </p>
       </div>
 
       {/* Status + Turf */}

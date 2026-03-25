@@ -1,15 +1,15 @@
 {
-  "generated": "2026-03-25T19:30:35.374894+00:00",
+  "generated": "2026-03-25T19:54:49.310115+00:00",
   "summary": {
     "totalLeads": 119,
     "sold": 17,
     "soldRate": 14.3,
-    "totalRevenue": 137394.0,
-    "avgDealSize": 8082,
-    "totalSqft": 7029.0,
-    "avgPricePerSqft": 19.55,
-    "pipelineValue": 75985.0,
-    "cancelledValue": 6878.0,
+    "totalRevenue": 149029.0,
+    "avgDealSize": 8766,
+    "totalSqft": 7838.0,
+    "avgPricePerSqft": 19.01,
+    "pipelineValue": 11000,
+    "cancelledValue": 11000,
     "cancelledCount": 1
   },
   "statusCounts": {
@@ -17,10 +17,11 @@
     "Being Contacted": 10,
     "On Hold": 9,
     "Contract Approved": 3,
-    "New Lead": 4,
+    "New Lead": 2,
     "Not Interested": 1,
     "Paid in Full": 13,
-    "Follow Up": 17,
+    "Follow Up": 18,
+    "Cancelled": 1,
     "Lost": 1,
     "Job Scheduled": 1
   },
@@ -34,12 +35,12 @@
     "K9 Park (Olive)": {
       "jobs": 1,
       "sqft": 261.0,
-      "revenue": 3600.0
+      "revenue": 3600
     },
     "Foundations Freedom": {
       "jobs": 3,
       "sqft": 1891.0,
-      "revenue": 100972.0
+      "revenue": 36622
     },
     "Shaw Turf (unspecified)": {
       "jobs": 13,
@@ -65,10 +66,10 @@
     "Costco.com": {
       "leads": 64,
       "sold": 6,
-      "revenue": 59690.0,
-      "sqft": 3183.0,
-      "pipeline": 3600.0,
-      "cancelled": 6878.0
+      "revenue": 63290.0,
+      "sqft": 3444.0,
+      "pipeline": 11000,
+      "cancelled": 11000
     },
     "Great Oaks": {
       "leads": 5,
@@ -87,9 +88,9 @@
     "Santa Cruz": {
       "leads": 3,
       "sold": 1,
-      "revenue": 0,
-      "sqft": 0,
-      "pipeline": 72385.0
+      "revenue": 8035,
+      "sqft": 548.0,
+      "pipeline": 0
     },
     "Tracy": {
       "leads": 3,
@@ -164,7 +165,10 @@
       "status": "Appointment Booked",
       "createdDate": "2026-03-23",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UpltFMAR/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/taVpOfMu1gY5HZl7hGhv"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/taVpOfMu1gY5HZl7hGhv",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000Uo4DeMAJ",
@@ -181,7 +185,10 @@
       "status": "Being Contacted",
       "createdDate": "2026-03-22",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000Uo4DeMAJ/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/lMJHEvF4muO4UWYBE3jq"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/lMJHEvF4muO4UWYBE3jq",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000UmPhBMAV",
@@ -198,7 +205,10 @@
       "status": "Appointment Booked",
       "createdDate": "2026-03-21",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UmPhBMAV/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/jMsMQjMGcXaD8o3MzVlk"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/jMsMQjMGcXaD8o3MzVlk",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000UlzJiMAJ",
@@ -215,7 +225,10 @@
       "status": "Appointment Booked",
       "createdDate": "2026-03-20",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UlzJiMAJ/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/b0cwJZP26Bj97H1KWzDt"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/b0cwJZP26Bj97H1KWzDt",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000UmCs1MAF",
@@ -232,7 +245,10 @@
       "status": "Appointment Booked",
       "createdDate": "2026-03-20",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UmCs1MAF/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/FvyFNMk0xycfKmm6VBZn"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/FvyFNMk0xycfKmm6VBZn",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000Um065MAB",
@@ -251,17 +267,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000Um065MAB/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/NU45LyT5QetOzV3bxmHU",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XXPCkIAP/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XXPCkIAP/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000UkG0VMAV",
@@ -278,7 +290,10 @@
       "status": "Being Contacted",
       "createdDate": "2026-03-19",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UkG0VMAV/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/COuWbolhEWX4n5TMHF4k"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/COuWbolhEWX4n5TMHF4k",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000Ui3qZMAR",
@@ -297,17 +312,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000Ui3qZMAR/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/Qwv2IMgWk0glpIGdAmgs",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XNZV9IAP/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XNZV9IAP/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000UexHqMAJ",
@@ -324,7 +335,10 @@
       "status": "On Hold",
       "createdDate": "2026-03-17",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UexHqMAJ/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/ibQimf0SBVrFC5drSk4y"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/ibQimf0SBVrFC5drSk4y",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000UdPq5MAF",
@@ -343,17 +357,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UdPq5MAF/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/FMbgtnfrIOGBKURnIcpi",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XLnpCIAT/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XLnpCIAT/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000UcoP8MAJ",
@@ -372,17 +382,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UcoP8MAJ/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/LJbv7s5INAMu33Ys2gmn",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XXY7zIAH/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XXY7zIAH/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000Uba1fMAB",
@@ -399,7 +405,10 @@
       "status": "Appointment Booked",
       "createdDate": "2026-03-16",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000Uba1fMAB/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/FcBFcd33HF5jWOKY07Pu"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/FcBFcd33HF5jWOKY07Pu",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000UbKZbMAN",
@@ -416,7 +425,10 @@
       "status": "On Hold",
       "createdDate": "2026-03-15",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UbKZbMAN/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/nKYtVtS6wwyqzn2hNRYF"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/nKYtVtS6wwyqzn2hNRYF",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000UaZxGMAV",
@@ -437,17 +449,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UaZxGMAV/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/QiiPb7a2KUcXJpgpgoYN",
       "opportunityStage": "Sales Closed Won - Needs Approval",
-      "totalPrice": 3600.0,
       "sqft": 261.0,
       "pricePerSqft": 13.7931034,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 3600.0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XNaivIAD/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XNaivIAD/view",
+      "totalPrice": 3600,
+      "revenueSource": "agm"
     },
     {
       "sfId": "00QRb00000UZghSMAT",
@@ -466,17 +474,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UZghSMAT/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/ICTqdUKumQUbhk7JpL01",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XFExJIAX/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XFExJIAX/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000UZLhpMAH",
@@ -495,17 +499,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UZLhpMAH/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/r13l4DmKdnxNmnn3iaJ9",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XKgbCIAT/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XKgbCIAT/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000UYkARMA1",
@@ -522,7 +522,10 @@
       "status": "Appointment Booked",
       "createdDate": "2026-03-13",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UYkARMA1/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/DBrXHtc4ZXBmjzCwuXGj"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/DBrXHtc4ZXBmjzCwuXGj",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000UXTWbMAP",
@@ -541,17 +544,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UXTWbMAP/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/c2OYRyint7Mjd1eZMinY",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000X5b0jIAB/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000X5b0jIAB/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000UVhiZMAT",
@@ -570,17 +569,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UVhiZMAT/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/jTeeSDf24qogYUM0HzQk",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XBrKXIA1/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XBrKXIA1/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000USfF8MAL",
@@ -599,17 +594,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000USfF8MAL/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/N7EB7PV1kKMmnNqWsVWW",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XSXinIAH/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XSXinIAH/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000USZMXMA5",
@@ -628,17 +619,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000USZMXMA5/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/gbZyYUfe6K0H60CuhMNC",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000X7059IAB/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000X7059IAB/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000UR7ybMAD",
@@ -655,7 +642,10 @@
       "status": "On Hold",
       "createdDate": "2026-03-10",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UR7ybMAD/view",
-      "agmUrl": ""
+      "agmUrl": "",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000UQJ5lMAH",
@@ -674,17 +664,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UQJ5lMAH/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/Z4UVCWPzI77wpPDSjrs3",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XBf88IAD/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XBf88IAD/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000UPSWCMA5",
@@ -703,17 +689,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UPSWCMA5/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/Pdg7EKLufw5rXEHWRLgi",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XNF0BIAX/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XNF0BIAX/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000UOyplMAD",
@@ -732,17 +714,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UOyplMAD/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/oElvUy90UXLjZGGJdQqG",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XF2GDIA1/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000XF2GDIA1/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000UOykvMAD",
@@ -759,7 +737,10 @@
       "status": "Appointment Booked",
       "createdDate": "2026-03-09",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UOykvMAD/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/3XrIrCRuTPC9lzHKc0Pp"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/3XrIrCRuTPC9lzHKc0Pp",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000UOpEcMAL",
@@ -776,7 +757,10 @@
       "status": "New Lead",
       "createdDate": "2026-03-09",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UOpEcMAL/view",
-      "agmUrl": ""
+      "agmUrl": "",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000UOvf0MAD",
@@ -793,7 +777,10 @@
       "status": "Being Contacted",
       "createdDate": "2026-03-09",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UOvf0MAD/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/0WLBtvRIigBvNYo2crHy"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/0WLBtvRIigBvNYo2crHy",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000UJmxJMAT",
@@ -812,17 +799,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UJmxJMAT/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/qCtqvl5dH2Azn33PDwQ8",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000X0zQKIAZ/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000X0zQKIAZ/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000UG5DlMAL",
@@ -841,17 +824,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UG5DlMAL/view",
       "agmUrl": "",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000X14rQIAR/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000X14rQIAR/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000UDxsEMAT",
@@ -870,17 +849,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UDxsEMAT/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/wGu6YeocBipM7G4p6b3C",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WrZuyIAF/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WrZuyIAF/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000UC4YAMA1",
@@ -897,7 +872,10 @@
       "status": "Appointment Booked",
       "createdDate": "2026-03-02",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UC4YAMA1/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/JtOetM6ATKruX9774MJ4"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/JtOetM6ATKruX9774MJ4",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000UB9mfMAD",
@@ -914,7 +892,10 @@
       "status": "Not Interested",
       "createdDate": "2026-03-02",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UB9mfMAD/view",
-      "agmUrl": ""
+      "agmUrl": "",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000UB7xmMAD",
@@ -933,17 +914,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UB7xmMAD/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/P7TtnLcWELzF00wEj0D5",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000X7CKpIAN/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000X7CKpIAN/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000UB7L3MAL",
@@ -962,17 +939,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UB7L3MAL/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/n8RRj19DfQtis37VP6Ko",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WmG01IAF/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WmG01IAF/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000UB2ejMAD",
@@ -993,17 +966,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000UB2ejMAD/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/gwGZJV49dXaQNic7qXkV",
       "opportunityStage": "Sales Closed Won - Approved",
-      "totalPrice": 21827.0,
       "sqft": 1027.0,
       "pricePerSqft": 21.2531646,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 21827.0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "2026-03-18",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WvoNRIAZ/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WvoNRIAZ/view",
+      "totalPrice": 21827,
+      "revenueSource": "agm"
     },
     {
       "sfId": "00QRb00000U8iU2MAJ",
@@ -1020,7 +989,10 @@
       "status": "On Hold",
       "createdDate": "2026-02-28",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000U8iU2MAJ/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/Y6FdvpM1FGIqdfoLMQd2"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/Y6FdvpM1FGIqdfoLMQd2",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000U7fjVMAR",
@@ -1039,17 +1011,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000U7fjVMAR/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/HvG1dYexVogCglzW7IDs",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000X4CvdIAF/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000X4CvdIAF/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000U7av9MAB",
@@ -1068,17 +1036,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000U7av9MAB/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/45Q3L9rDPatWRVlWHhhm",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000Wrgd5IAB/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000Wrgd5IAB/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000U4ECnMAN",
@@ -1097,17 +1061,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000U4ECnMAN/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/Ui7CLGu54XYOgYDPOQmZ",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000Wo0IYIAZ/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000Wo0IYIAZ/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TzpmTMAR",
@@ -1126,17 +1086,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TzpmTMAR/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/ZvjgoRzGgWkvBJYYhXRx",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WThOwIAL/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WThOwIAL/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TwmEsMAJ",
@@ -1155,17 +1111,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TwmEsMAJ/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/uTpwkyKRbj8eSiUVOJM7",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000Wr3tUIAR/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000Wr3tUIAR/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TwsNWMAZ",
@@ -1184,17 +1136,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TwsNWMAZ/view",
       "agmUrl": "",
       "opportunityStage": "Sales Closed Won - Approved",
-      "totalPrice": 12167.0,
       "sqft": 728.0,
       "pricePerSqft": 16.7129121,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 12167.0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "2026-03-09",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WiEXtIAN/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WiEXtIAN/view",
+      "totalPrice": 12167.0,
+      "revenueSource": "sf"
     },
     {
       "sfId": "00QRb00000TuWqyMAF",
@@ -1213,17 +1161,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TuWqyMAF/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/eGpxuE7e47ij9c5Hd9gF",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WKemzIAD/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WKemzIAD/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TtEzKMAV",
@@ -1242,17 +1186,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TtEzKMAV/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/HM8eQIchvEcIoB1Jl37u",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WltoGIAR/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WltoGIAR/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TqPb7MAF",
@@ -1269,7 +1209,10 @@
       "status": "On Hold",
       "createdDate": "2026-02-19",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TqPb7MAF/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/wREk3JlJLYldsDWLjSVV"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/wREk3JlJLYldsDWLjSVV",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000TkeBRMAZ",
@@ -1288,17 +1231,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TkeBRMAZ/view",
       "agmUrl": "",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WDEHGIA5/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WDEHGIA5/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TkH8QMAV",
@@ -1319,17 +1258,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TkH8QMAV/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/wSTvB0reuTgyPDRzUdDm",
       "opportunityStage": "Sales Closed Won - Approved",
-      "totalPrice": 6760.0,
       "sqft": 316.0,
       "pricePerSqft": 20.6727829,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 6760.0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "2026-03-06",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WGGCsIAP/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WGGCsIAP/view",
+      "totalPrice": 6760,
+      "revenueSource": "agm"
     },
     {
       "sfId": "00QRb00000Tjuv0MAB",
@@ -1348,17 +1283,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000Tjuv0MAB/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/luGKulvZxck3bU8R2j9c",
       "opportunityStage": "Complete - Unpaid",
-      "totalPrice": 8037.0,
       "sqft": 426.0,
       "pricePerSqft": 18.8661972,
       "crewNumber": "Bedrock Construction",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 8037.0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "2026-02-23",
-      "jobStartedDate": "2026-03-19",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WJFgrIAH/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WJFgrIAH/view",
+      "totalPrice": 8037.0,
+      "revenueSource": "sf"
     },
     {
       "sfId": "00QRb00000TjnGpMAJ",
@@ -1375,7 +1306,10 @@
       "status": "New Lead",
       "createdDate": "2026-02-16",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TjnGpMAJ/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/YNKZej3I0NNslJhcsAvQ"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/YNKZej3I0NNslJhcsAvQ",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000ThibPMAR",
@@ -1394,17 +1328,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000ThibPMAR/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/oNeSnLUD5prbzoQIpAbW",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WQFsKIAX/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WQFsKIAX/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000Tg2azMAB",
@@ -1421,7 +1351,10 @@
       "status": "On Hold",
       "createdDate": "2026-02-13",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000Tg2azMAB/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/14q4AXzT8DRpIcMNyz9r"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/14q4AXzT8DRpIcMNyz9r",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000Tec4HMAR",
@@ -1440,17 +1373,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000Tec4HMAR/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/9AnU0cQjAxnm8uwZi9bf",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WOczTIAT/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WOczTIAT/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TeaX7MAJ",
@@ -1469,17 +1398,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TeaX7MAJ/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/zNkic8WDDIGWwaEciUT9",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WeURZIA3/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WeURZIA3/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TeO9OMAV",
@@ -1498,17 +1423,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TeO9OMAV/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/L17qxWhmWlnC3hR9Q7B1",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000W8YjfIAF/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000W8YjfIAF/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TZ4RSMA1",
@@ -1527,17 +1448,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TZ4RSMA1/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/8lmmwzAhpP260ltZAOmd",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WJOlwIAH/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WJOlwIAH/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TZAF7MAP",
@@ -1556,17 +1473,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TZAF7MAP/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/ycsZlChD3DevwZ4mXdoc",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000Vx8ZBIAZ/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000Vx8ZBIAZ/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TZ3TlMAL",
@@ -1585,17 +1498,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TZ3TlMAL/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/TPCYxub4lW3ddXryd2VQ",
       "opportunityStage": "Complete - Unpaid",
-      "totalPrice": 12439.0,
       "sqft": 517.0,
       "pricePerSqft": 24.0599613,
       "crewNumber": "Creww 12",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 12439.0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "2026-03-13",
-      "jobStartedDate": "2026-03-17",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WAY4QIAX/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WAY4QIAX/view",
+      "totalPrice": 12439.0,
+      "revenueSource": "sf"
     },
     {
       "sfId": "00QRb00000TYb9KMAT",
@@ -1614,17 +1523,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TYb9KMAT/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/TPCYxub4lW3ddXryd2VQ",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WAN5mIAH/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WAN5mIAH/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TWTcVMAX",
@@ -1643,17 +1548,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TWTcVMAX/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/czhyW5PmmzUgkMz2VZS9",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000W1iauIAB/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000W1iauIAB/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TRBY9MAP",
@@ -1672,17 +1573,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TRBY9MAP/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/14q4AXzT8DRpIcMNyz9r",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VtBLyIAN/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VtBLyIAN/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TQ3hWMAT",
@@ -1701,17 +1598,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TQ3hWMAT/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/JCesoD5jzVsi0IukvCRG",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WJaLYIA1/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WJaLYIA1/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TNcYXMA1",
@@ -1730,17 +1623,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TNcYXMA1/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/S7CH4nA43cxK7kxg3mWL",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VjZMVIA3/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VjZMVIA3/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TJUphMAH",
@@ -1757,7 +1646,10 @@
       "status": "On Hold",
       "createdDate": "2026-02-03",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TJUphMAH/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/wCNLj1XDbOgP6LBSjsw8"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/wCNLj1XDbOgP6LBSjsw8",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000THEAjMAP",
@@ -1778,17 +1670,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000THEAjMAP/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/gHGoZVf0qXQ66BnkRLqm",
       "opportunityStage": "Sales Closed Won - Needs Approval",
-      "totalPrice": 72385.0,
       "sqft": 548.0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 1000.0,
-      "remainingBalance": 72385.0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000W4ZKyIAN/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000W4ZKyIAN/view",
+      "totalPrice": 8035,
+      "revenueSource": "agm"
     },
     {
       "sfId": "00QRb00000TH7XSMA1",
@@ -1807,17 +1695,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TH7XSMA1/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/ueHkQ4HDzeVYo9B0VOWI",
       "opportunityStage": "Not Sold - Needs Follow Up",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VmFEFIA3/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VmFEFIA3/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TH6YCMA1",
@@ -1836,17 +1720,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TH6YCMA1/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/CUgQd67ybTNQLJtGpuSU",
       "opportunityStage": "Not Sold - Needs Follow Up",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VorNVIAZ/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VorNVIAZ/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TG14IMAT",
@@ -1863,7 +1743,10 @@
       "status": "Appointment Booked",
       "createdDate": "2026-01-31",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TG14IMAT/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/fK5oUe2R1sN85dVsDwS4"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/fK5oUe2R1sN85dVsDwS4",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000TDorDMAT",
@@ -1882,17 +1765,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TDorDMAT/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/6XcVA9uygNjrVMmng6u8",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VmB0vIAF/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VmB0vIAF/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TCQ7hMAH",
@@ -1911,17 +1790,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TCQ7hMAH/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/8iI2i2ywcsbKZE3XkuVr",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WzGiAIAV/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WzGiAIAV/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000TCACeMAP",
@@ -1940,17 +1815,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000TCACeMAP/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/QWgU3UtCguC595xsD60v",
       "opportunityStage": "Job Scheduled",
-      "totalPrice": 15436.0,
       "sqft": 972.0,
       "pricePerSqft": 15.8806584,
       "crewNumber": "Crew 3",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 15436.0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "2026-02-20",
-      "jobStartedDate": "2026-03-23",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VgJMAIA3/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VgJMAIA3/view",
+      "totalPrice": 15436.0,
+      "revenueSource": "sf"
     },
     {
       "sfId": "00QRb00000T6tqjMAB",
@@ -1969,17 +1840,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000T6tqjMAB/view",
       "agmUrl": "",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VZPEcIAP/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VZPEcIAP/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000T5SuDMAV",
@@ -1998,17 +1865,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000T5SuDMAV/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/IVfY1JuDSJer3NIKaIzR",
       "opportunityStage": "Complete - Unpaid",
-      "totalPrice": 16705.0,
       "sqft": 904.0,
       "pricePerSqft": 18.4789823,
       "crewNumber": "Creww 16",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 16705.0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "2026-02-20",
-      "jobStartedDate": "2026-03-16",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VdH8pIAF/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VdH8pIAF/view",
+      "totalPrice": 16705.0,
+      "revenueSource": "sf"
     },
     {
       "sfId": "00QRb00000T4m8bMAB",
@@ -2027,17 +1890,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000T4m8bMAB/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/QV2xHWsjaas0qtk6qcdu",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VYSZVIA5/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VYSZVIA5/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000T4Uq1MAF",
@@ -2056,17 +1915,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000T4Uq1MAF/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/wnKavwrczE1PfYDjEvYK",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VWUxCIAX/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VWUxCIAX/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000T4TZ0MAN",
@@ -2083,7 +1938,10 @@
       "status": "Being Contacted",
       "createdDate": "2026-01-26",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000T4TZ0MAN/view",
-      "agmUrl": ""
+      "agmUrl": "",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000T4S0DMAV",
@@ -2100,7 +1958,10 @@
       "status": "Being Contacted",
       "createdDate": "2026-01-26",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000T4S0DMAV/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/JhBoPpLS4EY67ZOoceDs"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/JhBoPpLS4EY67ZOoceDs",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000T4RH3MAN",
@@ -2119,17 +1980,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000T4RH3MAN/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/wD8GEGnYFAEgPNQrc7O4",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VTG2kIAH/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VTG2kIAH/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000T4R0vMAF",
@@ -2148,17 +2005,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000T4R0vMAF/view",
       "agmUrl": "",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VSmuJIAT/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VSmuJIAT/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000T25yzMAB",
@@ -2177,17 +2030,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000T25yzMAB/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/begkj9KvDzYWsZUmJ62r",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VVi69IAD/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VVi69IAD/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000T12ThMAJ",
@@ -2206,17 +2055,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000T12ThMAJ/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/dqfVI1WoFpCpAJYXovZq",
       "opportunityStage": "Not Sold - Needs Follow Up",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VJJMrIAP/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VJJMrIAP/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000Syh0LMAR",
@@ -2235,17 +2080,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000Syh0LMAR/view",
       "agmUrl": "",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VIKcjIAH/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VIKcjIAH/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000SwLC2MAN",
@@ -2264,17 +2105,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SwLC2MAN/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/Zu2ywNUMu7lbo6U3U0xI",
       "opportunityStage": "Not Sold - Needs Follow Up",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VO9MrIAL/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VO9MrIAL/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000Sw8gDMAR",
@@ -2293,17 +2130,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000Sw8gDMAR/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/bPU2OmwQKTfAhYDRi6R7",
       "opportunityStage": "Complete - Unpaid",
-      "totalPrice": 3500.0,
       "sqft": 140.0,
       "pricePerSqft": 25.0,
       "crewNumber": "Crew 3",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 3500.0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "2026-01-28",
-      "jobStartedDate": "2026-03-10",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VO957IAD/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VO957IAD/view",
+      "totalPrice": 3500.0,
+      "revenueSource": "sf"
     },
     {
       "sfId": "00QRb00000SrW9hMAF",
@@ -2322,17 +2155,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SrW9hMAF/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/Ny3YZxfYPiuJIMLwyY2u",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VI4nMIAT/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VI4nMIAT/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000SrP9pMAF",
@@ -2351,17 +2180,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SrP9pMAF/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/gfZf7JyCgzsOVu4Xc3qW",
       "opportunityStage": "Not Sold - Needs Follow Up",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000V7dSeIAJ/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000V7dSeIAJ/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000SoulGMAR",
@@ -2377,22 +2202,18 @@
       "shawProducts": [
         "Meraki Mania"
       ],
-      "status": "New Lead",
+      "status": "Follow Up",
       "createdDate": "2026-01-17",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SoulGMAR/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/4i5WYK3LWQQyFQ24COfx",
       "opportunityStage": "Not Sold - Needs Follow Up",
-      "totalPrice": 0,
       "sqft": 458.0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000V7IpbIAF/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000V7IpbIAF/view",
+      "totalPrice": 11000,
+      "revenueSource": "agm"
     },
     {
       "sfId": "00QRb00000Sot9JMAR",
@@ -2411,17 +2232,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000Sot9JMAR/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/XIGK7uoRwpprQSWhr8eW",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WTaIbIAL/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000WTaIbIAL/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000SnEw9MAF",
@@ -2435,22 +2252,18 @@
       "costcoStore": "Costco.com",
       "turfType": "Artificial Turf",
       "shawProducts": [],
-      "status": "New Lead",
+      "status": "Cancelled",
       "createdDate": "2026-01-16",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SnEw9MAF/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/PlAb3j0L19a3ZeTrL3cE",
       "opportunityStage": "Cancelled Contract",
-      "totalPrice": 6878.0,
       "sqft": 475.0,
       "pricePerSqft": 14.48,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 6878.0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VF7aSIAT/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VF7aSIAT/view",
+      "totalPrice": 11000,
+      "revenueSource": "agm"
     },
     {
       "sfId": "00QRb00000SkbAwMAJ",
@@ -2469,17 +2282,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SkbAwMAJ/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/TmIAcrYmAhDJopZplfB4",
       "opportunityStage": "Not Sold - Needs Follow Up",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UzzTWIAZ/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UzzTWIAZ/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000SiQmgMAF",
@@ -2498,17 +2307,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SiQmgMAF/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/9otA6j7HwqBpmPO0vOwu",
       "opportunityStage": "Not Sold - Needs Follow Up",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UxXA2IAN/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UxXA2IAN/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000Si7ldMAB",
@@ -2525,7 +2330,10 @@
       "status": "On Hold",
       "createdDate": "2026-01-14",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000Si7ldMAB/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/ATyjXrvNkognxDU4AZLx"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/ATyjXrvNkognxDU4AZLx",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000Si5v8MAB",
@@ -2544,17 +2352,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000Si5v8MAB/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/MdKW7Tw04za22cdGi578",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VZPkwIAH/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000VZPkwIAH/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000SgWPyMAN",
@@ -2571,7 +2375,10 @@
       "status": "Being Contacted",
       "createdDate": "2026-01-13",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SgWPyMAN/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/pt9wHykzBrioL5jHzpCX"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/pt9wHykzBrioL5jHzpCX",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000SfdjdMAB",
@@ -2590,17 +2397,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SfdjdMAB/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/ox0ad1G1GAQMeIk3LudB",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000V1OCvIAN/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000V1OCvIAN/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000SdSe6MAF",
@@ -2619,17 +2422,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SdSe6MAF/view",
       "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/BOhZub9FtdDC8Evxr5Jg",
       "opportunityStage": "Not Sold - Needs Follow Up",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UsMtVIAV/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UsMtVIAV/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000SdHC9MAN",
@@ -2646,7 +2445,10 @@
       "status": "Being Contacted",
       "createdDate": "2026-01-12",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SdHC9MAN/view",
-      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/IxQX6r40rZTSxGcGwBNX"
+      "agmUrl": "https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts/detail/IxQX6r40rZTSxGcGwBNX",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000SYykpMAD",
@@ -2663,7 +2465,10 @@
       "status": "Being Contacted",
       "createdDate": "2026-01-09",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SYykpMAD/view",
-      "agmUrl": ""
+      "agmUrl": "",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000SVLrHMAX",
@@ -2680,7 +2485,10 @@
       "status": "On Hold",
       "createdDate": "2026-01-07",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SVLrHMAX/view",
-      "agmUrl": ""
+      "agmUrl": "",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000SQNdaMAH",
@@ -2699,17 +2507,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SQNdaMAH/view",
       "agmUrl": "",
       "opportunityStage": "Not Sold - Needs Follow Up",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UmBzEIAV/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UmBzEIAV/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000SQKr1MAH",
@@ -2728,17 +2532,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SQKr1MAH/view",
       "agmUrl": "",
       "opportunityStage": "Not Sold - Needs Follow Up",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000Uhm89IAB/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000Uhm89IAB/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000SQUNJMA5",
@@ -2755,7 +2555,10 @@
       "status": "Being Contacted",
       "createdDate": "2026-01-05",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SQUNJMA5/view",
-      "agmUrl": ""
+      "agmUrl": "",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000SQOLWMA5",
@@ -2774,17 +2577,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SQOLWMA5/view",
       "agmUrl": "",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UbI39IAF/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UbI39IAF/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000SQPqjMAH",
@@ -2803,17 +2602,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SQPqjMAH/view",
       "agmUrl": "",
       "opportunityStage": "Not Sold - Needs Follow Up",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UbJAcIAN/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UbJAcIAN/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000SQQZpMAP",
@@ -2832,17 +2627,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SQQZpMAP/view",
       "agmUrl": "",
       "opportunityStage": "Not Sold - Needs Follow Up",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UbKWnIAN/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UbKWnIAN/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000SQPSTMA5",
@@ -2861,17 +2652,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SQPSTMA5/view",
       "agmUrl": "",
       "opportunityStage": "Closed Lost",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UbRPlIAN/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UbRPlIAN/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000SQFL3MAP",
@@ -2890,17 +2677,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SQFL3MAP/view",
       "agmUrl": "",
       "opportunityStage": "Completed - Paid",
-      "totalPrice": 7929.0,
       "sqft": 404.0,
       "pricePerSqft": 19.6262376,
       "crewNumber": "Crew 3",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "2026-01-13",
-      "jobStartedDate": "2026-02-02",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UbCk7IAF/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UbCk7IAF/view",
+      "totalPrice": 7929.0,
+      "revenueSource": "sf"
     },
     {
       "sfId": "00QRb00000SQEGvMAP",
@@ -2919,17 +2702,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000SQEGvMAP/view",
       "agmUrl": "",
       "opportunityStage": "Not Sold - Needs Follow Up",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UbBMdIAN/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UbBMdIAN/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000S6LG9MAN",
@@ -2948,17 +2727,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000S6LG9MAN/view",
       "agmUrl": "",
       "opportunityStage": "Completed - Paid",
-      "totalPrice": 8453.0,
       "sqft": 299.0,
       "pricePerSqft": 28.270903,
       "crewNumber": "Creww 15",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "2026-01-15",
-      "jobStartedDate": "2026-02-13",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000Uk0F9IAJ/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000Uk0F9IAJ/view",
+      "totalPrice": 8453.0,
+      "revenueSource": "sf"
     },
     {
       "sfId": "00QRb00000S6KvBMAV",
@@ -2977,17 +2752,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000S6KvBMAV/view",
       "agmUrl": "",
       "opportunityStage": "Not Sold - Needs Follow Up",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UnF7vIAF/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000UnF7vIAF/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000Rw089MAB",
@@ -3004,7 +2775,10 @@
       "status": "Being Contacted",
       "createdDate": "2025-12-16",
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000Rw089MAB/view",
-      "agmUrl": ""
+      "agmUrl": "",
+      "totalPrice": 0,
+      "revenueSource": "",
+      "sqft": 0
     },
     {
       "sfId": "00QRb00000Rf1F7MAJ",
@@ -3023,17 +2797,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000Rf1F7MAJ/view",
       "agmUrl": "",
       "opportunityStage": "Not Sold - Needs Follow Up",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000TizGnIAJ/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000TizGnIAJ/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000RezwTMAR",
@@ -3052,17 +2822,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000RezwTMAR/view",
       "agmUrl": "",
       "opportunityStage": "Completed - Paid",
-      "totalPrice": 4828.0,
       "sqft": 246.0,
       "pricePerSqft": 19.6260163,
       "crewNumber": "Creww 15",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "2025-12-19",
-      "jobStartedDate": "2026-01-08",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000TsrpqIAB/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000TsrpqIAB/view",
+      "totalPrice": 4828.0,
+      "revenueSource": "sf"
     },
     {
       "sfId": "00QRb00000RRjhRMAT",
@@ -3081,17 +2847,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000RRjhRMAT/view",
       "agmUrl": "",
       "opportunityStage": "1st Presentation Set",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000TSIVyIAP/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000TSIVyIAP/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000RII8cMAH",
@@ -3110,17 +2872,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000RII8cMAH/view",
       "agmUrl": "",
       "opportunityStage": "Completed - Paid",
-      "totalPrice": 3961.0,
       "sqft": 182.0,
       "pricePerSqft": 21.7637363,
       "crewNumber": "Creww 16",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "2025-12-17",
-      "jobStartedDate": "2025-12-19",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000TKbh3IAD/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000TKbh3IAD/view",
+      "totalPrice": 3961.0,
+      "revenueSource": "sf"
     },
     {
       "sfId": "00QRb00000QjbCXMAZ",
@@ -3139,17 +2897,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000QjbCXMAZ/view",
       "agmUrl": "",
       "opportunityStage": "Completed - Paid",
-      "totalPrice": 4976.0,
       "sqft": 270.0,
       "pricePerSqft": 18.4296296,
       "crewNumber": "Creww 16",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "2025-12-05",
-      "jobStartedDate": "2025-12-15",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000Sd4y7IAB/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000Sd4y7IAB/view",
+      "totalPrice": 4976.0,
+      "revenueSource": "sf"
     },
     {
       "sfId": "00QRb00000QboRtMAJ",
@@ -3168,17 +2922,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000QboRtMAJ/view",
       "agmUrl": "",
       "opportunityStage": "Job Scheduled",
-      "totalPrice": 10376.0,
       "sqft": 598.0,
       "pricePerSqft": 17.3511706,
       "crewNumber": "Unassigned",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 10376.0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "2026-03-03",
-      "jobStartedDate": "2026-03-30",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000SZGJWIA5/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000SZGJWIA5/view",
+      "totalPrice": 10376.0,
+      "revenueSource": "sf"
     },
     {
       "sfId": "00QRb00000QW4HdMAL",
@@ -3197,17 +2947,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000QW4HdMAL/view",
       "agmUrl": "",
       "opportunityStage": "Not Sold - Needs Follow Up",
-      "totalPrice": 0,
       "sqft": 117.0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000SOAFuIAP/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000SOAFuIAP/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     },
     {
       "sfId": "00QRb00000QTiI1MAL",
@@ -3226,17 +2972,13 @@
       "sfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Lead/00QRb00000QTiI1MAL/view",
       "agmUrl": "",
       "opportunityStage": "Not Sold - Needs Follow Up",
-      "totalPrice": 0,
       "sqft": 0,
       "pricePerSqft": 0,
       "crewNumber": "",
       "jobType": "",
-      "depositAtSigning": 0,
-      "remainingBalance": 0,
-      "changeOrderAmount": 0,
-      "contractApprovalDate": "",
-      "jobStartedDate": "",
-      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000STL7NIAX/view"
+      "oppSfUrl": "https://d37000000pbiqeac.my.salesforce.com/lightning/r/Opportunity/006Rb00000STL7NIAX/view",
+      "totalPrice": 0,
+      "revenueSource": ""
     }
   ]
 }

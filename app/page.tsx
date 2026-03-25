@@ -48,16 +48,21 @@ export default function MissionControl() {
               </div>
             </div>
 
-            {/* Internal Processes — content flywheel, agents, handoffs */}
+            {/* Content Pipeline — flywheel health + content tracker */}
+            <div>
+              <p className="text-[10px] uppercase tracking-widest text-gray-500 font-mono mb-3">Content Pipeline</p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <FlywheelStatus />
+                <ContentPipeline compact />
+              </div>
+            </div>
+
+            {/* Internal Processes — agents, handoffs, ops */}
             <div>
               <p className="text-[10px] uppercase tracking-widest text-gray-500 font-mono mb-3">Internal Processes</p>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <FlywheelStatus />
                 <AgentStatusMonitor />
-              </div>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
                 <HandoffMonitor />
-                <ContentPipeline compact />
               </div>
             </div>
 

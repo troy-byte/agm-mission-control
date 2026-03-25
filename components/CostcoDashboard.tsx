@@ -49,39 +49,54 @@ interface DashboardData {
   statusCounts: Record<string, number>
   turfTypeCounts: Record<string, number>
   storePerformance: Record<string, { leads: number; sold: number; revenue: number; sqft: number }>
+  shawProductsSold: Record<string, { jobs: number; sqft: number; revenue: number }>
   leads: CostcoLead[]
 }
 
 // ── Helpers ─────────────────────────────────────────────────────────────
 
 const STATUS_COLORS: Record<string, string> = {
-  'Completed': 'bg-green-900/40 text-green-300 border-green-700',
-  'Completed - Unpaid': 'bg-orange-900/40 text-orange-300 border-orange-700',
-  'Sold': 'bg-emerald-900/40 text-emerald-300 border-emerald-700',
+  'Paid in Full': 'bg-green-900/40 text-green-300 border-green-700',
+  'Installed': 'bg-green-900/40 text-green-300 border-green-700',
+  'Installed - Unpaid': 'bg-orange-900/40 text-orange-300 border-orange-700',
+  'Contract Approved': 'bg-emerald-900/40 text-emerald-300 border-emerald-700',
+  'Deposit Sent': 'bg-emerald-900/40 text-emerald-300 border-emerald-700',
+  'Deposit Received': 'bg-emerald-900/40 text-emerald-300 border-emerald-700',
+  'Installation Started': 'bg-cyan-900/40 text-cyan-300 border-cyan-700',
   'Job Scheduled': 'bg-cyan-900/40 text-cyan-300 border-cyan-700',
+  'Appointment Ran': 'bg-purple-900/40 text-purple-300 border-purple-700',
+  'Proposal Out': 'bg-purple-900/40 text-purple-300 border-purple-700',
+  'Appointment Booked': 'bg-blue-900/40 text-blue-300 border-blue-700',
   'Follow Up': 'bg-yellow-900/40 text-yellow-300 border-yellow-700',
-  'Appointment Set': 'bg-blue-900/40 text-blue-300 border-blue-700',
+  'Being Contacted': 'bg-yellow-900/40 text-yellow-300 border-yellow-700',
   'In Pipeline': 'bg-indigo-900/40 text-indigo-300 border-indigo-700',
-  'Working': 'bg-purple-900/40 text-purple-300 border-purple-700',
   'On Hold': 'bg-orange-900/40 text-orange-300 border-orange-700',
   'New Lead': 'bg-blue-900/40 text-blue-300 border-blue-700',
   'Cancelled': 'bg-red-900/40 text-red-300 border-red-700',
+  'No Show': 'bg-red-900/40 text-red-300 border-red-700',
   'Lost': 'bg-red-900/40 text-red-300 border-red-700',
   'Not Interested': 'bg-red-900/40 text-red-300 border-red-700',
 }
 
 const STATUS_BAR_COLORS: Record<string, string> = {
-  'Completed': 'bg-green-600',
-  'Completed - Unpaid': 'bg-orange-600',
-  'Sold': 'bg-emerald-600',
+  'Paid in Full': 'bg-green-600',
+  'Installed': 'bg-green-600',
+  'Installed - Unpaid': 'bg-orange-600',
+  'Contract Approved': 'bg-emerald-600',
+  'Deposit Sent': 'bg-emerald-600',
+  'Deposit Received': 'bg-emerald-600',
+  'Installation Started': 'bg-cyan-600',
   'Job Scheduled': 'bg-cyan-600',
+  'Appointment Ran': 'bg-purple-600',
+  'Proposal Out': 'bg-purple-600',
+  'Appointment Booked': 'bg-blue-600',
   'Follow Up': 'bg-yellow-600',
-  'Appointment Set': 'bg-blue-600',
+  'Being Contacted': 'bg-yellow-600',
   'In Pipeline': 'bg-indigo-600',
-  'Working': 'bg-purple-600',
   'On Hold': 'bg-orange-500',
   'New Lead': 'bg-blue-500',
   'Cancelled': 'bg-red-600',
+  'No Show': 'bg-red-600',
   'Lost': 'bg-red-500',
   'Not Interested': 'bg-red-500',
 }
@@ -262,18 +277,26 @@ export default function CostcoDashboard() {
         <div className="bg-gray-900 rounded-lg p-5 border border-gray-800">
           <div className="flex items-center space-x-2 mb-4">
             <Layers className="w-4 h-4 text-emerald-400" />
-            <h3 className="text-sm font-semibold text-white">Turf Type Breakdown</h3>
+            <h3 className="text-sm font-semibold text-white">Shaw Turf Products Sold</h3>
+            <span className="text-xs text-gray-500 ml-auto">{Object.values(data.shawProductsSold).reduce((a, v) => a + v.sqft, 0).toLocaleString()} sqft total</span>
           </div>
-          <div className="space-y-2">
-            {Object.entries(turfTypeCounts).sort((a, b) => b[1] - a[1]).map(([type, count]) => {
-              const pct = s.totalLeads > 0 ? (count / s.totalLeads) * 100 : 0
+          <div className="space-y-3">
+            {Object.entries(data.shawProductsSold).sort((a, b) => b[1].sqft - a[1].sqft).map(([product, v]) => {
+              const maxSqft = Math.max(...Object.values(data.shawProductsSold).map(p => p.sqft))
+              const pct = maxSqft > 0 ? (v.sqft / maxSqft) * 100 : 0
               return (
-                <div key={type} className="flex items-center space-x-3">
-                  <span className="text-xs text-gray-400 w-40">{type}</span>
-                  <div className="flex-1 bg-gray-800 rounded-full h-5 overflow-hidden">
+                <div key={product}>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-xs text-white font-medium">{product}</span>
+                    <div className="flex items-center space-x-4 text-xs">
+                      <span className="text-gray-400">{v.jobs} jobs</span>
+                      <span className="text-cyan-400">{v.sqft.toLocaleString()} sqft</span>
+                      <span className="text-emerald-400">${v.revenue.toLocaleString()}</span>
+                    </div>
+                  </div>
+                  <div className="bg-gray-800 rounded-full h-3 overflow-hidden">
                     <div className="h-full rounded-full bg-emerald-600 transition-all" style={{ width: `${pct}%` }} />
                   </div>
-                  <span className="text-xs text-white font-medium w-8 text-right">{count}</span>
                 </div>
               )
             })}

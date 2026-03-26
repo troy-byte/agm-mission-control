@@ -194,6 +194,15 @@ export default function MissionControl() {
             <ExternalLink className="w-3.5 h-3.5 mr-3 flex-shrink-0" />
             Oasis Turf
           </a>
+          <a
+            href="https://troy-byte.github.io/agm-franchise-demo/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center px-0 py-1.5 text-sm font-medium text-gray-400 hover:text-cyan-400 transition-colors"
+          >
+            <ExternalLink className="w-3.5 h-3.5 mr-3 flex-shrink-0" />
+            AGM Franchise Demo
+          </a>
         </div>
 
         {/* True North Link */}

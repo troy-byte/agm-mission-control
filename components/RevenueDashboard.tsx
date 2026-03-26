@@ -28,7 +28,7 @@ export default function RevenueDashboard() {
     fsmPlatforms: 4,
     clients: [
       { name: 'Texas Turf (Ivana)', mrr: 797, platform: 'Jobber', status: 'live' },
-      { name: 'Heavenly Greens', mrr: 297, platform: 'Salesforce', status: 'live' },
+      { name: 'Heavenly Greens', mrr: 297, platform: 'CENTAH / Salesforce', status: 'live' },
       { name: 'Artificial Turf Express', mrr: 297, platform: 'Jobber', status: 'live' },
       { name: 'Valleywide Pest Control', mrr: 297, platform: 'Field Routes → SERTBO', status: 'live' },
       { name: 'Golden Mailer', mrr: 0, platform: 'Housecall Pro', status: 'in_progress' },

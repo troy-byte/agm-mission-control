@@ -42,7 +42,7 @@ export default function ClientsDashboard() {
   ])
 
   const [proToolsClients] = useState<ProToolsClient[]>([
-    { name: 'Heavenly Greens', fsmPlatform: 'Salesforce', status: 'live', monthlyValue: 297, notes: 'AGM + ProTools Core. SF + AGM bridge.' },
+    { name: 'Heavenly Greens', fsmPlatform: 'CENTAH / Salesforce', status: 'live', monthlyValue: 297, notes: 'Costco lead intake. AGM + ProTools Core. SF + AGM bridge.' },
     { name: 'Artificial Turf Express', fsmPlatform: 'Jobber', status: 'live', monthlyValue: 297, notes: 'AGM platform client.' },
     { name: 'Texas Turf (Ivana)', fsmPlatform: 'Jobber', status: 'live', monthlyValue: 0, notes: 'Residential free (founding partner). Commercial pipeline = $297/mo paid add-on, not yet scoped.' },
     { name: 'Valleywide Pest Control', fsmPlatform: 'Field Routes', status: 'live', monthlyValue: 297, notes: 'Via Andrew/SERTBO. Core tier ($297/mo). Signed Mar 18, 2026. 8,373 customers.' },

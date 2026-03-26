@@ -31,6 +31,18 @@ export default function IntegrationMonitor() {
       features: ['4 residential WFs live', 'Self-healing retry', 'Commercial pipeline pending']
     },
     {
+      id: 'centah-hg',
+      name: 'HG Costco → AGM + Salesforce',
+      client: 'Heavenly Greens',
+      fsmPlatform: 'CENTAH',
+      target: 'AGM + Salesforce',
+      status: 'live',
+      proToolsTier: 'Custom',
+      priceSignal: '$297/mo (confirm)',
+      description: 'Costco lead intake — email polling every 5 min, dual write to AGM and Salesforce.',
+      features: ['Costco lead polling', 'Dual CRM write', 'HG Polly (Voice AI) in dev']
+    },
+    {
       id: 'building-connected-sunburst',
       name: 'Sunburst → BuildingConnected',
       client: 'Noelle',

@@ -48,7 +48,7 @@ interface HealthData {
   recovery_log?: RecoveryAction[]
 }
 
-const HEALTH_URL = 'https://agm-pro--claude-orchestrator-health.modal.run'
+const HEALTH_URL = 'https://agm-pro--claude-orchestrator-health-summary.modal.run'
 const REFRESH_INTERVAL = 60000
 
 const CRON_LABELS: Record<string, { label: string; schedule: string }> = {

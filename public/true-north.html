@@ -84,14 +84,14 @@
 
 <h1>North Star To-Do List</h1>
 <p class="subtitle">Everything we're working on across AGM Pro Tools, Heavenly Greens, and ATE</p>
-<p class="datestamp">Last updated: 2026-04-02</p>
+<p class="datestamp">Last updated: 2026-04-03</p>
 
 <div class="stats">
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Clients Live</div></div>
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Prospects</div></div>
   <div class="stat"><div class="stat-value">$891</div><div class="stat-label">Monthly MRR</div></div>
-  <div class="stat"><div class="stat-value">7</div><div class="stat-label">Now / This Week</div></div>
-  <div class="stat"><div class="stat-value">13</div><div class="stat-label">Next Up</div></div>
+  <div class="stat"><div class="stat-value">6</div><div class="stat-label">Now / This Week</div></div>
+  <div class="stat"><div class="stat-value">17</div><div class="stat-label">Next Up</div></div>
   <div class="stat"><div class="stat-value">15</div><div class="stat-label">Queued</div></div>
 </div>
 
@@ -99,7 +99,7 @@
 <div class="category">
   <div class="cat-header">
     <span class="cat-title">This Week &mdash; Priority</span>
-    <span class="cat-count">9 items</span>
+    <span class="cat-count">14 items</span>
   </div>
 
   <div class="task">
@@ -114,19 +114,19 @@
   <div class="task">
     <span class="priority now">Now</span>
     <div>
-      <div class="task-name">Andrew &mdash; Franchise Snapshot Docs + Sub-Account Access</div>
-      <div class="task-desc">Two docs committed: FRANCHISE_SNAPSHOT_AUTOMATION_CONTENT.md (nurture sequences) and FRANCHISE_SNAPSHOT_CUSTOM_VALUES.md (custom values). Andrew also needs /score page HTML emailed. 5 unanswered escalations from Mar 31 about sub-account access + PIT key.</div>
+      <div class="task-name">Golden Template Roadmap &mdash; Full Launchpad Build Plan</div>
+      <div class="task-desc">Complete 3-layer, 4-phase roadmap for automated Jobber onboarding. Integration engine PROVEN (Apr 2 live test). Waiting on Andrew: golden snapshot, nurture copy, Stripe product, funnel page. Dashboard is the headline deliverable.</div>
     </div>
-    <div class="task-meta">Reply to Andrew today</div>
+    <div class="task-meta"><a href="https://docs.google.com/document/d/1MYiq_fb609MU-j1CWAdqDKFLOq4fFaHgZQI1ytcLXvk/edit">Roadmap</a><br>Doc delivered Apr 2</div>
   </div>
 
-  <div class="task">
-    <span class="priority now">Now</span>
+  <div class="task done-row">
+    <span class="priority done">Done</span>
     <div>
       <div class="task-name">Deactivate Broadly Workflow Rule in SF</div>
-      <div class="task-desc">SF Setup &rarr; Workflow Rules &rarr; &quot;Broadly&quot; &rarr; Deactivate. Zapier was contaminating AGM contact names via Broadly business_name mapping.</div>
+      <div class="task-desc">Broadly workflow rule was already deactivated in SF. Confirmed Apr 2 via SF Setup. Zapier contamination path fully dead.</div>
     </div>
-    <div class="task-meta">SF Setup<br>5 min</div>
+    <div class="task-meta">Apr 2<br>Already off</div>
   </div>
 
   <div class="task">
@@ -138,13 +138,13 @@
     <div class="task-meta">Script needed</div>
   </div>
 
-  <div class="task">
-    <span class="priority now">Now</span>
+  <div class="task done-row">
+    <span class="priority done">Done</span>
     <div>
       <div class="task-name">Project Ironclad &mdash; Tailscale Install</div>
-      <div class="task-desc">Cross-session persistence DONE. Tailscale directive written. Remaining: Troy installs Tailscale on all three machines, then SSH config. Telegram archive and machine state API still queued.</div>
+      <div class="task-desc">Tailscale installed and running on all 3 machines (Office iMac, Home iMac, Mac Mini). Cross-session persistence DONE. Remaining: Telegram archive and machine state API still queued.</div>
     </div>
-    <div class="task-meta">Troy physical<br>Directive ready</div>
+    <div class="task-meta">Apr 2<br>All 3 machines connected</div>
   </div>
 
   <div class="task">
@@ -163,6 +163,51 @@
       <div class="task-desc">10-step automated onboarding built (884 lines). Stripe webhook + status endpoints in code but NOT deployed to Modal. Andrew needs: golden Jobber snapshot, Stripe product ($397/mo), GHL funnel page. Waterloo meeting was positive &mdash; pipeline may activate soon.</div>
     </div>
     <div class="task-meta">Built Mar 30<br>Modal deploy pending</div>
+  </div>
+
+  <div class="task">
+    <span class="priority now">Now</span>
+    <div>
+      <div class="task-name">Valleywide PestRoutes &mdash; Finish Infrastructure Onboarding</div>
+      <div class="task-desc">Complete SERTBO↔PestRoutes integration. Troy shared flow diagram Apr 2 (saved to memory). Same sync pattern as Jobber↔AGM &mdash; replicate the adapter. Field Routes sync code exists but onboarding and automation not finished. 4 decisions still pending from Andrew.</div>
+    </div>
+    <div class="task-meta">Flow diagram saved<br>Discuss Apr 3</div>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">Jobber Token Refresh &mdash; Distributed Lock Before Scaling</div>
+      <div class="task-desc">Jobber refresh tokens are single-use. Race condition possible when multiple Modal containers refresh simultaneously. Fallback deployed (use access token if refresh fails). Root cause: need distributed lock (modal.Queue or Redis) before onboarding client #2. Monitor Texas Turf for 1 week first.</div>
+    </div>
+    <div class="task-meta">Fine at 1 client<br>Risk at 3+</div>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">Jobber Ghost Webhook &mdash; Clean Up via Support</div>
+      <div class="task-desc">Old QUOTE_SENT webhook registered at base URL (no ?client= param). Can&#x27;t delete via API. Draft support email in Troy&#x27;s inbox. Not blocking &mdash; just log noise. Send email to Jobber support when convenient.</div>
+    </div>
+    <div class="task-meta">Low priority<br>Cosmetic</div>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">Andrew MacBook Air &mdash; Clone AGM Instance</div>
+      <div class="task-desc">Turn Andrew&#x27;s MacBook Air into 4th Tailscale mesh node with full AGM dev environment. 5 layers: mesh setup, agent identity (.andrew marker), scoped credentials, memory bootstrap, handoff integration. Open decisions: credential tier, Modal access, voice. Guide doc complete.</div>
+    </div>
+    <div class="task-meta"><a href="https://github.com/troy-byte/agm-pro-tools/blob/main/docs/ANDREW_MACBOOK_CLONE_GUIDE.md">Clone Guide</a><br>Guide ready<br>Needs Troy decisions</div>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">S3 Backup &mdash; All 3 Machines</div>
+      <div class="task-desc">S3 encrypted backup currently only runs from Office iMac (2 AM daily cron). Home iMac and Mac Mini are NOT backing up independently. Set up daily S3 backup cron on all 3 machines so each backs up its local state.</div>
+    </div>
+    <div class="task-meta">Office iMac only<br>Home + Mini needed</div>
   </div>
 
   <div class="task">
@@ -500,7 +545,7 @@
 <div class="category">
   <div class="cat-header">
     <span class="cat-title">Waiting On Others</span>
-    <span class="cat-count">4 items</span>
+    <span class="cat-count">6 items</span>
   </div>
 
   <div class="task">
@@ -510,6 +555,24 @@
       <div class="task-desc">Needs to finalize SMS + email copy for the &quot;Completed - Paid&quot; review request.</div>
     </div>
     <div class="task-meta">Andrew</div>
+  </div>
+
+  <div class="task">
+    <span class="priority waiting">Waiting</span>
+    <div>
+      <div class="task-name">Andrew &mdash; Create AGM Custom Fields for WF2 Line Items</div>
+      <div class="task-desc">Create 4 custom fields in AGM: Turf Type (text), Sq Ft (number), Area (text), Add-Ons (text). Provide field IDs to Harlan so WF2 can pull sold line items from Jobber quotes into AGM automatically. Currently Andrew copies these manually.</div>
+    </div>
+    <div class="task-meta">Andrew<br>Blocks WF2 enhancement</div>
+  </div>
+
+  <div class="task">
+    <span class="priority waiting">Waiting</span>
+    <div>
+      <div class="task-name">Andrew &mdash; Confirm Opportunity Name Format with Ivana</div>
+      <div class="task-desc">Jobber sync sets opportunity name to &#x27;LastName - QuoteTitle&#x27; (e.g., &#x27;Testing - Artificial Turf Installation Project&#x27;). Confirm with Ivana if Texas Turf wants this format or something different.</div>
+    </div>
+    <div class="task-meta">Andrew<br>Quick confirmation</div>
   </div>
 
   <div class="task">
@@ -674,7 +737,7 @@
 </div>
 
 <div class="footer">
-  North Star To-Do List &mdash; AGM Pro Tools &mdash; Updated 2026-04-02 by Harlan<br>
+  North Star To-Do List &mdash; AGM Pro Tools &mdash; Updated 2026-04-03 by Harlan<br>
   Single source of truth for everything in flight. Updated each session. Replaces AGM Command Center Google Sheet.
 </div>
 

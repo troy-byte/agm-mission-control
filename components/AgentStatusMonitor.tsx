@@ -64,7 +64,7 @@ export default function AgentStatusMonitor() {
     {
       id: 'gemma',
       name: 'Gemma',
-      role: 'Local Inference',
+      role: 'Tier Zero Pre-Processor',
       status: 'active',
       model: {
         provider: 'Google',
@@ -82,7 +82,7 @@ export default function AgentStatusMonitor() {
     {
       id: 'scout',
       name: 'Scout',
-      role: 'Signal Detector',
+      role: 'Research & Intelligence',
       status: 'idle',
       model: {
         provider: 'Perplexity',
@@ -100,7 +100,7 @@ export default function AgentStatusMonitor() {
     {
       id: 'quill',
       name: 'Quill',
-      role: 'Content Writer',
+      role: 'Writing & Editing',
       status: 'idle',
       model: {
         provider: 'Google',
@@ -118,14 +118,14 @@ export default function AgentStatusMonitor() {
     {
       id: 'pixel',
       name: 'Pixel',
-      role: 'Thumbnail Designer',
+      role: 'Visual & Video Production',
       status: 'idle',
       model: {
         provider: 'OpenAI',
         name: 'GPT-4o'
       },
       lastActivity: new Date(Date.now() - 86400000).toISOString(),
-      currentTask: 'YouTube thumbnails, social graphics, slide decks',
+      currentTask: 'YouTube thumbnails, social graphics, video atomization (Shorts/Reels/TikTok)',
       metrics: {
         tasksCompleted: 0,
         avgResponseTime: 0,
@@ -136,14 +136,14 @@ export default function AgentStatusMonitor() {
     {
       id: 'echo',
       name: 'Echo',
-      role: 'Social Media Manager',
+      role: 'Distribution & Outreach',
       status: 'idle',
       model: {
         provider: 'OpenAI',
         name: 'ChatGPT'
       },
       lastActivity: new Date(Date.now() - 86400000).toISOString(),
-      currentTask: 'LinkedIn posts, X threads, content distribution',
+      currentTask: 'Email (GHL), YouTube, LinkedIn, newsletter, Instagram, TikTok distribution',
       metrics: {
         tasksCompleted: 0,
         avgResponseTime: 0,

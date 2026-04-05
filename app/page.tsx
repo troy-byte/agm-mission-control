@@ -66,7 +66,7 @@ export default function MissionControl() {
               <p className="text-[10px] uppercase tracking-widest text-gray-500 font-mono mb-3">Internal Processes</p>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <AgentStatusMonitor />
-                <HandoffMonitor />
+                <HandoffMonitor compact />
               </div>
             </div>
 

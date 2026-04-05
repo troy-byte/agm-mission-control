@@ -35,6 +35,13 @@ const PIPELINE_STAGES: FlywheelStage[] = [
     dependencies: ['ANTHROPIC_API_KEY'],
   },
   {
+    id: 'gemma',
+    name: 'Gemma',
+    description: 'Zero-cost pre-processing (local LLM)',
+    schedule: 'On-demand',
+    dependencies: [],
+  },
+  {
     id: 'quill',
     name: 'Quill',
     description: 'Newsletter + report writing',
@@ -169,7 +176,7 @@ export default function FlywheelStatus() {
             <div>
               <h2 className="text-sm font-semibold text-white">Content Flywheel</h2>
               <p className="text-[10px] text-gray-500 font-mono mt-0.5">
-                Scout &rarr; Quill &rarr; Pixel &rarr; Echo
+                Scout &rarr; Gemma &rarr; Quill &rarr; Pixel &rarr; Echo
               </p>
             </div>
           </div>
@@ -239,7 +246,7 @@ export default function FlywheelStatus() {
         </div>
 
         {/* Stage Detail Cards */}
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2">
           {stagesWithStatus.map(stage => {
             const stageFailures = stage.dependencies.filter(dep => failures.includes(dep))
             return (

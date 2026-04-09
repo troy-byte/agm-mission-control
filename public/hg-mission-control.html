@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HG Mission Control &mdash; Heavenly Greens</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a1a12; color: #e0e0e0; padding: 24px; max-width: 1100px; margin: 0 auto; }
+
+  h1 { font-size: 28px; color: #fff; margin-bottom: 4px; }
+  .subtitle { color: #8ab59b; font-size: 14px; margin-bottom: 8px; }
+  .datestamp { color: #475569; font-size: 12px; margin-bottom: 32px; }
+
+  .category { margin-bottom: 36px; }
+  .cat-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #1e3b28; }
+  .cat-title { font-size: 18px; font-weight: 700; color: #fff; }
+  .cat-count { font-size: 12px; color: #64748b; background: #1e3b28; padding: 2px 10px; border-radius: 10px; }
+
+  .priority { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 4px; margin-right: 8px; vertical-align: middle; }
+  .priority.now { background: rgba(239,68,68,0.2); color: #f87171; }
+  .priority.next { background: rgba(245,158,11,0.2); color: #fbbf24; }
+  .priority.soon { background: rgba(59,130,246,0.2); color: #60a5fa; }
+  .priority.queued { background: rgba(100,116,139,0.2); color: #94a3b8; }
+  .priority.recurring { background: rgba(168,85,247,0.2); color: #c084fc; }
+  .priority.waiting { background: rgba(34,197,94,0.2); color: #4ade80; }
+  .priority.done { background: rgba(100,116,139,0.15); color: #64748b; }
+
+  .task { display: grid; grid-template-columns: 90px 1fr 200px; align-items: start; gap: 12px; padding: 10px 12px; border-radius: 6px; margin-bottom: 4px; transition: background 0.15s; }
+  .task:hover { background: rgba(255,255,255,0.03); }
+  .task-name { font-size: 14px; font-weight: 600; color: #e0e0e0; }
+  .task-desc { font-size: 12px; color: #8ab59b; margin-top: 2px; }
+  .task-meta { font-size: 11px; color: #64748b; text-align: right; }
+  .task-meta a { color: #4ade80; text-decoration: none; }
+  .task-meta a:hover { text-decoration: underline; }
+
+  .task.done-row { opacity: 0.45; }
+  .task.done-row .task-name { text-decoration: line-through; }
+
+  .stats { display: flex; gap: 32px; margin-bottom: 32px; padding: 16px; background: #112015; border-radius: 8px; border: 1px solid #1e3b28; }
+  .stat { text-align: center; }
+  .stat-value { font-size: 24px; font-weight: 700; color: #fff; }
+  .stat-label { font-size: 11px; color: #8ab59b; }
+
+  .footer { text-align: center; color: #475569; font-size: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #1e3b28; }
+
+  .global-nav { display: flex; align-items: center; gap: 6px; margin-bottom: 24px; padding: 10px 14px; background: #112015; border-radius: 8px; border: 1px solid #1e3b28; flex-wrap: wrap; }
+  .global-nav a { font-size: 12px; font-weight: 600; color: #8ab59b; text-decoration: none; padding: 4px 10px; border-radius: 4px; transition: background 0.15s, color 0.15s; white-space: nowrap; }
+  .global-nav a:hover { background: rgba(74,222,128,0.15); color: #4ade80; }
+  .global-nav a.active { background: rgba(74,222,128,0.2); color: #4ade80; }
+  .global-nav .nav-sep { color: #1e3b28; font-size: 14px; user-select: none; }
+  .global-nav .nav-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #475569; margin-right: 4px; }
+</style>
+</head>
+<body>
+
+<nav class="global-nav">
+  <span class="nav-label">AGM</span>
+  <a href="https://troy-byte.github.io/agm-mission-control/">Mission Control</a>
+  <a href="https://troy-byte.github.io/agm-mission-control/true-north.html">True North</a>
+  <span class="nav-sep">|</span>
+  <span class="nav-label">HG</span>
+  <a href="https://troy-byte.github.io/agm-mission-control/hg-mission-control.html" class="active">HG Mission Control</a>
+  <a href="https://troy-byte.github.io/hg-calendar/">Calendar</a>
+  <a href="https://troy-byte.github.io/hg-costco-flow/">Costco Flow</a>
+  <a href="https://troy-byte.github.io/hg-projects/">Projects</a>
+  <a href="https://troy-byte.github.io/agm-case-study/">Case Study</a>
+</nav>
+
+<h1>HG Mission Control</h1>
+<p class="subtitle">Everything in flight on the Heavenly Greens side &mdash; Tim + Troy partnership</p>
+<p class="datestamp">Last updated: 2026-04-09</p>
+
+<div class="stats">
+  <div class="stat"><div class="stat-value">4</div><div class="stat-label">Active Programs</div></div>
+  <div class="stat"><div class="stat-value">3</div><div class="stat-label">Awaiting Tim</div></div>
+  <div class="stat"><div class="stat-value">38</div><div class="stat-label">Zaps to Migrate</div></div>
+  <div class="stat"><div class="stat-value">2</div><div class="stat-label">Now</div></div>
+  <div class="stat"><div class="stat-value">3</div><div class="stat-label">Next Up</div></div>
+  <div class="stat"><div class="stat-value">9</div><div class="stat-label">Queued</div></div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<div class="category">
+  <div class="cat-header">
+    <span class="cat-title">This Week &mdash; Priority</span>
+    <span class="cat-count">4 items</span>
+  </div>
+
+  <div class="task">
+    <span class="priority waiting">Waiting</span>
+    <div>
+      <div class="task-name">HG Q1 YoY + Rep Scorecard &mdash; awaiting Tim</div>
+      <div class="task-desc">Two executive memos delivered Apr 7 to tfullerton@heavenlygreens.com (cc Troy): Q1 2026 vs Q1 2025 full-funnel YoY with profitability reframe (57% marketing spend cut, ROAS 8.5x &rarr; 19.1x, cost per deal $2,040 &rarr; $1,000), and per-rep scorecard with three-engines framing (Commercial/Steve Taylor, Costco/Anthony Hall, Residential). Tools: sf_yoy_report.py + sf_rep_scorecard.py, both re-runnable. Open when Tim replies: Costco full-cost reconciliation, bench depth on single-threaded channels, appointments set/run layer.</div>
+    </div>
+    <div class="task-meta">Delivered Apr 7<br>Awaiting Tim</div>
+  </div>
+
+  <div class="task">
+    <span class="priority waiting">Waiting</span>
+    <div>
+      <div class="task-name">HG Call Center Automation &mdash; iterate with Tim + Andrew</div>
+      <div class="task-desc">Framework created, Google Doc shared, email sent to Troy/Tim/Andrew. 4 decisions pending: Tim alignment on replace-vs-rehire, HG phone number type, AGM plan tier, exception-handler staffing. Directive: directives/hg_call_center_automation.md. Replacing the department, not the person &mdash; call center manager walked.</div>
+    </div>
+    <div class="task-meta"><a href="https://docs.google.com/document/d/1UcoTsp3csqmqHgyjiXfHxfyagQDAXi2D5Nu4_l_d4_0/edit">Google Doc</a><br>Doc shared<br>4 decisions pending</div>
+  </div>
+
+  <div class="task">
+    <span class="priority now">Now</span>
+    <div>
+      <div class="task-name">Contact Linda at PCM Integration &mdash; Costco thank-you letters</div>
+      <div class="task-desc">Reach out to Linda at PCM Integration to coordinate Costco thank-you letter setup. Tied to HG Costco workflow. Not started.</div>
+    </div>
+    <div class="task-meta">HG Costco<br>Not started</div>
+  </div>
+
+  <div class="task">
+    <span class="priority now">Now</span>
+    <div>
+      <div class="task-name">HG Zapier Deprecation &mdash; finish migration</div>
+      <div class="task-desc">4/42 Zaps replaced, 38 remaining. All Zaps turned off Mar 30; direct connections monitored. Cancel Zapier subscription once all flows verified stable.</div>
+    </div>
+    <div class="task-meta">38 Zaps remaining</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<div class="category">
+  <div class="cat-header">
+    <span class="cat-title">Costco Program</span>
+    <span class="cat-count">6 items</span>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">Costco Lead Outreach Protocols (Pillar 5)</div>
+      <div class="task-desc">Structured outbound cadence for Costco-sourced leads. Part of the broader Costco program playbook.</div>
+    </div>
+    <div class="task-meta">Pillar 5</div>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">SMS / Email / Voice Follow-Up Sequences (Pillar 6)</div>
+      <div class="task-desc">Multi-channel follow-up cadence for Costco pipeline. Ties into AGM SMS/email infrastructure.</div>
+    </div>
+    <div class="task-meta">Pillar 6</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">Costco Contract Trigger &mdash; AGM side</div>
+      <div class="task-desc">Costco contracts fire from AGM, not Salesforce. Any email-validation gate must live on the AGM side. Keep this in mind for Phase 2 work.</div>
+    </div>
+    <div class="task-meta">AGM-side gate</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">SF Costco Dashboard &mdash; temporary source of truth</div>
+      <div class="task-desc">Salesforce is currently the Costco revenue source of truth. Revert to AGM-first once contracts are triggered there. Dedup fix already applied.</div>
+    </div>
+    <div class="task-meta">Temporary<br>SF &rarr; AGM swap pending</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">Costco / Shaw Strategy</div>
+      <div class="task-desc">Long-term Costco + Shaw channel strategy work tied to HG profitability plan.</div>
+    </div>
+    <div class="task-meta">Strategic</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">HG Costco Team Roles</div>
+      <div class="task-desc">Defined team role structure for Costco program: Anthony Hall on Costco close-side, Steve Taylor on Commercial. Single-threaded channels flagged as risk in Q1 scorecard.</div>
+    </div>
+    <div class="task-meta">Role map set</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<div class="category">
+  <div class="cat-header">
+    <span class="cat-title">HG Infrastructure</span>
+    <span class="cat-count">6 items</span>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">HG Calendar Dashboard &mdash; Modal Live Refresh</div>
+      <div class="task-desc">DayBack-style calendar for Tim. Live at troy-byte.github.io/hg-calendar/. Currently reads SF data; AGM swap planned. Modal live-refresh build in flight.</div>
+    </div>
+    <div class="task-meta"><a href="https://troy-byte.github.io/hg-calendar/">Calendar</a><br>Live (SF data)</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">HG Calendar &rarr; AGM Data Source Swap</div>
+      <div class="task-desc">Swap HG Calendar&#x27;s data source from Salesforce to AGM once HG&#x27;s appointment-setting layer moves into AGM. Part of the HG Mission Control vision.</div>
+    </div>
+    <div class="task-meta">Blocked on AGM appt layer</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">SF-to-AGM Record Migration &mdash; Batch Strategy</div>
+      <div class="task-desc">POC complete (Jerry Ellis, Mar 23): 32+ custom fields, pipeline opp, structured notes, PDF uploads. Script execution/sf_to_agm_migration.py. Batch migration not yet planned &mdash; needs Tim + Troy sign-off on scope.</div>
+    </div>
+    <div class="task-meta">POC done Mar 23</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">HubSpot Package Investigation</div>
+      <div class="task-desc">Evaluate HubSpot package fit for HG &mdash; pricing, feature overlap with AGM, migration cost, sales-team adoption risk. Decision input for stack consolidation.</div>
+    </div>
+    <div class="task-meta">Due diligence</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">CENTAH Note Pipeline</div>
+      <div class="task-desc">One-way ingestion of CENTAH notes into HG CRM. CENTAH is a one-way street &mdash; never reply or send to them.</div>
+    </div>
+    <div class="task-meta">One-way</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queued">Queued</span>
+    <div>
+      <div class="task-name">Document Signature Watchdog</div>
+      <div class="task-desc">Signature alert pipeline for HG DocuSign envelopes. Known apostrophe bug in 5 DocuSign buttons &mdash; workaround: remove apostrophe from name before sending. Not fixing per Troy.</div>
+    </div>
+    <div class="task-meta">Apostrophe bug known</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<div class="category">
+  <div class="cat-header">
+    <span class="cat-title">HG Profitability &mdash; 2026</span>
+    <span class="cat-count">1 item</span>
+  </div>
+
+  <div class="task">
+    <span class="priority recurring">Recurring</span>
+    <div>
+      <div class="task-name">HG 2026 Profitability Plan</div>
+      <div class="task-desc">Ongoing profitability work &mdash; core revenue held within 8% ex-Costco despite 57% marketing spend cut. Cost per deal nearly halved. Strategic framing lives in Q1 memo.</div>
+    </div>
+    <div class="task-meta">Ongoing</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<div class="category">
+  <div class="cat-header">
+    <span class="cat-title">Recurring / Ongoing</span>
+    <span class="cat-count">2 items</span>
+  </div>
+
+  <div class="task">
+    <span class="priority recurring">Recurring</span>
+    <div>
+      <div class="task-name">HG Newsletter</div>
+      <div class="task-desc">Recurring HG newsletter pipeline. Cadence and cron TBD.</div>
+    </div>
+    <div class="task-meta">Weekly</div>
+  </div>
+
+  <div class="task">
+    <span class="priority recurring">Recurring</span>
+    <div>
+      <div class="task-name">HG Recap (executive digest)</div>
+      <div class="task-desc">Executive recap via execution/hg_recap.py &mdash; pulls SF data, summarizes recent activity for Tim.</div>
+    </div>
+    <div class="task-meta">Cron</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<div class="category">
+  <div class="cat-header">
+    <span class="cat-title">Recently Completed</span>
+    <span class="cat-count">4 items</span>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority done">Done</span>
+    <div>
+      <div class="task-name">HG Q1 YoY + Rep Scorecard Delivered</div>
+      <div class="task-desc">Two executive memos sent to Tim Apr 7. Profitability reframe landed, three-engines framing in place.</div>
+    </div>
+    <div class="task-meta">Apr 7</div>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority done">Done</span>
+    <div>
+      <div class="task-name">Troy Named Salesforce Admin in HG Org</div>
+      <div class="task-desc">Troy has full SF admin in the HG org (Apr 6). No more routing field adds or layout changes through Tim.</div>
+    </div>
+    <div class="task-meta">Apr 6</div>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority done">Done</span>
+    <div>
+      <div class="task-name">SF Costco Dedup Fix</div>
+      <div class="task-desc">Dedup logic applied to SF Costco dashboard &mdash; duplicate opportunity records no longer inflate revenue.</div>
+    </div>
+    <div class="task-meta">Fixed</div>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority done">Done</span>
+    <div>
+      <div class="task-name">AGM Case Study Published</div>
+      <div class="task-desc">HG case study live at troy-byte.github.io/agm-case-study/. Used in sales outreach.</div>
+    </div>
+    <div class="task-meta"><a href="https://troy-byte.github.io/agm-case-study/">Case Study</a><br>Live</div>
+  </div>
+</div>
+
+<div class="footer">
+  HG Mission Control &mdash; Heavenly Greens &mdash; Updated 2026-04-09 by Harlan<br>
+  Single source of truth for HG-side work. Mirrors NEXT_SESSION.md Priority Actions &mdash; Heavenly Greens.
+</div>
+
+</body>
+</html>

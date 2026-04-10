@@ -89,7 +89,7 @@
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Clients Live</div></div>
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Prospects</div></div>
   <div class="stat"><div class="stat-value">$891</div><div class="stat-label">Monthly MRR</div></div>
-  <div class="stat"><div class="stat-value">12</div><div class="stat-label">Now / This Week</div></div>
+  <div class="stat"><div class="stat-value">8</div><div class="stat-label">Now / This Week</div></div>
   <div class="stat"><div class="stat-value">14</div><div class="stat-label">Next Up</div></div>
   <div class="stat"><div class="stat-value">17</div><div class="stat-label">Queued</div></div>
 </div>
@@ -98,7 +98,7 @@
 <div class="category">
   <div class="cat-header">
     <span class="cat-title">Launchpad &mdash; Push-Button Client Onboarding</span>
-    <span class="cat-count">9 items</span>
+    <span class="cat-count">10 items</span>
   </div>
 
   <div class="task done-row">
@@ -119,22 +119,22 @@
     <div class="task-meta"><a href="https://docs.google.com/document/d/1h3Fgk1c1wRl3jDY-ZpoD9deJ19JAetZl8Mf-yVu_vPo/edit">Build Workbook</a><br>Apr 10<br>Both committed</div>
   </div>
 
-  <div class="task">
-    <span class="priority now">Now</span>
+  <div class="task done-row">
+    <span class="priority done">Done</span>
     <div>
-      <div class="task-name">Stripe Credentials Setup</div>
-      <div class="task-desc">Create Stripe product ($397/mo recurring), add webhook endpoint, copy API key + webhook signing secret. Use TEST MODE first. Troy does this in Stripe dashboard &mdash; 15 min.</div>
+      <div class="task-name">Stripe Credentials + Modal Secrets</div>
+      <div class="task-desc">Stripe test keys added to .env and Modal (agm-stripe secret). Checkout endpoint tested &mdash; returns valid Stripe session.</div>
     </div>
-    <div class="task-meta">Troy<br>15 min in Stripe dashboard</div>
+    <div class="task-meta">Apr 10<br>Test mode verified</div>
   </div>
 
-  <div class="task">
-    <span class="priority now">Now</span>
+  <div class="task done-row">
+    <span class="priority done">Done</span>
     <div>
       <div class="task-name">Post-Payment Success Page</div>
-      <div class="task-desc">Build success.html &mdash; receives ?session_id from Stripe redirect, polls /franchise-signup-status every 5 sec, shows progress, displays Jobber OAuth button when ready, dashboard link when complete. Content filter may block &mdash; manual build as fallback.</div>
+      <div class="task-desc">Built success.html with 4-step progress tracker, session_id polling, OAuth button on step 5, dashboard link on completion. Live on GitHub Pages.</div>
     </div>
-    <div class="task-meta">Harlan<br>~1 hour</div>
+    <div class="task-meta"><a href="https://troy-byte.github.io/agm-launchpad/success.html">Live</a><br>Apr 10</div>
   </div>
 
   <div class="task">
@@ -146,29 +146,38 @@
     <div class="task-meta">Troy + Harlan<br>~2 hours together</div>
   </div>
 
-  <div class="task">
-    <span class="priority now">Now</span>
+  <div class="task done-row">
+    <span class="priority done">Done</span>
     <div>
       <div class="task-name">Deploy Intake Form to GitHub Pages</div>
-      <div class="task-desc">Create agm-launchpad repo, copy intake + success pages, enable GitHub Pages. Verify form loads at troy-byte.github.io/agm-launchpad/.</div>
+      <div class="task-desc">agm-launchpad repo created, intake + success pages deployed, GitHub Pages live. Form pre-fills from URL params for unified funnel.</div>
     </div>
-    <div class="task-meta">Harlan<br>30 min</div>
+    <div class="task-meta"><a href="https://troy-byte.github.io/agm-launchpad/">Intake Form</a><br>Apr 10</div>
   </div>
 
-  <div class="task">
-    <span class="priority now">Now</span>
+  <div class="task done-row">
+    <span class="priority done">Done</span>
     <div>
-      <div class="task-name">Modal Deploy with Launchpad Endpoint</div>
-      <div class="task-desc">Set STRIPE_API_KEY and STRIPE_WEBHOOK_SECRET as Modal secrets. Deploy modal_webhook.py. Verify /launchpad-checkout and /stripe-franchise-webhook respond.</div>
+      <div class="task-name">Modal Deploy with Launchpad + Stripe</div>
+      <div class="task-desc">agm-stripe Modal secret wired into launchpad_checkout + stripe_franchise_webhook. stripe pip package added. All 3 endpoints live and tested.</div>
     </div>
-    <div class="task-meta">Harlan<br>15 min<br>After Stripe creds</div>
+    <div class="task-meta">Apr 10<br>3 endpoints live</div>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority done">Done</span>
+    <div>
+      <div class="task-name">Unified Funnel: Quiz &rarr; Nurture &rarr; Launchpad &rarr; Closed Won</div>
+      <div class="task-desc">Built close_the_loop() &mdash; on Stripe payment, finds Automation Score lead in main AGM account by email, moves opportunity to Won, tags launchpad-customer, adds conversion note. Follow-up sequence auto-stops. Strategy call URL pre-fills contact info. Intake form pre-fills from URL params. Deployed to all 3 Modal apps.</div>
+    </div>
+    <div class="task-meta">Apr 10<br>Full chain connected</div>
   </div>
 
   <div class="task">
     <span class="priority now">Now</span>
     <div>
       <div class="task-name">End-to-End Test &mdash; Form to Dashboard</div>
-      <div class="task-desc">Full Stripe test mode walkthrough: fill intake form, pay with test card, verify webhook fires, pipeline runs, AGM sub-account created, OAuth URL appears, Jobber auth, dashboard deployed, welcome email sent, Slack notifications. Target: under 10 min.</div>
+      <div class="task-desc">Full Stripe test mode walkthrough: fill intake form, pay with test card, verify webhook fires, pipeline runs, close-the-loop fires, AGM sub-account created, OAuth URL appears, dashboard deployed. Target: under 10 min.</div>
     </div>
     <div class="task-meta">Troy + Harlan<br>~1 hour</div>
   </div>

@@ -86,31 +86,58 @@
 
 <h1>North Star To-Do List</h1>
 <p class="subtitle">Everything we're working on across AGM Pro Tools, Heavenly Greens, and ATE</p>
-<p class="datestamp">Last updated: 2026-04-09</p>
+<p class="datestamp">Last updated: 2026-04-10</p>
 
 <div class="stats">
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Clients Live</div></div>
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Prospects</div></div>
   <div class="stat"><div class="stat-value">$891</div><div class="stat-label">Monthly MRR</div></div>
-  <div class="stat"><div class="stat-value">7</div><div class="stat-label">Now / This Week</div></div>
-  <div class="stat"><div class="stat-value">14</div><div class="stat-label">Next Up</div></div>
-  <div class="stat"><div class="stat-value">15</div><div class="stat-label">Queued</div></div>
+  <div class="stat"><div class="stat-value">10</div><div class="stat-label">Now / This Week</div></div>
+  <div class="stat"><div class="stat-value">16</div><div class="stat-label">Next Up</div></div>
+  <div class="stat"><div class="stat-value">14</div><div class="stat-label">Queued</div></div>
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
 <div class="category">
   <div class="cat-header">
     <span class="cat-title">This Week &mdash; Priority</span>
-    <span class="cat-count">16 items</span>
+    <span class="cat-count">20 items</span>
   </div>
 
   <div class="task">
     <span class="priority now">Now</span>
     <div>
-      <div class="task-name">Contractor Automation Score &mdash; Funnel Wiring</div>
-      <div class="task-desc">Backend DEPLOYED and tested end-to-end (score + AGM lead + email/PDF + Slack + Sheet all confirmed Apr 5). Remaining: booking calendar URL, GitHub Pages push, avg_ticket_value persistence, follow-up sequence, report button handler. LinkedIn GTM post BLOCKED until funnel is wired.</div>
+      <div class="task-name">Content Flywheel &mdash; Weekend Sprint (Apr 10-11)</div>
+      <div class="task-desc">End-to-end flywheel test this weekend. Scout ran successfully (41KB April intelligence). Checklist: verify Echo&rarr;Intelligence Report, Quill&rarr;content, Pixel&rarr;assets on Modal. Test full Mon-Thu cycle. Draft first &#x27;This Week at AGM&#x27; Wednesday emails + first 3-5 LinkedIn origin story posts. Confirm all send times at 5 AM PT.</div>
+    </div>
+    <div class="task-meta">Weekend sprint<br>Scout data ready</div>
+  </div>
+
+  <div class="task">
+    <span class="priority now">Now</span>
+    <div>
+      <div class="task-name">Contractor Automation Score &mdash; Funnel Wiring + LinkedIn GTM</div>
+      <div class="task-desc">Backend DEPLOYED and tested. Follow-up sequence expanded to 17 emails (QA walkthrough in Troy&#x27;s inbox for review). Remaining: booking calendar URL, GitHub Pages push, report button handler, avg_ticket_value persistence, WeasyPrint font hardening, sheet column-pad for 58-col schema. LinkedIn GTM post BLOCKED until funnel is wired &mdash; post drafted + approved.</div>
     </div>
     <div class="task-meta"><a href="https://contractorautomationscore.com">Live</a><br>Backend done Apr 5<br>Funnel wiring remaining</div>
+  </div>
+
+  <div class="task">
+    <span class="priority now">Now</span>
+    <div>
+      <div class="task-name">Monthly Customer 3-Point Email &mdash; V2 Ready</div>
+      <div class="task-desc">Built end-to-end Apr 6. V2 is AGM-centric per Troy&#x27;s feedback (&#x27;pretty dang good&#x27;). Open question: Automation Score URL referenced but funnel not live &mdash; decide whether to cut paragraph, hold email, or swap content. Once approved, send to Texas Turf/Andrew first.</div>
+    </div>
+    <div class="task-meta">Troy reviewing<br>V2 ready to send</div>
+  </div>
+
+  <div class="task">
+    <span class="priority now">Now</span>
+    <div>
+      <div class="task-name">Chapter Audio Link Sweep &mdash; Chapters 1-29</div>
+      <div class="task-desc">Format drift between record_chapter.py and create_chapter_book_doc.py caused dead links in Google Doc. Fixed for Chapter 30. Chapters 1-29 need: sweep script to verify S3 URLs, backfill missing objects, update chapter entries, re-run doc generator.</div>
+    </div>
+    <div class="task-meta">Script needed<br>Dead links in Google Doc</div>
   </div>
 
   <div class="task">
@@ -242,10 +269,19 @@
   <div class="task">
     <span class="priority next">Next</span>
     <div>
-      <div class="task-name">April Intelligence Report Pipeline</div>
-      <div class="task-desc">Monthly report pipeline rolling. Scout 30-day scan due Apr 3, Quill draft Apr 5, Pixel graphics Apr 7, Echo distribution Apr 10 to ~280 subscribers.</div>
+      <div class="task-name">X/Twitter Developer Account Setup</div>
+      <div class="task-desc">Create developer account at developer.x.com, get API keys, test automated posting. Script execution/publish_twitter.py is built. Then Instagram + TikTok after.</div>
     </div>
-    <div class="task-meta">In progress<br>Target Apr 10</div>
+    <div class="task-meta">Script ready<br>Needs API keys</div>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">April Intelligence Report Pipeline</div>
+      <div class="task-desc">Folded into Content Flywheel. Tuesday 5AM = Intelligence Report (Monthly Trends replaces on 1st Tue). Scout ran successfully Apr 9 (41KB). Pipeline: Scout &rarr; Quill &rarr; Pixel &rarr; Echo.</div>
+    </div>
+    <div class="task-meta">Part of flywheel<br>~280 subscribers</div>
   </div>
 </div>
 
@@ -418,12 +454,12 @@
   </div>
 
   <div class="task">
-    <span class="priority queued">Queued</span>
+    <span class="priority next">Next</span>
     <div>
-      <div class="task-name">Jobber Marketplace Listing</div>
-      <div class="task-desc">Get AGM Pro Tools listed on the Jobber App Marketplace. Partnership conversation initiated. Key distribution channel for first 100 clients.</div>
+      <div class="task-name">Jobber Marketplace Listing &mdash; Submit for Review</div>
+      <div class="task-desc">Engineering ALL GREEN (8 bugs fixed, live drill passed Apr 7). Remaining to submit: support@agmprotools.com inbox, 5 screenshots, Loom demo video, privacy policy URL, ToS URL, app icon 512x512, paste into Developer Portal.</div>
     </div>
-    <div class="task-meta">Partnership</div>
+    <div class="task-meta">Engineering done<br>Paperwork remaining</div>
   </div>
 
   <div class="task">
@@ -766,7 +802,7 @@
 </div>
 
 <div class="footer">
-  North Star To-Do List &mdash; AGM Pro Tools &mdash; Updated 2026-04-09 by Harlan<br>
+  North Star To-Do List &mdash; AGM Pro Tools &mdash; Updated 2026-04-10 by Harlan<br>
   Single source of truth for everything in flight. Updated each session. Replaces AGM Command Center Google Sheet.
 </div>
 

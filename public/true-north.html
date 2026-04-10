@@ -90,7 +90,7 @@
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Prospects</div></div>
   <div class="stat"><div class="stat-value">$891</div><div class="stat-label">Monthly MRR</div></div>
   <div class="stat"><div class="stat-value">9</div><div class="stat-label">Now / This Week</div></div>
-  <div class="stat"><div class="stat-value">13</div><div class="stat-label">Next Up</div></div>
+  <div class="stat"><div class="stat-value">17</div><div class="stat-label">Next Up</div></div>
   <div class="stat"><div class="stat-value">17</div><div class="stat-label">Queued</div></div>
 </div>
 
@@ -421,6 +421,96 @@
       <div class="task-desc">Confirm email is receiving and sending correctly.</div>
     </div>
     <div class="task-meta">Andrew<br>5 min</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<div class="category">
+  <div class="cat-header">
+    <span class="cat-title">Heavenly Greens &mdash; SF Automation Rebuild</span>
+    <span class="cat-count">9 items</span>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority done">Done</span>
+    <div>
+      <div class="task-name">SF Automation Dashboard &mdash; Complete Visibility</div>
+      <div class="task-desc">Full inventory dashboard: 48 workflow rules, 42 flows/process builders, 70 email templates, 40 Apex triggers, 7 validation rules, 4 scheduled jobs, 11 identified gaps. Filterable, searchable, customer journey mapped stage-by-stage. Built from Metadata + Tooling API pulls.</div>
+    </div>
+    <div class="task-meta"><a href="https://troy-byte.github.io/agm-mission-control/hg-sf-automation.html">Dashboard</a><br>
+      <a href="https://github.com/troy-byte/agm-automation/blob/main/.tmp/sf_workflow_audit.md">Audit MD</a><br>Apr 10<br>Live on GitHub Pages</div>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority done">Done</span>
+    <div>
+      <div class="task-name">Customer Welcome Letter &mdash; Template Rewrite</div>
+      <div class="task-desc">Rebuilt the 2021 COVID/drought Customer Installation Letter as a modern HTML template. 10-step onboarding from scanned physical letter. Signed by Liz Vazquez (Installation Coordinator). Reply-to routes to Liz. Logo artifact fixed Apr 10. Sent to Tim for approval.</div>
+    </div>
+    <div class="task-meta"><a href="https://github.com/troy-byte/agm-automation/blob/main/templates/email/hg/customer_installation_letter.html">Template</a><br>Apr 10<br>Awaiting Tim&#x27;s approval</div>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">Gap #1 &mdash; Automated Welcome Email on Contract Approved</div>
+      <div class="task-desc">Build a Flow that fires on StageName = Sales Closed Won - Approved and sends the new Customer Welcome Letter to the customer. Currently the Welcome Letter PB only creates an internal task &mdash; customer hears nothing after deposit.</div>
+    </div>
+    <div class="task-meta">After Tim approves template</div>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">Gap #2 &mdash; Post-Deposit Nurture Sequence</div>
+      <div class="task-desc">Replace the inactive 2021 Customer Check In / 7 Week / 12 Week letters. New sequence: 2-week check-in, 4-week progress, day-before install reminder. The dead zone between deposit and install is currently unmanaged.</div>
+    </div>
+    <div class="task-meta">4 inactive templates to retire</div>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">Gap #3 &mdash; Post-Install Thank-You + Review Request</div>
+      <div class="task-desc">Post Sale Email template exists and is current but fires manually only. Broadly/Zapier review integration is inactive. Build automated fire on StageName = Completed - Paid.</div>
+    </div>
+    <div class="task-meta">Template ready</div>
+  </div>
+
+  <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">Gap #4 &mdash; Commercial Customer Automation</div>
+      <div class="task-desc">Every customer-facing rule is gated on Inquiry_Division__c = Residential. Commercial customers currently get ZERO automated emails across the entire lifecycle. Build parallel Commercial path.</div>
+    </div>
+    <div class="task-meta">High impact</div>
+  </div>
+
+  <div class="task">
+    <span class="priority queue">Queue</span>
+    <div>
+      <div class="task-name">Gap #5 &mdash; Delay Notification to Customer</div>
+      <div class="task-desc">Delayed Job workflow currently only alerts the Opportunity Owner. Customer hears nothing when their install is delayed. Build customer-facing alert.</div>
+    </div>
+    <div class="task-meta"></div>
+  </div>
+
+  <div class="task">
+    <span class="priority queue">Queue</span>
+    <div>
+      <div class="task-name">Cleanup &mdash; Retire 11 Inactive Workflow Rules</div>
+      <div class="task-desc">Broadly (old Zapier), duplicate Customer 7 Week Letter, Must_Fill_Out_Job_Schedule_Dates validation rule, Commercial Lead alert (broken criteria), and 7 other inactive rules cluttering the org.</div>
+    </div>
+    <div class="task-meta"></div>
+  </div>
+
+  <div class="task">
+    <span class="priority queue">Queue</span>
+    <div>
+      <div class="task-name">Cleanup &mdash; Email Alerts Folder Content Refresh</div>
+      <div class="task-desc">All 15 templates in Email Alerts folder are 2016-2018 vintage. Internal-only but overdue for content audit. Flag for Liz / Tim review.</div>
+    </div>
+    <div class="task-meta"></div>
   </div>
 </div>
 

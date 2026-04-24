@@ -83,14 +83,14 @@
 
 <h1>True North</h1>
 <p class="subtitle">AGM Pro Tools &mdash; everything in flight, prioritized</p>
-<p class="datestamp">Last updated: 2026-04-17</p>
+<p class="datestamp">Last updated: 2026-04-24</p>
 
 <div class="stats">
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Clients Live</div></div>
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Prospects</div></div>
   <div class="stat"><div class="stat-value">$891</div><div class="stat-label">Monthly MRR</div></div>
-  <div class="stat"><div class="stat-value">19</div><div class="stat-label">Now / This Week</div></div>
-  <div class="stat"><div class="stat-value">17</div><div class="stat-label">Next Up</div></div>
+  <div class="stat"><div class="stat-value">21</div><div class="stat-label">Now / This Week</div></div>
+  <div class="stat"><div class="stat-value">18</div><div class="stat-label">Next Up</div></div>
   <div class="stat"><div class="stat-value">17</div><div class="stat-label">Queued</div></div>
 </div>
 
@@ -98,7 +98,7 @@
 <div class="category">
   <div class="cat-header">
     <span class="cat-title">Launchpad &mdash; Push-Button Client Onboarding</span>
-    <span class="cat-count">10 items</span>
+    <span class="cat-count">11 items</span>
   </div>
 
   <div class="task done-row">
@@ -141,9 +141,9 @@
     <span class="priority now">Now</span>
     <div>
       <div class="task-name">Golden Template &mdash; Turf (First Industry)</div>
-      <div class="task-desc">Build first industry-specific AGM template via API. Sub-account, pipeline (5 stages), tags, custom fields, 5 workflows with turf-specific messaging. Troy wires visual triggers. Snapshot it, update INDUSTRY_TEMPLATES. Copy spec in LAUNCHPAD_SNAPSHOT_AUTOMATION_CONTENT.md.</div>
+      <div class="task-desc">Builder script exists (launchpad_build_template.py, 732 lines). Turf messaging pack complete (turf.json &mdash; 5 workflows, custom fields, 6 pipeline stages). But NO template has been built yet. All snapshot_id = null in registry. Steps: (1) run --build --industry turf, (2) configure 5 workflows in AGM UI using turf.json copy, (3) review pipeline + custom fields, (4) take snapshot in AGM UI, (5) run --register --industry turf --snapshot-id &lt;ID&gt;. Blocked by custom fields bootstrap.</div>
     </div>
-    <div class="task-meta">Troy + Harlan<br>~2 hours together</div>
+    <div class="task-meta"><a href="https://docs.google.com/document/d/1bl4sAjSCIxPcCW5grL40r_ysrx8WPoHA4DyzFYsa04I/edit">Push-Button Client Plan (Google Doc)</a><br>Troy + Harlan<br>~1 hour together<br>Blocked by custom fields bootstrap</div>
   </div>
 
   <div class="task done-row">
@@ -164,22 +164,31 @@
     <div class="task-meta">Apr 10<br>3 endpoints live</div>
   </div>
 
-  <div class="task done-row">
-    <span class="priority done">Done</span>
+  <div class="task">
+    <span class="priority now">Now</span>
     <div>
       <div class="task-name">Automation Score Funnel: Quiz &rarr; Nurture &rarr; Launchpad &rarr; Closed Won</div>
-      <div class="task-desc">Full prospect-to-customer funnel named &#x27;Automation Score.&#x27; close_the_loop() fires on Stripe payment &mdash; finds lead in AGM by email, moves opp to Won, tags launchpad-customer, stops nurture sequence. Strategy call + intake form pre-fill contact info. All 3 Modal apps deployed.</div>
+      <div class="task-desc">CORRECTED Apr 24: Was marked done &mdash; pieces exist but chain is NOT connected end-to-end. Quiz does not pass contact ID to Launchpad intake. Contact lookup at payment time is email-based, not a true handoff. Missing: (1) Launchpad CTA in quiz report with pre-filled URL params, (2) openFullReport() needs &#x27;Get Started&#x27; button linking to intake with agm_contact_id, (3) verify intake form pre-population works. Individual systems deployed (score backend, nurture sequence, Stripe checkout, pipeline, close_the_loop) but the HANDOFF between them is not wired.</div>
     </div>
-    <div class="task-meta">Apr 10<br>Full chain connected</div>
+    <div class="task-meta"><a href="https://docs.google.com/document/d/1bl4sAjSCIxPcCW5grL40r_ysrx8WPoHA4DyzFYsa04I/edit">Push-Button Client Plan (Google Doc)</a><br>CORRECTED Apr 24<br>Handoff wiring needed<br>~30 min Harlan solo</div>
+  </div>
+
+  <div class="task">
+    <span class="priority now">Now</span>
+    <div>
+      <div class="task-name">Custom Fields Bootstrap &mdash; Run Setup Script</div>
+      <div class="task-desc">launchpad_setup_custom_fields.py exists (331 lines, 7 AGM Pro fields defined: agmpro_active, agmpro_plan, agmpro_mrr, agmpro_signed_up_at, agmpro_last_payment_at, agmpro_subscription_state, agmpro_signup_source) but has NEVER been run. Field IDs not in production config. Must run --create before golden template build or E2E test.</div>
+    </div>
+    <div class="task-meta">Harlan solo<br>~10 min<br>Blocks golden template + E2E</div>
   </div>
 
   <div class="task">
     <span class="priority now">Now</span>
     <div>
       <div class="task-name">End-to-End Test &mdash; Form to Dashboard</div>
-      <div class="task-desc">Full Stripe test mode walkthrough: fill intake form, pay with test card, verify webhook fires, pipeline runs, close-the-loop fires, AGM sub-account created, OAuth URL appears, dashboard deployed. Target: under 10 min.</div>
+      <div class="task-desc">Full Stripe test mode walkthrough: fill intake form, pay with test card, verify webhook fires, pipeline runs, close-the-loop fires, AGM sub-account created from golden template (not interim), OAuth URL appears, dashboard deployed, lifecycle email fires Day 1. Never tested. Target: under 10 min.</div>
     </div>
-    <div class="task-meta">Troy + Harlan<br>~1 hour</div>
+    <div class="task-meta">Troy + Harlan<br>~1 hour<br>Blocked by golden template + custom fields</div>
   </div>
 
   <div class="task">
@@ -188,7 +197,7 @@
       <div class="task-name">Industry Templates &mdash; Pest + General</div>
       <div class="task-desc">Follow turf template pattern for pest control and general FSM. Different messaging copy, same pipeline/tags/fields structure. Build after turf validates.</div>
     </div>
-    <div class="task-meta">Harlan<br>~2 hours each<br>After turf template</div>
+    <div class="task-meta">Harlan<br>~1 hour each<br>After turf template</div>
   </div>
 </div>
 
@@ -196,16 +205,16 @@
 <div class="category">
   <div class="cat-header">
     <span class="cat-title">This Week &mdash; Priority</span>
-    <span class="cat-count">14 items</span>
+    <span class="cat-count">15 items</span>
   </div>
 
   <div class="task">
     <span class="priority now">Now</span>
     <div>
-      <div class="task-name">Newsletter-as-a-Service &mdash; Spec + AGM Dogfood</div>
-      <div class="task-desc">Managed monthly newsletter addon for AGM subscribers. $197/mo Pro Tools addon ($497 weekly). Authorized + timeline compressed by Troy 2026-04-14 night. Spec-first approach per Troy: outline + spec before any code. ANDREW&#x27;S ROLE = DNS + agency access for customer rollouts only, NOT editorial (Harlan initially miscast Andrew as editorial owner; Troy corrected same night). For AGM&#x27;s own dogfood this week, zero Andrew involvement &mdash; Troy + Harlan handle end to end. Andrew enters only when Chad pilot rolls out next week (CNAME adds on news.dfwturf.com). Voice calibration = Quill trained on AGM newsletter archive + Troy review. Sprint runs parallel to HG Costco contract work. Wed 4/15 AM-PM: HG Costco Layer 2 wraps first. Wed 4/15 late PM &mdash; SPRINT START: Harlan drafts full spec live as Google Doc (scope, architecture, intake pipeline via AGM workflow &rarr; SMS &rarr; webhook &rarr; S3, assembly via Scout/Quill/Pixel + Slack approval, SES send per-customer verified domain, pilot roadmap, open decisions), shares with Troy same night for ad-hoc review. Thu 4/16 &mdash; BUILD DAY: template (MJML), SES identity for AGM sending domain, intake webhook, assembly wrapper trained on AGM newsletter archive, Slack approval, send worker. Troy reviews draft EOD. Fri 4/17: AGM dogfood pilot &mdash; first issue through the new pipeline for AGM&#x27;s OWN newsletter (customer zero). Week after: Chad (DFW, AGM-only, NOT Jobber) productized offer, Andrew adds DNS. Critical framing: Chad&#x27;s intake trigger is AGM&#x27;s own workflow engine, NOT Jobber &mdash; everything rides on infrastructure he already pays for. Jobber stacks on later for HG/ATE as additional trigger, not prerequisite.</div>
+      <div class="task-name">Newsletter-as-a-Service &mdash; Spec DELIVERED, awaiting Troy review</div>
+      <div class="task-desc">Managed monthly newsletter addon for AGM subscribers. $197/mo Pro Tools addon ($497 weekly). SPEC DELIVERED 2026-04-23 &mdash; Draft v0.1 Google Doc live: https://docs.google.com/document/d/1Q-4YZScmet1499k5tb1w0bzAHlOBU-LlS4qk8ve6P_k/edit (13 sections: scope, 10-beat architecture, intake/assembly/send pipeline detail, template system, packaging, pilot roadmap, risks, success criteria). ORIGINAL SPRINT (Apr 15-17) MISSED &mdash; HG Costco/change-order build owned the window. REPLANNED ship date in spec: Fri 2026-05-01 for AGM dogfood issue #1. SIX OPEN DECISIONS in §9 awaiting Troy: (1) ship date confirmation, (2) SMS number strategy (shared vs per-customer), (3) Quill voice calibration &mdash; add Andrew for pilot QA?, (4) pricing sanity check $197 vs $297, (5) Apple Shortcut v1 vs v1.1, (6) unsubscribe plumbing SES-managed vs custom AGM-writeback. GREEN-LIGHT PATH: Troy reviews &rarr; Harlan starts MJML template + SES identity for agmpro.com subdomain &rarr; build through pilot roadmap Phase 1. RED-FLAG PATH: inline edits in doc &rarr; Harlan revises v0.2. Andrew&#x27;s role remains DNS-only for Chad rollout, NOT editorial. Chad&#x27;s intake trigger is AGM workflow engine, NOT Jobber. Jobber stacks on later for HG/ATE.</div>
     </div>
-    <div class="task-meta">NEW TOP PRIORITY<br>Authorized + compressed Apr 14 night<br>Wed eve spec &rarr; Thu build &rarr; Fri AGM ship<br>Andrew = DNS for Chad rollout only (week after)</div>
+    <div class="task-meta"><a href="https://docs.google.com/document/d/1Q-4YZScmet1499k5tb1w0bzAHlOBU-LlS4qk8ve6P_k/edit">Spec Doc (Draft v0.1)</a><br>SPEC DELIVERED Apr 23<br>Awaiting Troy review + §9 decisions<br>Proposed ship: Fri May 1 (AGM dogfood)<br>Parallel to HG Costco Layer 2/3</div>
   </div>
 
   <div class="task">
@@ -245,6 +254,15 @@
   </div>
 
   <div class="task">
+    <span class="priority next">Next</span>
+    <div>
+      <div class="task-name">HG Costco Retroactive Contract Re-Generation (Path 1 &mdash; Signature Porting)</div>
+      <div class="task-desc">Older Costco contracts were built in AGM&#x27;s native format. Costco won&#x27;t accept that format. Solution (approved Apr 23): extract signature images from the old signed PDFs via PyMuPDF, feed the original contract data through the current engine with all historical dates overridden (contract date, signing date, cancellation deadline, start/completion dates), stamp extracted signatures onto the new format at correct coordinates, produce finalized PDFs, upload to S3. No customer action required. Build items: (1) signature extraction utility (PyMuPDF image/annotation pull), (2) batch re-generation pipeline accepting historical date overrides + pre-captured signatures, (3) coordinate mapping from old format signature locations to new format fields, (4) QA pass &mdash; verify dates, signatures, and content match originals.</div>
+    </div>
+    <div class="task-meta">Approved Apr 23<br>Path 1 (signature porting)<br>No customer re-sign needed</div>
+  </div>
+
+  <div class="task">
     <span class="priority now">Now</span>
     <div>
       <div class="task-name">HG Call Center Transition &mdash; Team Meeting Agenda (Tue/Wed Apr 15-16)</div>
@@ -275,10 +293,10 @@
     <span class="priority now">Now</span>
     <div>
       <div class="task-name">Contractor Automation Score &mdash; Funnel Wiring + LinkedIn GTM</div>
-      <div class="task-desc">Backend DEPLOYED and tested. Follow-up sequence expanded to 17 emails (QA walkthrough in Troy&#x27;s inbox for review). Remaining: booking calendar URL, GitHub Pages push, report button handler, avg_ticket_value persistence, WeasyPrint font hardening, sheet column-pad for 58-col schema. LinkedIn GTM post BLOCKED until funnel is wired &mdash; post drafted + approved.</div>
+      <div class="task-desc">Backend DEPLOYED and tested. Follow-up sequence (17 emails + 12 SMS) operational. Booking calendar link EXISTS (strategy call booking). Report button EXISTS (openFullReport). STILL REMAINING: avg_ticket_value persistence, WeasyPrint font hardening, sheet column-pad for 58-col schema, Launchpad CTA in quiz report (score&rarr;intake handoff). LinkedIn GTM post BLOCKED until funnel wired &mdash; post drafted + approved.</div>
     </div>
     <div class="task-meta"><a href="https://contractorautomationscore.com">Live</a><br>
-      <a href="https://docs.google.com/document/d/1tgOKf6nLOHS5EGUrEp96u3xl4YfTZdx8Ux3bE3eO71I/edit">Comms Catalog</a><br>Backend done Apr 5<br>Funnel wiring remaining</div>
+      <a href="https://docs.google.com/document/d/1tgOKf6nLOHS5EGUrEp96u3xl4YfTZdx8Ux3bE3eO71I/edit">Comms Catalog</a><br>Backend done Apr 5<br>Handoff wiring + polish remaining</div>
   </div>
 
   <div class="task">
@@ -979,7 +997,7 @@
 </div>
 
 <div class="footer">
-  True North &mdash; AGM Pro Tools &mdash; Updated 2026-04-17 by Harlan<br>
+  True North &mdash; AGM Pro Tools &mdash; Updated 2026-04-24 by Harlan<br>
   Single source of truth for everything in flight. Updated each session.
 </div>
 

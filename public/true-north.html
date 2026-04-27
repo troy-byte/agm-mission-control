@@ -83,7 +83,7 @@
 
 <h1>True North</h1>
 <p class="subtitle">AGM Pro Tools &mdash; everything in flight, prioritized</p>
-<p class="datestamp">Last updated: 2026-04-25</p>
+<p class="datestamp">Last updated: 2026-04-26</p>
 
 <div class="stats">
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Clients Live</div></div>
@@ -206,7 +206,7 @@
 <div class="category">
   <div class="cat-header">
     <span class="cat-title">Multi-Track Contract Engine &mdash; Active Sprint</span>
-    <span class="cat-count">13 items</span>
+    <span class="cat-count">18 items</span>
   </div>
 
   <div class="task done-row">
@@ -317,13 +317,58 @@
     <div class="task-meta">~1 hour<br>Mechanical &mdash; built on top of shipped tile grid</div>
   </div>
 
-  <div class="task">
+  <div class="task done-row">
     <span class="priority now">Now</span>
     <div>
       <div class="task-name">Engine &mdash; End-to-end real-job dry run</div>
       <div class="task-desc">One real HG Costco contract through the full pipeline: signing UI &rarr; fully_executed &rarr; ready_for_install &rarr; rep upload (mix of HEIC photos + HEVC videos) &rarr; production clicks Build Installer Packet button &rarr; packet PDF reviewed for correctness (header, photos inline, video tiles clickable + playing). Establishes the smoke baseline for every future engine deploy.</div>
     </div>
-    <div class="task-meta">TOP PRIORITY #2<br>~1 hour with Troy<br>Validates Phases 1-4 in production posture</div>
+    <div class="task-meta">TOP PRIORITY #2<br>~1 hour with Troy<br>Validates Phases 1-4 in production posture Done 2026-04-26: Cathy Bradsher / HGC-00103 walked end-to-end, surfaced + killed 6 bugs.</div>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority NORMAL">Normal</span>
+    <div>
+      <div class="task-name">Search-first AGM dedupe in create_test_draft_oneoff</div>
+      <div class="task-desc">Adopt existing contact by email instead of racing AGM merge. Stops the +tag-stripping dedupe ghost.</div>
+    </div>
+    <div class="task-meta">Shipped 2026-04-26 commit b783366</div>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority NORMAL">Normal</span>
+    <div>
+      <div class="task-name">Engine diagnostic helpers (audit/repoint/refire/find/dump)</div>
+      <div class="task-desc">5 new Modal helpers for surfacing + repairing dedupe drift on existing sessions.</div>
+    </div>
+    <div class="task-meta">Shipped 2026-04-26 commit b783366</div>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority NORMAL">Normal</span>
+    <div>
+      <div class="task-name">Uploader Modal volume reload pattern</div>
+      <div class="task-desc">contract_volume.reload() before each DB read so warm container sees engine writes after container start.</div>
+    </div>
+    <div class="task-meta">Shipped 2026-04-26 commit b783366</div>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority NORMAL">Normal</span>
+    <div>
+      <div class="task-name">Uploader content-addressed storage</div>
+      <div class="task-desc">SHA256 of input bytes as basename. Duplicate uploads collapse silently to one S3 object.</div>
+    </div>
+    <div class="task-meta">Shipped 2026-04-26 commit b783366</div>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority NORMAL">Normal</span>
+    <div>
+      <div class="task-name">Installer packet &mdash; Sequence A tile labels (B/C deferred to May 3 checkpoint)</div>
+      <div class="task-desc">Drop hashed basename caption from Site Videos tiles. Per-upload category picker (B) + AI auto-classify (C) revisit after a week of real upload traffic.</div>
+    </div>
+    <div class="task-meta">Shipped 2026-04-26 commit b783366</div>
   </div>
 </div>
 
@@ -957,7 +1002,7 @@
 <div class="category">
   <div class="cat-header">
     <span class="cat-title">Recurring / Ongoing</span>
-    <span class="cat-count">4 items</span>
+    <span class="cat-count">5 items</span>
   </div>
 
   <div class="task">
@@ -994,6 +1039,15 @@
       <div class="task-desc">Blog posts, long-form topics, cloud stacks, local short topics, press releases. 4x per month cadence for HG.</div>
     </div>
     <div class="task-meta">4x/month</div>
+  </div>
+
+  <div class="task done-row">
+    <span class="priority HIGH">High</span>
+    <div>
+      <div class="task-name">Canonical doc staleness session-start hook</div>
+      <div class="task-desc">SessionStart hook blocks Claude session greeting until any canonical doc &gt;=1d stale is updated or explicitly deferred in NEXT_SESSION.md. Replaces the passive Slack alert + reactive 5d deploy block. Threshold tightened from 2d to 1d so daily delta is 5min, not weekly catch-up of 30min.</div>
+    </div>
+    <div class="task-meta">Shipped 2026-04-26 &mdash; fixes 3rd 4+ day drift in a month</div>
   </div>
 </div>
 
@@ -1132,7 +1186,7 @@
 </div>
 
 <div class="footer">
-  True North &mdash; AGM Pro Tools &mdash; Updated 2026-04-25 by Harlan<br>
+  True North &mdash; AGM Pro Tools &mdash; Updated 2026-04-26 by Harlan (home iMac, end-of-session 2026-04-26)<br>
   Single source of truth for everything in flight. Updated each session.
 </div>
 

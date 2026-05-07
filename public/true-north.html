@@ -1245,10 +1245,18 @@
   <details>
     <summary class="cat-header">
       <span class="cat-title">Recently Completed</span>
-      <span class="cat-count">27</span>
+      <span class="cat-count">28</span>
       <span class="cat-toggle">expand &darr;</span>
     </summary>
     <div class="cat-items">
+  <article class="task p-done">
+    <div class="task-body">
+      <div class="task-name"><span class="priority done">Done</span>Contract engine rep-mailbox validation guard</div>
+      <div class="task-desc">delivery.py rep-assignment fallback audit (carryover from May 6) closed. Customer-facing contract emails (signing link, signed PDF, withdrawal, reminder, finalize confirmation x2 paths) now hard-fail with Slack alert when rep_email is missing or in DECOMMISSIONED_REP_EMAILS env deny-list. _format_rep_from default fallback flipped from callcenter@ to empty so silent re-routing is impossible. send_via_agm_email only sets emailFrom when populated. Operator runbook in INSURANCE_PLAYBOOK -&gt; Rep Mailbox Decommissioning (HG). Commits 4350c4f (parallel instance, 3 of 4 sites) + de5e3cd (this instance, reminder + finalize x2 + runbook).</div>
+    </div>
+    <div class="task-meta"><span class="meta-text">May 7 · +199 lines / 3 files / 2 commits</span></div>
+  </article>
+
   <article class="task p-done">
     <div class="task-body">
       <div class="task-name"><span class="priority done">Done</span>HG Costco Materials Manifest &mdash; shipped + deployed</div>

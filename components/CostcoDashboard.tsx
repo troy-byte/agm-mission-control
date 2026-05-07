@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { ShoppingCart, TrendingUp, DollarSign, MapPin, Users, Layers, ExternalLink, ChevronDown, ChevronRight } from 'lucide-react'
+import { ShoppingCart, TrendingUp, DollarSign, MapPin, Users, Layers, ExternalLink, ChevronDown, ChevronRight, GitBranch } from 'lucide-react'
 
 // AGM fallback URL (when no specific contact ID)
 const AGM_CONTACTS_URL = 'https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts'
@@ -30,6 +30,19 @@ interface CostcoLead {
   crewNumber?: string
   jobType?: string
   oppSfUrl?: string
+  origin?: 'netNew' | 'recycled' | 'unknown'
+  priorSources?: string[]
+}
+
+interface OriginAnalysis {
+  netNew: number
+  recycled: number
+  netNewSold: number
+  recycledSold: number
+  netNewRevenue: number
+  recycledRevenue: number
+  recycledRate: number
+  recycledRevenueRate: number
 }
 
 interface DashboardData {
@@ -48,6 +61,7 @@ interface DashboardData {
     appointmentsBooked: number
     appointmentsRanConfirmed: number
     appointmentsUnconfirmed: number
+    originAnalysis?: OriginAnalysis
   }
   statusCounts: Record<string, number>
   turfTypeCounts: Record<string, number>
@@ -308,6 +322,46 @@ export default function CostcoDashboard() {
           <strong>{s.appointmentsUnconfirmed}</strong> additional at &ldquo;Booked&rdquo; in Salesforce &mdash; appointment outcome unconfirmed (pre-pipeline leads).
         </p>
       </div>
+
+      {/* Lead Origin — Net New vs Recycled (HG → Costco) */}
+      {s.originAnalysis && (s.originAnalysis.netNew + s.originAnalysis.recycled) > 0 && (
+        <div className="bg-gray-900 rounded-lg p-5 border border-gray-800">
+          <div className="flex items-center space-x-2 mb-4">
+            <GitBranch className="w-4 h-4 text-purple-400" />
+            <h3 className="text-sm font-semibold text-white">Lead Origin Attribution</h3>
+            <span className="text-xs text-gray-500 ml-auto">Costco's role: acquisition vs. closing tool for HG-originated leads</span>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <MetricCard
+              label="Net New"
+              value={s.originAnalysis.netNew}
+              sub={`${s.originAnalysis.netNewSold} sold · $${s.originAnalysis.netNewRevenue.toLocaleString()}`}
+              color="text-emerald-400"
+            />
+            <MetricCard
+              label="Recycled (HG → Costco)"
+              value={s.originAnalysis.recycled}
+              sub={`${s.originAnalysis.recycledSold} sold · $${s.originAnalysis.recycledRevenue.toLocaleString()}`}
+              color="text-amber-400"
+            />
+            <MetricCard
+              label="% Recycled (leads)"
+              value={`${s.originAnalysis.recycledRate}%`}
+              sub="of classified Costco leads"
+              color="text-amber-400"
+            />
+            <MetricCard
+              label="% Recycled (revenue)"
+              value={`${s.originAnalysis.recycledRevenueRate}%`}
+              sub="of total Costco revenue"
+              color="text-amber-400"
+            />
+          </div>
+          <p className="text-[11px] text-gray-500 mt-3">
+            Match: SF Leads with same phone/email created before the Costco lead, under a different LeadSource. Small-N caveat: signals are directional until volume scales.
+          </p>
+        </div>
+      )}
 
       {/* Status + Turf */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

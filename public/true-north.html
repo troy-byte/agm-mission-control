@@ -276,8 +276,8 @@
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Prospects</div></div>
   <div class="stat"><div class="stat-value">$891</div><div class="stat-label">Monthly MRR</div></div>
   <div class="stat accent"><div class="stat-value">28</div><div class="stat-label">Now</div></div>
-  <div class="stat"><div class="stat-value">17</div><div class="stat-label">Next</div></div>
-  <div class="stat"><div class="stat-value">79</div><div class="stat-label">Active Total</div></div>
+  <div class="stat"><div class="stat-value">18</div><div class="stat-label">Next</div></div>
+  <div class="stat"><div class="stat-value">80</div><div class="stat-label">Active Total</div></div>
 </div>
 
 <div class="filter-bar" id="filterBar">
@@ -392,7 +392,7 @@
 <section class="category">
   <header class="cat-header">
     <span class="cat-title">Multi-Track Contract Engine &mdash; Active Sprint</span>
-    <span class="cat-count">2 active &middot; 16 done</span>
+    <span class="cat-count">3 active &middot; 16 done</span>
   </header>
   <div class="cat-items">
   <article class="task p-now">
@@ -409,6 +409,14 @@
       <div class="task-desc">Delta on top of the just-shipped Site Videos tile grid (b17e90d). Add ~15 lines to format_normalize.normalize_video to extract a 1.0s frame thumbnail (ffmpeg -ss 1 -frames:v 1 -vf scale=480:-2) and upload to S3 as &lt;basename&gt;_thumb.jpg. Add ~25 lines to _layout_videos in installer_packet.py to fetch the thumb via boto3, write to tmpfile, page.insert_image as tile background under existing PLAY badge. Fall back silently to the current green tile if thumb missing. Backfill script for the 5 existing HGC-TEST-001 videos.</div>
     </div>
     <div class="task-meta"><span class="meta-text">~1 hour · Mechanical &mdash; built on top of shipped tile grid</span></div>
+  </article>
+
+  <article class="task p-next">
+    <div class="task-body">
+      <div class="task-name"><span class="priority next">Next</span>AGM HG Contracts &mdash; HG-direct Contract Engine Build</div>
+      <div class="task-desc">Second client config on the contract engine: HG-direct retail jobs. ~90% reuse from Costco; net-new is deep product catalog (25+ turf SKUs alone), custom React contract form with line-item picker, deposit-capture step via AGM native payments + card-on-file (reused for progress + final payments), and GHL native QuickBooks connector for accounting reconciliation (replaces SF/DBSync on the AGM side). Architectural primitive already in place &mdash; ready_for_install_trigger: deposit_received was anticipated in config.py from day one. Execution plan covers 11 workstreams across catalog, form, engine wiring, template + signing calibration, deposit capture, QBO connector, stored-card payments, ordering pipeline, testing, and pilot/go-live. ~10-week timeline targeting mid-July 2026 GA. Open decisions logged for both Troy (verbiage, catalog source, processor confirmation) and Andrew (Eric sit-down on current deposit flow, GL mapping, tax codes, top-25 SKU inventory).</div>
+    </div>
+    <div class="task-meta"><a href="https://docs.google.com/document/d/1f4cfOsk1nQhCv9TRYeJtv6UJzmWyqw25tapyKPJjmIU/edit">Execution Plan</a><br><span class="meta-text">Planning · Plan drafted 2026-05-11 · 11 workstreams · ~10 wk to GA</span></div>
   </article>
   </div>
   <details class="completed-fold">

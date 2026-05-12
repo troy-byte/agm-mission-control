@@ -275,9 +275,9 @@
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Clients Live</div></div>
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Prospects</div></div>
   <div class="stat"><div class="stat-value">$891</div><div class="stat-label">Monthly MRR</div></div>
-  <div class="stat accent"><div class="stat-value">28</div><div class="stat-label">Now</div></div>
+  <div class="stat accent"><div class="stat-value">29</div><div class="stat-label">Now</div></div>
   <div class="stat"><div class="stat-value">18</div><div class="stat-label">Next</div></div>
-  <div class="stat"><div class="stat-value">80</div><div class="stat-label">Active Total</div></div>
+  <div class="stat"><div class="stat-value">81</div><div class="stat-label">Active Total</div></div>
 </div>
 
 <div class="filter-bar" id="filterBar">
@@ -556,9 +556,17 @@
 <section class="category">
   <header class="cat-header">
     <span class="cat-title">This Week &mdash; Priority</span>
-    <span class="cat-count">19 active &middot; 2 done</span>
+    <span class="cat-count">20 active &middot; 2 done</span>
   </header>
   <div class="cat-items">
+  <article class="task p-now">
+    <div class="task-body">
+      <div class="task-name"><span class="priority now">Now</span>Prospecting Engine v1.1 &mdash; Enrichment Layer (FR Pest)</div>
+      <div class="task-desc">v1 shipped 2026-05-11: agm-prospecting Modal app live, every-6h cron, 41 FieldRoutes-confirmed pest operators in cloud DB, all cold-scored (15/100) because only `fr_confirmed` signal is set. v1.1 sprint: build the enrichment layer so 8-15 of those 41 score ≥80 and convert to dossiers + outbound drafts in Troy&#x27;s review queue. Modules to ship: (1) domain_resolver &mdash; Sonnet maps operator name &rarr; real website domain, (2) website_audit &mdash; location count, FB Pixel, Google Ads, review velocity, (3) vendor_mention_scan &mdash; Costco/HD/Lowe&#x27;s affiliations on operator sites, (4) geography enrichment &mdash; extract service-area states, (5) dossier_writer &mdash; Claude-generated deep dossier per ≥80-score, (6) outbound_drafter &mdash; email + LinkedIn DM draft per ≥80, queued not sent. Estimated ~2-3 hours. After v1.1: build v2 sources (google_powered_by, pest_directories, job_post_signals) &mdash; currently only 1 of 4 sources active.</div>
+    </div>
+    <div class="task-meta"><a href="directives/prospecting_engine.md">Directive</a> · <a href="https://modal.com/apps/agm-pro/main/deployed/agm-prospecting">Modal app</a> · <a href="directives/agm_protools_fieldroutes_opportunity.md">FR Strategy</a><br><span class="meta-text">engine: agm-prospecting | source dir: execution/prospecting/ | directive: prospecting_engine.md</span></div>
+  </article>
+
   <article class="task p-now">
     <div class="task-body">
       <div class="task-name"><span class="priority now">Now</span>FieldRoutes Marketplace Listing + AGM Pricing Reframe (2026-05-06 sprint)</div>
@@ -1261,10 +1269,18 @@
   <details>
     <summary class="cat-header">
       <span class="cat-title">Recently Completed</span>
-      <span class="cat-count">28</span>
+      <span class="cat-count">29</span>
       <span class="cat-toggle">expand &darr;</span>
     </summary>
     <div class="cat-items">
+  <article class="task p-done done-row">
+    <div class="task-body">
+      <div class="task-name"><span class="priority done">Done</span>Prospecting Engine v1 &mdash; FieldRoutes pest seed deployed</div>
+      <div class="task-desc">Continuous FSM operator hunt &mdash; first vertical FR pest, pairs with the FR opportunity directive as the active-outbound demand layer. Shipped: operator_db, fr_public_references source (polite 3s scrape of fieldroutes.com case studies), deterministic 7-component scoring rubric + Sonnet rationale, pipeline orchestrator, agm-prospecting Modal app on a 6h cron, heartbeat tracking, Slack alerts on ≥80 scores. Pre-deploy check 9/9 passed. First production fire: 41 FR-confirmed pest operators in cloud DB. Storage: /tokens/prospects/ on Modal, data/prospects/ gitignored locally (moat asset stays out of repo).</div>
+    </div>
+    <div class="task-meta"><a href="directives/prospecting_engine.md">Directive</a> · <a href="https://modal.com/apps/agm-pro/main/deployed/agm-prospecting">Modal app</a><br><span class="meta-text">commit 1f28fa1 | 41 operators in cloud DB | agm-prospecting live</span></div>
+  </article>
+
   <article class="task p-done">
     <div class="task-body">
       <div class="task-name"><span class="priority done">Done</span>Contract engine rep-mailbox validation guard</div>

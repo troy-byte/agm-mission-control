@@ -269,15 +269,15 @@
 
 <h1>True North</h1>
 <p class="subtitle">AGM Pro Tools &mdash; everything in flight, prioritized</p>
-<p class="datestamp">Last updated: 2026-05-11</p>
+<p class="datestamp">Last updated: 2026-05-13</p>
 
 <div class="stats">
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Clients Live</div></div>
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Prospects</div></div>
   <div class="stat"><div class="stat-value">$891</div><div class="stat-label">Monthly MRR</div></div>
-  <div class="stat accent"><div class="stat-value">29</div><div class="stat-label">Now</div></div>
+  <div class="stat accent"><div class="stat-value">30</div><div class="stat-label">Now</div></div>
   <div class="stat"><div class="stat-value">18</div><div class="stat-label">Next</div></div>
-  <div class="stat"><div class="stat-value">81</div><div class="stat-label">Active Total</div></div>
+  <div class="stat"><div class="stat-value">82</div><div class="stat-label">Active Total</div></div>
 </div>
 
 <div class="filter-bar" id="filterBar">
@@ -392,9 +392,17 @@
 <section class="category">
   <header class="cat-header">
     <span class="cat-title">Multi-Track Contract Engine &mdash; Active Sprint</span>
-    <span class="cat-count">3 active &middot; 16 done</span>
+    <span class="cat-count">4 active &middot; 16 done</span>
   </header>
   <div class="cat-items">
+  <article class="task p-now">
+    <div class="task-body">
+      <div class="task-name"><span class="priority now">Now</span>Phase 6 &mdash; SQLite &rarr; Neon Postgres migration (concurrency-fix sprint)</div>
+      <div class="task-desc">4-rep Costco training failed 2026-05-13 due to SQLite-on-Modal-Volume concurrent-write loss. Day-1 shipped: max_containers=1 throttle on signing_ui (live at signature.heavenlygreens.com); Neon project agm-contract-engine provisioned (PG17, Launch tier, us-west-2); canonical Postgres DDL in signing_pg.sql; one-shot migrate_sqlite_to_pg.py with --dry-run / --verify; 1,905 rows migrated with perfect parity (245 sessions + 1,483 events + 30 audit + 1 counter + 146 jobs); psycopg2-binary in image; Modal secret contract-engine-pg created. Day-2 (next session): shadow-write code in signing.py + bind contract-engine-pg to every init_db call site + parity-monitor cron. Day-3: flip reads to Postgres. Day-4: decommission SQLite + lift throttle + 15-rep canary. Full plan in docs/NEXT_SESSION.md top entry. Blocks the 6-10 rep ramp until Day-4 completes.</div>
+    </div>
+    <div class="task-meta"><a href="docs/NEXT_SESSION.md">NEXT_SESSION Day-2 plan</a> · <a href="docs/AGM_BUILD_CHANGELOG.md">Build Changelog 2026-05-13</a> · <a href="INSURANCE_PLAYBOOK.md">INSURANCE_PLAYBOOK Postgres recovery</a><br><span class="meta-text">May 13 &mdash; Day 1 of 4 shipped</span></div>
+  </article>
+
   <article class="task p-now">
     <div class="task-body">
       <div class="task-name"><span class="priority now">Now</span>Phase 4B/C &mdash; Lifecycle clock + customer cadences + per-rep daily digest</div>
@@ -556,15 +564,15 @@
 <section class="category">
   <header class="cat-header">
     <span class="cat-title">This Week &mdash; Priority</span>
-    <span class="cat-count">20 active &middot; 2 done</span>
+    <span class="cat-count">20 active &middot; 3 done</span>
   </header>
   <div class="cat-items">
   <article class="task p-now">
     <div class="task-body">
-      <div class="task-name"><span class="priority now">Now</span>Prospecting Engine v1.1 &mdash; Enrichment Layer (FR Pest)</div>
-      <div class="task-desc">v1 shipped 2026-05-11: agm-prospecting Modal app live, every-6h cron, 41 FieldRoutes-confirmed pest operators in cloud DB, all cold-scored (15/100) because only `fr_confirmed` signal is set. v1.1 sprint: build the enrichment layer so 8-15 of those 41 score ≥80 and convert to dossiers + outbound drafts in Troy&#x27;s review queue. Modules to ship: (1) domain_resolver &mdash; Sonnet maps operator name &rarr; real website domain, (2) website_audit &mdash; location count, FB Pixel, Google Ads, review velocity, (3) vendor_mention_scan &mdash; Costco/HD/Lowe&#x27;s affiliations on operator sites, (4) geography enrichment &mdash; extract service-area states, (5) dossier_writer &mdash; Claude-generated deep dossier per ≥80-score, (6) outbound_drafter &mdash; email + LinkedIn DM draft per ≥80, queued not sent. Estimated ~2-3 hours. After v1.1: build v2 sources (google_powered_by, pest_directories, job_post_signals) &mdash; currently only 1 of 4 sources active.</div>
+      <div class="task-name"><span class="priority now">Now</span>Prospecting Engine v1.2 &mdash; GBP Review-Velocity Enricher</div>
+      <div class="task-desc">Build google_business_signals.py: given an operator domain, capture total review count + last-30d delta from Google Business Profile. Populate signals.review_velocity_30d + review_velocity_gap_pct (15pt of the FR-pest rubric &mdash; currently unsourced, capping cohort at 67/100). Wire into enrichment/__init__.py after geography. Flip HOT_SCORE_THRESHOLD back from 60&rarr;80 in pipeline.py. Re-run backfill &mdash; expect 4-8 of existing 8-warm cohort to move into ≥80 with review-velocity on record. Open arch question: Places API (~$0.70 one-off for 41 ops) vs. public scrape &mdash; lean Places API for reliability.</div>
     </div>
-    <div class="task-meta"><a href="directives/prospecting_engine.md">Directive</a> · <a href="https://modal.com/apps/agm-pro/main/deployed/agm-prospecting">Modal app</a> · <a href="directives/agm_protools_fieldroutes_opportunity.md">FR Strategy</a><br><span class="meta-text">engine: agm-prospecting | source dir: execution/prospecting/ | directive: prospecting_engine.md</span></div>
+    <div class="task-meta"><span class="meta-text">Queued for May 13 · ~2-3 hours</span></div>
   </article>
 
   <article class="task p-now">
@@ -720,8 +728,16 @@
   </article>
   </div>
   <details class="completed-fold">
-    <summary>2 completed in this category &mdash; show</summary>
+    <summary>3 completed in this category &mdash; show</summary>
     <div class="cat-items completed-items">
+  <article class="task p-done done-row">
+    <div class="task-body">
+      <div class="task-name"><span class="priority done">Done</span>Prospecting Engine v1.1 &mdash; Enrichment Layer (FR Pest)</div>
+      <div class="task-desc">SHIPPED 2026-05-12. Full enrichment layer (domain_resolver, website_audit, vendor_mention_scan, geography) + Opus dossier writer + outbound email/LinkedIn drafter. First backfill: 32/41 enriched, 8 dossiers + 8 outbound drafts queued in awaiting_send. Threshold ran at ≥60 for v1.1 (achievable ceiling 85 until v1.2 GBP review-velocity enricher lands). Top cohort: Go Forth (67), Miche (67), Alta/City Wide/Ridd/Magic City (63), Friendly/Admiral (62).</div>
+    </div>
+    <div class="task-meta"><a href="directives/prospecting_engine.md">Directive</a> · <a href="https://modal.com/apps/agm-pro/main/deployed/agm-prospecting">Modal app</a> · <a href="directives/agm_protools_fieldroutes_opportunity.md">FR Strategy</a><br><span class="meta-text">Shipped May 12 · 8 dossiers + 8 outbound drafts queued</span></div>
+  </article>
+
   <article class="task p-done done-row">
     <div class="task-body">
       <div class="task-name"><span class="priority done">Done</span>HG Costco Contract &mdash; Field-map audit deploy + DNS</div>
@@ -1510,7 +1526,7 @@
 
 <div class="footer">
   True North &mdash; AGM Pro Tools<br>
-  Updated 2026-05-11 by Harlan<br>
+  Updated 2026-05-13 by Harlan<br>
   Single source of truth for everything in flight.
 </div>
 

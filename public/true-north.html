@@ -269,7 +269,7 @@
 
 <h1>True North</h1>
 <p class="subtitle">AGM Pro Tools &mdash; everything in flight, prioritized</p>
-<p class="datestamp">Last updated: 2026-05-14</p>
+<p class="datestamp">Last updated: 2026-05-15</p>
 
 <div class="stats">
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Clients Live</div></div>
@@ -392,17 +392,9 @@
 <section class="category">
   <header class="cat-header">
     <span class="cat-title">Multi-Track Contract Engine &mdash; Active Sprint</span>
-    <span class="cat-count">4 active &middot; 16 done</span>
+    <span class="cat-count">4 active &middot; 17 done</span>
   </header>
   <div class="cat-items">
-  <article class="task p-now">
-    <div class="task-body">
-      <div class="task-name"><span class="priority now">Now</span>Phase 6 &mdash; SQLite &rarr; Neon Postgres migration (concurrency-fix sprint)</div>
-      <div class="task-desc">4-rep Costco training failed 2026-05-13 due to SQLite-on-Modal-Volume concurrent-write loss. Day-1 shipped: max_containers=1 throttle on signing_ui (live at signature.heavenlygreens.com); Neon project agm-contract-engine provisioned (PG17, Launch tier, us-west-2); canonical Postgres DDL in signing_pg.sql; one-shot migrate_sqlite_to_pg.py with --dry-run / --verify; 1,905 rows migrated with perfect parity (245 sessions + 1,483 events + 30 audit + 1 counter + 146 jobs); psycopg2-binary in image; Modal secret contract-engine-pg created. Day-2 (next session): shadow-write code in signing.py + bind contract-engine-pg to every init_db call site + parity-monitor cron. Day-3: flip reads to Postgres. Day-4: decommission SQLite + lift throttle + 15-rep canary. Full plan in docs/NEXT_SESSION.md top entry. Blocks the 6-10 rep ramp until Day-4 completes.</div>
-    </div>
-    <div class="task-meta"><a href="docs/NEXT_SESSION.md">NEXT_SESSION Day-2 plan</a> · <a href="docs/AGM_BUILD_CHANGELOG.md">Build Changelog 2026-05-13</a> · <a href="INSURANCE_PLAYBOOK.md">INSURANCE_PLAYBOOK Postgres recovery</a><br><span class="meta-text">May 13 &mdash; Day 1 of 4 shipped</span></div>
-  </article>
-
   <article class="task p-now">
     <div class="task-body">
       <div class="task-name"><span class="priority now">Now</span>Phase 4B/C &mdash; Lifecycle clock + customer cadences + per-rep daily digest</div>
@@ -419,6 +411,14 @@
     <div class="task-meta"><span class="meta-text">~1 hour · Mechanical &mdash; built on top of shipped tile grid</span></div>
   </article>
 
+  <article class="task p-now">
+    <div class="task-body">
+      <div class="task-name"><span class="priority now">Now</span>HG Costco Contract Engine &mdash; Anthony Punch List</div>
+      <div class="task-desc">Sequenced 11-item punch list out of Anthony Zoom call. Status as of 2026-05-15: items 1, 2 (parts 1+2), 8, 9, 10 SHIPPED. Item 7 KILLED by Troy 2026-05-14. Items 3, 4 BLOCKED on Tim Fullerton (commission). Remaining attackable: items 5 (Wrap-Up section), 6 (Problem/Issue uploader), 11 (Pause project reminders). Andrew owes validation on items 1+2 &mdash; scenarios A/B/C.</div>
+    </div>
+    <div class="task-meta"><span class="meta-text">5 of 11 shipped | 1 killed | 2 blocked on Tim | 3 attackable (5/6/11) | Andrew validation pending on 1+2</span></div>
+  </article>
+
   <article class="task p-next">
     <div class="task-body">
       <div class="task-name"><span class="priority next">Next</span>AGM HG Contracts &mdash; HG-direct Contract Engine Build</div>
@@ -428,8 +428,16 @@
   </article>
   </div>
   <details class="completed-fold">
-    <summary>16 completed in this category &mdash; show</summary>
+    <summary>17 completed in this category &mdash; show</summary>
     <div class="cat-items completed-items">
+  <article class="task p-done done-row">
+    <div class="task-body">
+      <div class="task-name"><span class="priority done">Done</span>Phase 6 &mdash; SQLite &rarr; Neon Postgres migration (concurrency-fix sprint)</div>
+      <div class="task-desc">4-rep Costco training failed 2026-05-13 due to SQLite-on-Modal-Volume concurrent-write loss. Day-1 shipped: max_containers=1 throttle on signing_ui (live at signature.heavenlygreens.com); Neon project agm-contract-engine provisioned (PG17, Launch tier, us-west-2); canonical Postgres DDL in signing_pg.sql; one-shot migrate_sqlite_to_pg.py with --dry-run / --verify; 1,905 rows migrated with perfect parity (245 sessions + 1,483 events + 30 audit + 1 counter + 146 jobs); psycopg2-binary in image; Modal secret contract-engine-pg created. Day-2 (next session): shadow-write code in signing.py + bind contract-engine-pg to every init_db call site + parity-monitor cron. Day-3: flip reads to Postgres. Day-4: decommission SQLite + lift throttle + 15-rep canary. Full plan in docs/NEXT_SESSION.md top entry. Blocks the 6-10 rep ramp until Day-4 completes.</div>
+    </div>
+    <div class="task-meta"><a href="docs/NEXT_SESSION.md">NEXT_SESSION Day-2 plan</a> · <a href="docs/AGM_BUILD_CHANGELOG.md">Build Changelog 2026-05-13</a> · <a href="INSURANCE_PLAYBOOK.md">INSURANCE_PLAYBOOK Postgres recovery</a><br><span class="meta-text">COMPLETE 2026-05-14 | Phases 1-3 shipped | SQLite decommissioned, PG canonical for both costco_intake + contract_engine</span></div>
+  </article>
+
   <article class="task p-done done-row">
     <div class="task-body">
       <div class="task-name"><span class="priority done">Done</span>Phase 1 &mdash; Engine rename dealer&rarr;rep, member&rarr;signer</div>
@@ -1208,7 +1216,7 @@
       <div class="task-name"><span class="priority waiting">Waiting</span>Andrew &mdash; Review Workflow SMS/Email Copy</div>
       <div class="task-desc">Needs to finalize SMS + email copy for the &#x27;Completed - Paid&#x27; review request.</div>
     </div>
-    <div class="task-meta"><span class="meta-text">Andrew</span></div>
+    <div class="task-meta"><span class="meta-text">Andrew | Undated entry &mdash; freshness unknown, needs verdict (verify or retire)</span></div>
   </article>
 
   <article class="task p-waiting">
@@ -1240,7 +1248,7 @@
       <div class="task-name"><span class="priority waiting">Waiting</span>Rent Manager &mdash; Andrew Intel</div>
       <div class="task-desc">8 questions sent to Andrew&#x27;s internal contact Apr 9. HOLD on all build/outreach/sandbox until intel lands.</div>
     </div>
-    <div class="task-meta"><span class="meta-text">Andrew&#x27;s contact · Sent Apr 9</span></div>
+    <div class="task-meta"><span class="meta-text">Andrew&#x27;s contact | Sent Apr 9 &mdash; STALE (36 days, no reply) | Rent Manager build remains on hold</span></div>
   </article>
 
   <article class="task p-waiting">
@@ -1248,7 +1256,7 @@
       <div class="task-name"><span class="priority waiting">Waiting</span>Andrew &mdash; 4 AGM custom field IDs (Drawing PDF, Walkthrough Video, Change Order PDFs, Waiver PDFs)</div>
       <div class="task-desc">Batched ask emailed 2026-05-05 (Troy CC&#x27;d). System runs degraded-but-functional until field IDs land &mdash; drawings/videos/waivers still upload to S3 and reach installer packet via prefix listing, but won&#x27;t show on AGM contact card as &#x27;received&#x27;. Manifest evaluator treats missing field IDs as pending so digest keeps nudging. Soft-failing on purpose so no data lost.</div>
     </div>
-    <div class="task-meta"><span class="meta-text">Sent May 5 · Follow up by May 12</span></div>
+    <div class="task-meta"><span class="meta-text">Sent May 5 | FU was May 12 (overdue) | Code degraded-functional via env-var fallback in uploader_app &mdash; uploads still hit S3, won&#x27;t write to AGM card until IDs land</span></div>
   </article>
   </div>
 </section>
@@ -1550,7 +1558,7 @@
 
 <div class="footer">
   True North &mdash; AGM Pro Tools<br>
-  Updated 2026-05-14 by Harlan<br>
+  Updated 2026-05-15 by Harlan<br>
   Single source of truth for everything in flight.
 </div>
 

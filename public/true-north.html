@@ -275,9 +275,9 @@
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Clients Live</div></div>
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Prospects</div></div>
   <div class="stat"><div class="stat-value">$891</div><div class="stat-label">Monthly MRR</div></div>
-  <div class="stat accent"><div class="stat-value">33</div><div class="stat-label">Now</div></div>
-  <div class="stat"><div class="stat-value">18</div><div class="stat-label">Next</div></div>
-  <div class="stat"><div class="stat-value">83</div><div class="stat-label">Active Total</div></div>
+  <div class="stat accent"><div class="stat-value">34</div><div class="stat-label">Now</div></div>
+  <div class="stat"><div class="stat-value">20</div><div class="stat-label">Next</div></div>
+  <div class="stat"><div class="stat-value">86</div><div class="stat-label">Active Total</div></div>
 </div>
 
 <div class="filter-bar" id="filterBar">
@@ -792,9 +792,17 @@
 <section class="category">
   <header class="cat-header">
     <span class="cat-title">Next Up &mdash; This Week / Next Week</span>
-    <span class="cat-count">12 active &middot; 1 done</span>
+    <span class="cat-count">17 active &middot; 1 done</span>
   </header>
   <div class="cat-items">
+  <article class="task p-now">
+    <div class="task-body">
+      <div class="task-name"><span class="priority now">Now</span>Sprint 3 #1 &mdash; installer_packet_build auth gate</div>
+      <div class="task-desc">installer_packet_build endpoint takes a guessable AGM contact_id with no bearer auth. Has IP rate limit (120/min) from Sprint 2 but no identity gate. Fix: require WEBHOOK_API_KEY like change_order_endpoint, OR scope to AGM custom-action HMAC, OR signed-URL pattern from AGM workflow. 2-4 hours design + implementation. Highest priority Sprint 3 item.</div>
+    </div>
+    <div class="task-meta"><a href="docs/architecture_gaps.md">architecture_gaps.md 2026-05-15</a><br><span class="meta-text">2-4 hr design + build</span></div>
+  </article>
+
   <article class="task p-now">
     <div class="task-body">
       <div class="task-name"><span class="priority now">Now</span>Jobber Developer Onboarding Call &mdash; May 6, 9 AM PT</div>
@@ -809,6 +817,22 @@
       <div class="task-desc">TOP PRIORITY. AGM-driven workflow: on install stage, fire webhook to Modal worker, write BarCloud Stock Issue with turf type + dye lot, push draw record back to AGM + SF. Exec memo sent to Tim + Troy Apr 9 &mdash; significant scope. First step: BOM schema + dye lot data model in AGM. No canonical bill of materials exists at HG today &mdash; this build forces a canonical turf-type &rarr; materials map to exist for the first time. BarCloud API has no webhooks (pull-only). Eliminates manual BarCloud entry by office staff.</div>
     </div>
     <div class="task-meta"><a href="https://docs.google.com/document/d/10tyXtR-3YMY3xeZnc6YLm-TXr_W3lG5BGkaqZvtBMLE/edit">Exec Memo (Google Doc)</a><br><span class="meta-text">Top priority · Exec memo sent Apr 9</span></div>
+  </article>
+
+  <article class="task p-next">
+    <div class="task-body">
+      <div class="task-name"><span class="priority next">Next</span>Sprint 3 #2 &mdash; Document UUID-as-credential pattern</div>
+      <div class="task-desc">Six contract_engine endpoints rely on session_id (UUID v4, 122 bits) being the de-facto auth credential. Pattern is fine if documented and UUID generation is verified random &mdash; but currently implicit. Add to directives/dashboard_security_contract.md or write new directives/unguessable_id_auth.md codifying entropy floor + canonical generator.</div>
+    </div>
+    <div class="task-meta"><span class="meta-text">1 hr writing</span></div>
+  </article>
+
+  <article class="task p-next">
+    <div class="task-body">
+      <div class="task-name"><span class="priority next">Next</span>Sprint 3 #3 &mdash; Audit log Modal Volume + S3 rollup</div>
+      <div class="task-desc">execution/lib/audit_log.write_audit_entry falls back to logger.info (Modal structured logs) when /audit volume isn&#x27;t mounted. For long-term forensic retention: mount agm-audit-log volume on every Modal function calling require_auth or guard_contract_endpoint + daily cron rolling to S3 with KMS-encrypted at-rest storage.</div>
+    </div>
+    <div class="task-meta"><span class="meta-text">3-4 hr</span></div>
   </article>
 
   <article class="task p-next">
@@ -889,6 +913,22 @@
       <div class="task-desc">Folded into Content Flywheel. Tuesday 5AM = Intelligence Report (Monthly Trends replaces on 1st Tue). Scout ran successfully Apr 9 (41KB). Pipeline: Scout, Quill, Pixel, Echo.</div>
     </div>
     <div class="task-meta"><span class="meta-text">Part of flywheel · ~280 subscribers</span></div>
+  </article>
+
+  <article class="task p-later">
+    <div class="task-body">
+      <div class="task-name"><span class="priority later">Later</span>Sprint 3 #4 &mdash; Third-party pen test (deferred)</div>
+      <div class="task-desc">All red-teaming today is internal (red_team_3_probes.py). For enterprise sales, external attestation from boutique vendor (Cure53, Latacora, Bishop Fox tier, $10K-$25K). Defer until enterprise pipeline justifies the spend or until processing live multi-tenant revenue data at scale. Re-evaluate quarterly.</div>
+    </div>
+    <div class="task-meta"><span class="meta-text">$10K-$25K · Gated on enterprise pipeline</span></div>
+  </article>
+
+  <article class="task p-later">
+    <div class="task-body">
+      <div class="task-name"><span class="priority later">Later</span>Sprint 3 #5 &mdash; DPA legal review</div>
+      <div class="task-desc">docs/legal/data_processing_agreement.md is a v1 draft written without counsel. Standard Art. 28 structure but every customer signing requires a lawyer to sign off on jurisdiction, liability caps, SCC implementation. Engage counsel before first enterprise contract that requests a DPA.</div>
+    </div>
+    <div class="task-meta"><a href="docs/legal/data_processing_agreement.md">DPA draft</a><br><span class="meta-text">Gated on first DPA request</span></div>
   </article>
   </div>
   <details class="completed-fold">
@@ -1301,10 +1341,18 @@
   <details>
     <summary class="cat-header">
       <span class="cat-title">Recently Completed</span>
-      <span class="cat-count">29</span>
+      <span class="cat-count">30</span>
       <span class="cat-toggle">expand &darr;</span>
     </summary>
     <div class="cat-items">
+  <article class="task p-done done-row">
+    <div class="task-body">
+      <div class="task-name"><span class="priority done">Done</span>Sprint 2 security hardening &mdash; DONE</div>
+      <div class="task-desc">Closed 4-gap audit from 2026-05-15 vibe-coded-app checklist: (1) Per-bearer-token rate limit (60/min soft, 1000/hr hard) via modal.Dict token bucket in execution/lib/rate_limit.py, wired into require_auth. (2) Audit log per authed call to Modal structured logs with Slack alerts on hard-cap + auth-failure bursts (execution/lib/audit_log.py). (3) Six security response headers (HSTS, X-Frame-Options DENY, etc.) on all 20 fastapi_endpoints via @with_security_headers decorator (execution/lib/security_headers.py). (4) GDPR DPA v1 draft + privacy policy uplifted with sub-processor disclosure, lawful bases, SCC reference. Pre-deploy Check 14 enforces decorator pairing structurally. Contract engine endpoints (no require_auth) got guard_contract_endpoint() with IP-based rate limiting (120/min, 2000/hr per IP per scope). Live-verified on both Modal apps.</div>
+    </div>
+    <div class="task-meta"><a href="docs/legal/data_processing_agreement.md">DPA draft</a> · <a href="docs/agmpro/privacy.html">Privacy policy</a> · <a href="docs/architecture_gaps.md">Architecture gaps</a><br><span class="meta-text">May 15 · Commits 231fd10 + 511711a · All 14 pre_deploy_check checks green</span></div>
+  </article>
+
   <article class="task p-done done-row">
     <div class="task-body">
       <div class="task-name"><span class="priority done">Done</span>Prospecting Engine v1 &mdash; FieldRoutes pest seed deployed</div>

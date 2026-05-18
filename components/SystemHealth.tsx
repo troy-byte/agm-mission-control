@@ -103,6 +103,10 @@ const CLIENT_PLATFORMS: Record<string, { label: string; bg: string; text: string
     { label: 'AGM', bg: 'bg-blue-900/40', text: 'text-blue-400', border: 'border-blue-800/50' },
     { label: 'SALESFORCE', bg: 'bg-indigo-900/40', text: 'text-indigo-400', border: 'border-indigo-800/50' },
   ],
+  'valleywide': [
+    { label: 'FIELD ROUTES', bg: 'bg-amber-900/40', text: 'text-amber-400', border: 'border-amber-800/50' },
+    { label: 'SERTBO', bg: 'bg-purple-900/40', text: 'text-purple-400', border: 'border-purple-800/50' },
+  ],
 }
 
 // Internal process crons — shown separately from client integration crons.

@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { ShoppingCart, TrendingUp, DollarSign, MapPin, Users, Layers, ExternalLink, ChevronDown, ChevronRight, GitBranch } from 'lucide-react'
+import { useState, useEffect, useCallback } from 'react'
+import { ShoppingCart, TrendingUp, DollarSign, MapPin, Users, Layers, ExternalLink, ChevronDown, ChevronRight, GitBranch, RefreshCw } from 'lucide-react'
 
 // AGM fallback URL (when no specific contact ID)
 const AGM_CONTACTS_URL = 'https://app.agmpro.com/v2/location/tNwDUPgJ4GFjCD81OGVA/contacts'
@@ -47,6 +47,7 @@ interface OriginAnalysis {
 
 interface DashboardData {
   generated: string
+  _publicView?: boolean
   summary: {
     totalLeads: number
     sold: number
@@ -59,8 +60,9 @@ interface DashboardData {
     cancelledValue: number
     cancelledCount: number
     appointmentsBooked: number
-    appointmentsRanConfirmed: number
-    appointmentsUnconfirmed: number
+    appointmentsRan?: number
+    appointmentsRanConfirmed?: number
+    appointmentsUnconfirmed?: number
     originAnalysis?: OriginAnalysis
   }
   statusCounts: Record<string, number>
@@ -205,29 +207,51 @@ function LeadRow({ lead }: { lead: CostcoLead }) {
 
 // ── Main Component ──────────────────────────────────────────────────────
 
+const REFRESH_INTERVAL_MS = 60_000  // refresh once a minute while the tab is open
+const MODAL_URL = 'https://agm-pro--costco-lead-intake-costco-dashboard-data.modal.run'
+const STATIC_URL = 'costco-data.json'
+
 export default function CostcoDashboard() {
   const [data, setData] = useState<DashboardData | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
+  const [refreshing, setRefreshing] = useState(false)
+  const [lastRefreshed, setLastRefreshed] = useState<Date | null>(null)
   const [statusFilter, setStatusFilter] = useState('all')
   const [turfFilter, setTurfFilter] = useState('all')
   const [view, setView] = useState<'store' | 'list'>('store')
   const [sortCol, setSortCol] = useState('')
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('asc')
 
-  useEffect(() => {
-    const MODAL_URL = 'https://agm-pro--costco-lead-intake-costco-dashboard-data.modal.run'
-    fetch(MODAL_URL)
-      .then(r => { if (!r.ok) throw new Error(`${r.status}`); return r.json() })
-      .then(d => { setData(d); setLoading(false) })
-      .catch(() => {
-        // Fallback to static file if Modal endpoint is down
-        fetch('costco-data.json?' + Date.now())
-          .then(r => r.json())
-          .then(d => { setData(d); setLoading(false) })
-          .catch(e => { setError(e.message); setLoading(false) })
-      })
+  const fetchData = useCallback(async (manual = false) => {
+    if (manual) setRefreshing(true)
+    const bust = Date.now()
+    try {
+      // Try the live Modal endpoint first (always fresh). Cache-bust to defeat
+      // any intermediate CDN/proxy. Fall back to the static JSON if the
+      // endpoint is unreachable or disabled.
+      let resp = await fetch(`${MODAL_URL}?_=${bust}`, { cache: 'no-store' })
+      if (!resp.ok) {
+        resp = await fetch(`${STATIC_URL}?_=${bust}`, { cache: 'no-store' })
+        if (!resp.ok) throw new Error(`${resp.status}`)
+      }
+      const json = await resp.json() as DashboardData
+      setData(json)
+      setError('')
+      setLastRefreshed(new Date())
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : 'fetch failed')
+    } finally {
+      setLoading(false)
+      setRefreshing(false)
+    }
   }, [])
+
+  useEffect(() => {
+    fetchData()
+    const interval = setInterval(() => fetchData(), REFRESH_INTERVAL_MS)
+    return () => clearInterval(interval)
+  }, [fetchData])
 
   if (loading) return <div className="text-center text-gray-500 py-20">Loading Costco data from Salesforce...</div>
   if (error) return <div className="text-center text-red-400 py-20">Failed to load: {error}</div>
@@ -296,14 +320,30 @@ export default function CostcoDashboard() {
             <p className="text-xs text-gray-500">Shaw / Costco Lead Pipeline &mdash; Heavenly Greens &mdash; {s.totalLeads} leads</p>
           </div>
         </div>
-        <span className="text-xs text-gray-600">Updated: {new Date(data.generated).toLocaleString()}</span>
+        <div className="flex items-center space-x-3">
+          <div className="text-right">
+            <p className="text-xs text-gray-600">Source: {new Date(data.generated).toLocaleString()}</p>
+            {lastRefreshed && (
+              <p className="text-[10px] text-gray-700">Checked: {lastRefreshed.toLocaleTimeString()}</p>
+            )}
+          </div>
+          <button
+            type="button"
+            onClick={() => fetchData(true)}
+            disabled={refreshing}
+            className="px-2.5 py-1 border border-gray-700 rounded text-[10px] text-gray-400 hover:border-gray-500 hover:text-gray-300 transition-colors disabled:opacity-50 uppercase tracking-wider"
+          >
+            <RefreshCw className={`w-3 h-3 inline mr-1 ${refreshing ? 'animate-spin' : ''}`} />
+            Refresh
+          </button>
+        </div>
       </div>
 
       {/* Funnel Summary */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         <MetricCard label="Total Leads" value={s.totalLeads} />
         <MetricCard label="Appts Booked" value={s.appointmentsBooked} color="text-blue-400" />
-        <MetricCard label="Appts Ran" value={s.appointmentsRanConfirmed} color="text-purple-400" sub="AGM confirmed" />
+        <MetricCard label="Appts Ran" value={s.appointmentsRan ?? s.appointmentsRanConfirmed ?? 0} color="text-purple-400" sub="appointment date past" />
         <MetricCard label="Sold" value={s.sold} color="text-green-400" />
       </div>
 
@@ -316,12 +356,14 @@ export default function CostcoDashboard() {
       </div>
 
       {/* Data gap note */}
-      <div className="p-3 rounded-lg border" style={{ background: 'rgba(59,130,246,0.06)', borderColor: 'rgba(59,130,246,0.15)' }}>
-        <p className="text-xs text-blue-400">
-          <strong>{s.appointmentsRanConfirmed}</strong> appointments confirmed ran via AGM.{' '}
-          <strong>{s.appointmentsUnconfirmed}</strong> additional at &ldquo;Booked&rdquo; in Salesforce &mdash; appointment outcome unconfirmed (pre-pipeline leads).
-        </p>
-      </div>
+      {s.appointmentsRanConfirmed !== undefined && s.appointmentsUnconfirmed !== undefined && (
+        <div className="p-3 rounded-lg border" style={{ background: 'rgba(59,130,246,0.06)', borderColor: 'rgba(59,130,246,0.15)' }}>
+          <p className="text-xs text-blue-400">
+            <strong>{s.appointmentsRanConfirmed}</strong> appointments confirmed ran via AGM.{' '}
+            <strong>{s.appointmentsUnconfirmed}</strong> additional at &ldquo;Booked&rdquo; in Salesforce &mdash; appointment outcome unconfirmed (pre-pipeline leads).
+          </p>
+        </div>
+      )}
 
       {/* Lead Origin — Net New vs Recycled (HG → Costco) */}
       {s.originAnalysis && (s.originAnalysis.netNew + s.originAnalysis.recycled) > 0 && (
@@ -416,7 +458,13 @@ export default function CostcoDashboard() {
         </div>
       </div>
 
-      {/* Filters */}
+      {/* Filters — only render when per-lead detail is present.
+          The public/aggregates-only build of costco-data.json ships an empty
+          leads array (PII stripped per Dashboard Security Contract Rule 1).
+          When that's the case, hide filters/views and offer a deep-link into
+          AGM where the user can authenticate and see records.
+       */}
+      {data.leads.length > 0 && (
       <div className="bg-gray-900 rounded-lg p-4 border border-gray-800 flex items-center justify-between flex-wrap gap-3">
         <div className="flex items-center space-x-3">
           <label className="text-xs text-gray-500">Status:</label>
@@ -436,8 +484,26 @@ export default function CostcoDashboard() {
           <button onClick={() => setView('list')} className={`px-3 py-1 rounded text-xs font-medium transition-colors ${view === 'list' ? 'bg-blue-600 text-white' : 'bg-gray-800 text-gray-400 hover:text-white'}`}>All Leads</button>
         </div>
       </div>
+      )}
+
+      {data.leads.length === 0 && (
+        <div className="bg-gray-900 rounded-lg p-4 border border-gray-800 flex items-center justify-between flex-wrap gap-3">
+          <p className="text-xs text-gray-500">
+            Per-lead detail is hidden on this public view. Aggregates above reflect all {s.totalLeads} leads.
+          </p>
+          <a
+            href={AGM_CONTACTS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs px-3 py-1 rounded bg-green-900/30 text-green-400 hover:bg-green-900/50 transition-colors flex items-center space-x-1"
+          >
+            <span>View leads in AGM</span><ExternalLink className="w-3 h-3" />
+          </a>
+        </div>
+      )}
 
       {/* Leads */}
+      {data.leads.length > 0 && (
       <div className="space-y-2">
         {view === 'store' ? (
           Object.entries(byStore).sort((a, b) => b[1].length - a[1].length).map(([store, leads]) => (
@@ -485,6 +551,7 @@ export default function CostcoDashboard() {
           </div>
         )}
       </div>
+      )}
 
       {/* Store Performance */}
       <div className="bg-gray-900 rounded-lg p-5 border border-gray-800">

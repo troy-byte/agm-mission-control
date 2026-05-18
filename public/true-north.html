@@ -269,15 +269,15 @@
 
 <h1>True North</h1>
 <p class="subtitle">AGM Pro Tools &mdash; everything in flight, prioritized</p>
-<p class="datestamp">Last updated: 2026-05-16</p>
+<p class="datestamp">Last updated: 2026-05-18</p>
 
 <div class="stats">
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Clients Live</div></div>
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Prospects</div></div>
   <div class="stat"><div class="stat-value">$891</div><div class="stat-label">Monthly MRR</div></div>
-  <div class="stat accent"><div class="stat-value">34</div><div class="stat-label">Now</div></div>
-  <div class="stat"><div class="stat-value">21</div><div class="stat-label">Next</div></div>
-  <div class="stat"><div class="stat-value">87</div><div class="stat-label">Active Total</div></div>
+  <div class="stat accent"><div class="stat-value">36</div><div class="stat-label">Now</div></div>
+  <div class="stat"><div class="stat-value">22</div><div class="stat-label">Next</div></div>
+  <div class="stat"><div class="stat-value">90</div><div class="stat-label">Active Total</div></div>
 </div>
 
 <div class="filter-bar" id="filterBar">
@@ -572,9 +572,17 @@
 <section class="category">
   <header class="cat-header">
     <span class="cat-title">This Week &mdash; Priority</span>
-    <span class="cat-count">24 active &middot; 3 done</span>
+    <span class="cat-count">27 active &middot; 3 done</span>
   </header>
   <div class="cat-items">
+  <article class="task p-now">
+    <div class="task-body">
+      <div class="task-name"><span class="priority now">Now</span>OffClock™ Phase 0 &mdash; Monday sprint Track 2 (parallel Claude execution)</div>
+      <div class="task-desc">OffClock is the marquee Pro Max ($497/mo) feature for AGM Pro Tools &mdash; autonomous after-hours operator that reads inbound customer email, replies in the company&#x27;s brand voice (typed + audio), and bubbles to a morning digest. Phase 0 = scaffold + go live shadow on service@heavenlygreens.com Monday 2026-05-18. Sprint Track 2, executed by a parallel Claude instance while Harlan owns Track 1 (Jobber Marketplace) and Track 3 (Synthflow planning) runs separately. Phase 0 outputs: Modal app deployed, Graph webhook subscribed on service@, 10-bucket service intent classifier wired, every inbound email classified and logged. Zero customer sends &mdash; pure shadow mode. Voice persona locked: Sarah (ElevenLabs EXAVITQu4vr4xnSDxMaL). Anchor-tenant pilot of the HG Call Center Automation directive (Apr 3) &mdash; OffClock is the productized form, HG Call Center Automation is the HG implementation. Risk gates: zero sends Phase 0, warranty/complaint/&lt;30-day-install always reviewer touch, daily volume cap 30, OFFCLOCK_SEND_AUTHORITY kill switch, pre_deploy_check additions 15-17. Spec at directives/offclock_spec.md; HG implementation at directives/hg_call_center_automation.md.</div>
+    </div>
+    <div class="task-meta"><a href="../directives/offclock_spec.md">OffClock Spec</a> · <a href="../directives/hg_call_center_automation.md">HG Call Center Automation (anchor pilot)</a><br><span class="meta-text">Monday 2026-05-18 launch · Track 2 (parallel Claude execution) · Voice: Sarah (EXAVITQu4vr4xnSDxMaL)</span></div>
+  </article>
+
   <article class="task p-now">
     <div class="task-body">
       <div class="task-name"><span class="priority now">Now</span>Jobber App Marketplace Listing &mdash; AGM Pro Tools</div>
@@ -757,6 +765,22 @@
       <div class="task-desc">Audit every AGM workflow, calendar automation, and trigger that sends email or SMS for Heavenly Greens. Map: what sends, who it comes from, who receives it. Flag anything using {{user.name}} or rep identity when it should be call center. Partial progress: HG Lead Alert split sender from costco@ to HGLeads@ + Andrew cut over to agmprotools.com (commit 4d60510, May 5). Contract emails now route FROM rep with callcenter fallback (commit f5529e2). Three earlier-found instances fixed (appointment confirmation email/SMS, welcome email/SMS). Systematic sweep across all remaining workflows still pending.</div>
     </div>
     <div class="task-meta"><span class="meta-text">Partial progress · Full sweep still pending</span></div>
+  </article>
+
+  <article class="task p-now">
+    <div class="task-body">
+      <div class="task-name"><span class="priority now">Now</span>Content Flywheel &mdash; Restart (back on the radar)</div>
+      <div class="task-desc">Triggered 2026-05-17 by audit of an external 5-agent content pipeline article vs our Scout/Quill/Pixel/Echo flywheel. Troy: &#x27;we&#x27;ve got to get back on this.&#x27; The architecture in directives/content_flywheel_master.md is more sophisticated than the article &mdash; the gap is execution + invocability + cadence enforcement. Priority sequence: (1) Fork Scout/Quill/Pixel/Echo into invocable .claude/agents/*.md files with frontmatter + short identity line + machine-parseable &#x27;End with:&#x27; footer (one-hour first step, immediately unlocks /agents content-scout from any session). (2) Add &#x27;End with:&#x27; footers to existing scripts so cron can grep handoff status. (3) Audit weekly cadence crons (Mon Scout / Wed Quill / Thu Pixel / Fri Publish / Sat Atomize) &mdash; verify each runs or document the manual gap. (4) Define {{voice_profile}} text per content stream instead of word-blocklists. (5) Pixel + Echo gap audit: publish_linkedin/twitter/tiktok/instagram scripts exist but may not be cron-invoked. Full audit memo in Harlan memory: project_content_flywheel_2026-05-17_audit.md.</div>
+    </div>
+    <div class="task-meta"><a href="../directives/content_flywheel_master.md">Content Flywheel Master Directive</a> · <a href="../execution/content_pipeline.py">Content Pipeline Orchestrator</a> · <a href="../execution/briggs_skills/SKILL_flywheel_monitor.md">Briggs Flywheel Monitor Skill</a><br><span class="meta-text">Restart 2026-05-17 · One-hour first step · Master ToDo items #50-#54</span></div>
+  </article>
+
+  <article class="task p-next">
+    <div class="task-body">
+      <div class="task-name"><span class="priority next">Next</span>Synthflow Voice Integration &mdash; Track 3 (planning only)</div>
+      <div class="task-desc">Synthflow integration into AGM Pro Tools as the voice agent engine for OffClock Phase 3 (real-time call answering &mdash; replaces AGM&#x27;s native AI voice with a higher-quality plug-in). Surface-level visibility tracking only &mdash; no Monday deliverables. Architecture/positioning happening separately; will surface real asks once execution starts. Native AGM/GHL integration (sub-account sync, real-time calendar booking, AI call summaries push back to AGM workflows) makes Synthflow the build-vs-buy answer for the voice agent layer. ElevenLabs Sarah voice ID is portable across OffClock email audio replies AND Synthflow voice calls &mdash; one brand voice across every customer touchpoint. Phases 0-2 of OffClock (email + voicemail + SMS) stay custom-built on Modal; Phase 3 = Synthflow. Cost model: ~$0.15-$0.24/min real cost once STT/TTS fees are included. Email triage stays in-house as core IP; voice agent we buy. Hybrid is the move.</div>
+    </div>
+    <div class="task-meta"><a href="../directives/offclock_spec.md">OffClock Spec (Phase 3 section)</a> · <a href="https://marketplace.gohighlevel.com/integration/653bee8ab4783e721f7b1348">Synthflow GHL Marketplace integration</a><br><span class="meta-text">Planning only &mdash; no execution Monday · Real asks surface once Phase 3 begins · See OffClock spec Phase 3</span></div>
   </article>
 
   <article class="task p-next">
@@ -1349,10 +1373,18 @@
   <details>
     <summary class="cat-header">
       <span class="cat-title">Recently Completed</span>
-      <span class="cat-count">30</span>
+      <span class="cat-count">31</span>
       <span class="cat-toggle">expand &darr;</span>
     </summary>
     <div class="cat-items">
+  <article class="task p-done done-row">
+    <div class="task-body">
+      <div class="task-name"><span class="priority done">Done</span>CO Current Scope panel &mdash; closed-conn rollup fix (commit f37f085)</div>
+      <div class="task-desc">Two-panel scope render shipped 527dace exposed a closed-connection bug in change_order_page: conn.close() at line 10480 ran before the scope-rollup query at line 10584, query failed inside a swallowing try/except, _scope_co_rows came back empty every render, Current Scope == Original Scope. Fix moved conn.close() after the rollup query with explicit closes in early-return branches and logged the previously-swallowed exception. Deployed via pre_deploy_check Check 16 harness clean on the 20-test suite (including the new 5-digit-street-number regression for HGC-00149 v2). Verification: rebuild HGC-00149 draft 74cc4d4b in browser &mdash; Current Scope should show K9 Park Olive + Hydrofill from CO #2 and CO #1 edging addition.</div>
+    </div>
+    
+  </article>
+
   <article class="task p-done done-row">
     <div class="task-body">
       <div class="task-name"><span class="priority done">Done</span>Sprint 2 security hardening &mdash; DONE</div>
@@ -1598,7 +1630,7 @@
 
 <div class="footer">
   True North &mdash; AGM Pro Tools<br>
-  Updated 2026-05-16 by harlan<br>
+  Updated 2026-05-18 by harlan<br>
   Single source of truth for everything in flight.
 </div>
 

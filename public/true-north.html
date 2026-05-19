@@ -276,7 +276,7 @@
   <div class="stat"><div class="stat-value">4</div><div class="stat-label">Prospects</div></div>
   <div class="stat"><div class="stat-value">$891</div><div class="stat-label">Monthly MRR</div></div>
   <div class="stat accent"><div class="stat-value">37</div><div class="stat-label">Now</div></div>
-  <div class="stat"><div class="stat-value">22</div><div class="stat-label">Next</div></div>
+  <div class="stat"><div class="stat-value">23</div><div class="stat-label">Next</div></div>
   <div class="stat"><div class="stat-value">91</div><div class="stat-label">Active Total</div></div>
 </div>
 
@@ -1087,6 +1087,26 @@
     <div class="task-meta"><span class="meta-text">High impact</span></div>
   </article>
 
+  <article class="task p-next">
+    <div class="task-body">
+      <div class="task-name"><span class="priority next">Next</span>SF OAuth Client Credentials Migration &mdash; NEXT WEEK PRIORITY</div>
+      <div class="task-desc">URGENCY BUMPED 2026-05-19: Salesforce Transaction Security froze user Tscott@heavenlygreens.com (00537000000vH5J) for apparent OAuth-token reuse via an anonymizing proxy. Forensics + rotation runbook in directives/sf_admin_password_rotation.md. The root vulnerability is that all 11 backend scripts log in as Troy&#x27;s human user via SOAP username/password &mdash; a single freeze takes down the entire SF integration surface, and the human-user classifier is what flagged the cloud egress as a proxy in the first place. Moving to OAuth Client Credentials Flow eliminates both failure modes.
+
+Original 2026-05-07 notice: SOAP API login() in API v31.0–64.0 retires Summer &#x27;27. v65+ has no SOAP login() at all. We use SOAP login() across 11 production scripts: costco_lead_intake.py, modal_costco.py, contract_engine/pipeline.py, modal_zapier_replacement.py, sf_agm_stage_sync.py, sf_yoy_report.py, hg_sales_dashboard_data.py, costco_dashboard_data.py, sf_calendar_feed.py, sf_to_agm_migration.py, salesforce_triage.py.
+
+Migration plan (next week sprint):
+1. Create External Client App in HG SF org with OAuth Client Credentials Flow (run-as a dedicated integration user, NOT Troy).
+2. Build execution/lib/salesforce.py shared OAuth helper (Strangler Fig &mdash; eliminates 11 duplicate login functions, aligns with the 2026-04-27 shared library policy).
+3. Add SF_CLIENT_ID/SF_CLIENT_SECRET to .env + 2 Modal secrets (contract-engine-sf, costco-lead-intake). Drop SF_ADMIN_USERNAME / SF_ADMIN_PASSWORD.
+4. Migrate scripts one at a time with staging verification; the contract engine has the sf_soap_liveness_probe cron that flips to sf_oauth_liveness_probe on the new path.
+5. Bump API version to v60+ across the board.
+6. Deprecate SF_ADMIN_USERNAME/SF_ADMIN_PASSWORD entirely; remove from verify_andrew_scope.py.
+
+Deadline: targeted week of 2026-05-25. Stop-gap until then is the rotation runbook + password change. Reference: directives/sf_admin_password_rotation.md.</div>
+    </div>
+    <div class="task-meta"><a href="directives/sf_admin_password_rotation.md">Rotation runbook</a><br><span class="meta-text">Trigger event: 2026-05-19 SF freeze of Tscott@heavenlygreens.com · Original notice: 2026-05-07 (Summer &#x27;27 SOAP retirement) · Stop-gap: directives/sf_admin_password_rotation.md · Target sprint: week of 2026-05-25 · Affected scripts: 11 production</span></div>
+  </article>
+
   <article class="task p-queued">
     <div class="task-body">
       <div class="task-name"><span class="priority queued">Queued</span>Gap #5 &mdash; Delay Notification to Customer</div>
@@ -1117,14 +1137,6 @@
       <div class="task-desc">Replace manual triage/data-entry/print-approve loop at accounting@heavenlygreens.com with full close-loop automation. Architecture: Microsoft Graph ingest &rarr; Claude vision OCR/classification &rarr; QuickBooks API (vendor match, bill creation, attachment upload) &rarr; Slack approval gate &rarr; Bill.com or Melio for ACH origination (Chase = funding source only, no Chase UI automation, no fraud walls). Three phases: (1) Foundation + read-only intelligence weeks 1-3, (2) QB sync + Slack approvals weeks 4-6, (3) Payment rail weeks 7-9. Email sent to Tim + Troy 2026-05-06 with build-vs-buy recommendation (hybrid: we build phases 1-2, buy phase 3 from Bill.com). Six scoping questions back to Tim: invoice/bill volume, current rail (Bill.com/QB Bill Pay/manual), approver hierarchy, employee redeploy plan, vendor count, Chase commercial banking products in place. Follow up with Tim once answers come back to lock the build plan.</div>
     </div>
     <div class="task-meta"><span class="meta-text">Email sent 2026-05-06 · Awaiting Tim&#x27;s scoping answers · Follow up if no reply by 2026-05-13</span></div>
-  </article>
-
-  <article class="task p-queued">
-    <div class="task-body">
-      <div class="task-name"><span class="priority queued">Queued</span>SF SOAP API login() Retirement &mdash; Migrate to OAuth Client Credentials</div>
-      <div class="task-desc">Salesforce notice received 2026-05-07: SOAP API login() in API versions 31.0–64.0 will be retired with Summer &#x27;27. Org 00D37000000Pbiq (HG) flagged. We use SOAP login() across 11 production scripts: costco_lead_intake.py, modal_costco.py, contract_engine/pipeline.py, modal_zapier_replacement.py, sf_agm_stage_sync.py, sf_yoy_report.py, hg_sales_dashboard_data.py, costco_dashboard_data.py, sf_calendar_feed.py, sf_to_agm_migration.py, salesforce_triage.py. All POST username/password to login.salesforce.com/services/Soap/u/{55|58|62}. Migration plan: (1) create External Client App in HG SF org with OAuth Client Credentials Flow, (2) build execution/lib/salesforce.py shared OAuth helper (Strangler Fig &mdash; eliminates 11 duplicate login functions, aligns with Apr 27 shared library policy), (3) add SF_CLIENT_ID/SF_CLIENT_SECRET to .env + 3 Modal secrets (costco-lead-intake, modal-zapier-replacement, contract-engine), (4) migrate scripts one at a time with staging verification, (5) bump API version to v60+ across the board, (6) deprecate SF_ADMIN_USERNAME/SF_ADMIN_PASSWORD. Plenty of runway but front-load before Summer &#x27;27 wall &mdash; also unblocks v65+ where SOAP login() is gone entirely.</div>
-    </div>
-    <div class="task-meta"><span class="meta-text">Notice received 2026-05-07 · Deadline: Summer &#x27;27 · Email sent to Tim + Andrew</span></div>
   </article>
   </div>
   <details class="completed-fold">
@@ -1638,7 +1650,7 @@
 
 <div class="footer">
   True North &mdash; AGM Pro Tools<br>
-  Updated 2026-05-19 by harlan<br>
+  Updated 2026-05-19 by Harlan (2026-05-19 SF freeze response)<br>
   Single source of truth for everything in flight.
 </div>
 
